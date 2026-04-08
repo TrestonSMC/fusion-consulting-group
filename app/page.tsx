@@ -88,9 +88,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-4 text-base leading-relaxed text-black/70 md:text-lg">
-              Fuzion Consulting Group helps organizations make technology a true
-              business advantage through strategic, operational, and IT
-              consulting.
+             Fuzion Consulting Group helps organizations unlock business value by automating processes, adopting AI, and modernizing their digital capabilities.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
