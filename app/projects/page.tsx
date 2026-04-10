@@ -27,6 +27,204 @@ const projects = [
       "Business process mapping, break/fix support, and modernization roadmap",
     ],
   },
+  {
+    slug: "3p-app",
+    category: "Enterprise Systems Modernization",
+    title: "3P Lifecycle Management System (3P App)",
+    client: "Major Electric Utility · Phoenix Metro Area",
+    duration: "Jan 2025 – March 2026",
+    badge: "Compliance-Critical",
+    summary:
+      "Enterprise document governance platform designed to automate and manage the full lifecycle of processes, procedures, and policies across non-nuclear generation operations.",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2200&q=80",
+    challenge: [
+      "Fragmented, manual, and email-driven document governance processes",
+      "Limited auditability, centralized control, and lifecycle visibility",
+      "Need to support compliance in a regulated generation environment",
+    ],
+    delivered: [
+      "Microsoft 365–based lifecycle management system for 3P governance",
+      "Automated creation, review, approval, and biennial maintenance workflows",
+      "Centralized, role-based document governance with search and metadata configuration",
+    ],
+  },
+  {
+  slug: "arl-app",
+  category: "Enterprise Workflow Automation",
+  title: "Alarm Response Library (ARL) App",
+  client: "Major Electric Utility · Phoenix Metro Area",
+  duration: "2024 – 2025",
+  badge: "Mission-Critical",
+  summary:
+    "Centralized alarm response management application built to automate the creation, review, and approval of power plant equipment alarm responses across regulated generation operations.",
+  image:
+    "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=2200&q=80",
+  challenge: [
+    "Manual, email-driven alarm response coordination",
+    "Disconnected Word documents and review workflows",
+    "Need for accountability across operations, engineering, and external stakeholders",
+  ],
+  delivered: [
+    "Power Apps–based alarm response management solution",
+    "Structured workflows for creation, review, and approval",
+    "Centralized collaboration with auditable approvals and improved visibility",
+  ],
+},
+{
+  slug: "esl-pdl",
+  category: "Enterprise Data & Document Standardization",
+  title: "Equipment Specification Library (ESL) & PDL Alignment",
+  client: "Major Electric Utility · Phoenix Metro Area",
+  duration: "2024 – 2025",
+  badge: "Governance-Critical",
+  summary:
+    "Enterprise initiative to standardize and centralize equipment specifications and document libraries, improving governance, traceability, and alignment across generation systems.",
+  image:
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2200&q=80",
+  challenge: [
+    "Fragmented document and specification management across systems",
+    "Limited traceability and governance in a regulated environment",
+    "Need to align ESL and PDL with broader generation automation initiatives",
+  ],
+  delivered: [
+    "Centralized and standardized document management approach across ESL and PDL",
+    "Improved usability, governance, and traceability of generation specifications",
+    "Aligned with EPMS, PMB, and Alarm Response systems for unified operations",
+  ],
+},
+{
+  slug: "epms-ado-requirements",
+  category: "Enterprise Architecture & Requirements Engineering",
+  title: "Enterprise Functional Decomposition & ADO Requirements",
+  client: "Major Electric Utility · Phoenix Metro Area",
+  duration: "Dec 2024 – June 2025",
+  badge: "Strategic",
+  summary:
+    "Enterprise requirements engineering initiative translating complex business and engineering workflows into structured, traceable system requirements to support EPMS platform evaluation.",
+  image:
+    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2200&q=80",
+  challenge: [
+    "Lack of standardized, traceable requirements across business units",
+    "Need to support enterprise-level platform evaluation decisions",
+    "Complex alignment across Generation, Operations, T&D, and Corporate IT",
+  ],
+  delivered: [
+    "Developed functional decomposition model across business and engineering workflows",
+    "Created structured ADO framework with epics, features, and user stories",
+    "Delivered traceable, testable requirements supporting strategic platform decisions",
+  ],
+},
+{
+  slug: "gdmp",
+  category: "Enterprise Application Development & Lifecycle",
+  title: "Generation Document Management Portal (GDMP)",
+  client: "Major Electric Utility · Phoenix Metro Area",
+  duration: "2021 – Present",
+  badge: "Mission-Critical",
+  summary:
+    "Enterprise document management platform supporting construction, engineering, and generation operations through long-term development, integration, and lifecycle support.",
+  image:
+    "https://images.unsplash.com/photo-1581092160607-ee22731f3bfe?auto=format&fit=crop&w=2200&q=80",
+  challenge: [
+    "Fragmented document workflows across construction and generation teams",
+    "Need to modernize and standardize document management in a regulated environment",
+    "Requirement for long-term scalability, adoption, and operational support",
+  ],
+  delivered: [
+    "Designed and developed custom M365-based document management platform (GDMP)",
+    "Led pilot testing, iterative development, and enterprise rollout",
+    "Provided ongoing SLA-based support and application lifecycle management",
+  ],
+},
+{
+  slug: "generation-training",
+  category: "Change Management & Workforce Enablement",
+  title: "Generation Training & Change Management Modernization",
+  client: "Major Electric Utility · Phoenix Metro Area",
+  duration: "Nov 2024 – Nov 2025",
+  badge: "Adoption-Critical",
+  summary:
+    "Enterprise training and change management program designed to support adoption of modernized Generation systems through standardized processes, centralized training, and AI-enabled learning assets.",
+  image:
+    "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2200&q=80",
+  challenge: [
+    "Outdated training materials and inconsistent knowledge transfer methods",
+    "Need to support enterprise-wide adoption of multiple new systems",
+    "Lack of standardized, scalable training across generation operations",
+  ],
+  delivered: [
+    "Designed and implemented centralized training and enablement framework",
+    "Replaced legacy materials with AI-enabled training videos and documentation",
+    "Standardized adoption processes across multiple Generation platforms",
+  ],
+},
+{
+  slug: "pmb-library",
+  category: "Enterprise Project Governance",
+  title: "Project Management Basis (PMB) SharePoint Library",
+  client: "Major Electric Utility · Phoenix Metro Area",
+  duration: "2024 – 2025",
+  badge: "Governance-Critical",
+  summary:
+    "Centralized project governance platform providing a single source of truth for project processes, stage gate lifecycle guidance, and engineering standards across generation operations.",
+  image:
+    "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
+  challenge: [
+    "Dispersed project management processes and documentation",
+    "Lack of standardized governance across project lifecycle stages",
+    "Need for centralized access to engineering standards and operational guidance",
+  ],
+  delivered: [
+    "Implemented centralized PMB SharePoint platform for project governance",
+    "Consolidated Stage Gate lifecycle, standards, and specifications into single hub",
+    "Enabled structured workflows, dashboards, and improved project visibility",
+  ],
+},
+{
+  slug: "pmb-library",
+  category: "Enterprise Project Governance",
+  title: "Project Management Basis (PMB) SharePoint Library",
+  client: "Major Electric Utility · Phoenix Metro Area",
+  duration: "2024 – 2025",
+  badge: "Governance-Critical",
+  summary:
+    "Centralized project governance platform providing a single source of truth for project processes, stage gate lifecycle guidance, and engineering standards across generation operations.",
+  image:
+    "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=2200&q=80",
+  challenge: [
+    "Dispersed project management processes and documentation",
+    "Lack of standardized governance across project lifecycle stages",
+    "Need for centralized access to engineering standards and operational guidance",
+  ],
+  delivered: [
+    "Implemented centralized PMB SharePoint platform for project governance",
+    "Consolidated Stage Gate lifecycle, standards, and specifications into single hub",
+    "Enabled structured workflows, dashboards, and improved project visibility",
+  ],
+},
+{
+  slug: "support-beacon",
+  category: "Disaster Response & Logistics Platform",
+  title: "Support Beacon Relief – Fuzion Logistics Application",
+  client: "Rancher Navy (Nonprofit) · Central Texas",
+  duration: "In Development – June 2026",
+  badge: "Impact-Critical",
+  summary:
+    "Disaster relief logistics and volunteer coordination platform designed to automate large-scale response operations across multiple states using AI-driven workflows and cloud infrastructure.",
+  image:
+    "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=2200&q=80",
+  challenge: [
+    "Manual coordination of disaster relief using spreadsheets and phone calls",
+    "Limited scalability across multi-state operations and growing response volume",
+    "Need for secure, real-time logistics and volunteer management",
+  ],
+  delivered: [
+    "Designed and developed scalable disaster response logistics platform (Support Beacon)",
+    "Automated coordination of donations, volunteers, routes, and delivery tracking",
+    "Built cloud-based system leveraging AWS, AI tools, and mobile application support",
+  ],
+},
 ];
 
 const impactStats = [
@@ -252,7 +450,7 @@ export default function ProjectsPage() {
 
                     <div className="mt-8">
                       <Link
-                        href="/projects/epms"
+                        href={`/projects/${project.slug}`}
                         className="inline-flex items-center justify-center rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
                       >
                         View Project Details →
