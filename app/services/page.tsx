@@ -1,73 +1,138 @@
-// app/services/page.tsx
 "use client";
 
 import Link from "next/link";
 
 const LOGO_BLUE = "#2a8bff";
+const NAV_HEIGHT = 112; // adjust if your header is taller/shorter
 
-type Service = {
-  title: string;
-  desc: string;
-  href: string;
-  badge: string;
+type ServiceCategory = {
+  heading: string;
+  items: {
+    title: string;
+    desc: string;
+    href: string;
+    badge: string;
+  }[];
 };
 
 export default function ServicesPage() {
-  const services: Service[] = [
+  const serviceCategories: ServiceCategory[] = [
     {
-      title: "Construction, Document & Project Management SaaS",
-      desc: "Modern platforms that streamline approvals, documentation, scheduling, and delivery.",
-      href: "/services",
-      badge: "SaaS / PM",
+      heading: "Business & Professional Consulting",
+      items: [
+        {
+          title: "Business Process Optimization (BPO)",
+          desc: "Improve efficiency, reduce friction, and align core business processes with operational goals.",
+          href: "/contact",
+          badge: "BPO",
+        },
+        {
+          title: "Infrastructure & Integration",
+          desc: "Connect systems, teams, and workflows with practical integration strategies built for real operations.",
+          href: "/contact",
+          badge: "Integration",
+        },
+        {
+          title: "Nonprofit Evaluation & Business Automation",
+          desc: "Support nonprofit organizations with evaluation frameworks, automation opportunities, and better operating visibility.",
+          href: "/contact",
+          badge: "Nonprofit",
+        },
+        {
+          title: "Project & Program Management (PMO)",
+          desc: "Bring structure, accountability, and delivery discipline to projects and enterprise programs.",
+          href: "/contact",
+          badge: "PMO",
+        },
+        {
+          title: "Process & Automation",
+          desc: "Replace manual work with scalable workflows that improve consistency and measurable performance.",
+          href: "/contact",
+          badge: "Automation",
+        },
+        {
+          title: "Strategy & Change Management",
+          desc: "Guide transformation efforts with practical planning, stakeholder alignment, and adoption support.",
+          href: "/contact",
+          badge: "Strategy",
+        },
+        {
+          title: "Utility Consulting",
+          desc: "Advisory and operational support tailored to utility environments, governance requirements, and modernization goals.",
+          href: "/contact",
+          badge: "Utility",
+        },
+      ],
     },
     {
-      title: "Field Productivity Portals & Dashboards",
-      desc: "Operational visibility across teams, sites, and systems—built for speed and clarity.",
-      href: "/services",
-      badge: "Dashboards",
-    },
-    {
-      title: "Business & IT Integration Strategies",
-      desc: "Connect tools, data, and workflows so your operations run as one system.",
-      href: "/services",
-      badge: "Strategy",
-    },
-    {
-      title: "AI Engineering Solutions",
-      desc: "Practical AI that reduces overhead, automates decisions, and increases output.",
-      href: "/services",
-      badge: "AI",
-    },
-    {
-      title: "Microsoft 365 & Cloud Optimization",
-      desc: "Migrations, governance, reporting architecture, and cloud cost control.",
-      href: "/services/microsoft-cloud", // ✅ connects to your new page
-      badge: "M365 / Cloud",
-    },
-    {
-      title: "Workflow Automation & Digital Transformation",
-      desc: "Replace manual work with clean, measurable processes that scale.",
-      href: "/services",
-      badge: "Automation",
+      heading: "Technology Consulting",
+      items: [
+        {
+          title: "Application & Web Development",
+          desc: "Design and build modern digital platforms that improve operations, user experience, and visibility.",
+          href: "/contact",
+          badge: "Web / App",
+        },
+        {
+          title: "Maintenance & Support",
+          desc: "Ongoing support services that keep business-critical systems stable, secure, and performing well.",
+          href: "/contact",
+          badge: "Support",
+        },
+        {
+          title: "Mobile App Development",
+          desc: "Custom mobile solutions that extend business capabilities into the field and into customers’ hands.",
+          href: "/contact",
+          badge: "Mobile",
+        },
+        {
+          title: "Process Analysis & Evaluation",
+          desc: "Assess current-state workflows, identify inefficiencies, and define practical improvement paths.",
+          href: "/contact",
+          badge: "Analysis",
+        },
+        {
+          title: "Reporting Evaluation & Development",
+          desc: "Create reporting structures and dashboards that turn operational data into usable insight.",
+          href: "/contact",
+          badge: "Reporting",
+        },
+        {
+          title: "System Evaluation & Integration",
+          desc: "Evaluate current systems and implement integrations that reduce silos and improve business continuity.",
+          href: "/contact",
+          badge: "Systems",
+        },
+        {
+          title: "Workflow Analysis & Automation",
+          desc: "Analyze workflow bottlenecks and deploy automation solutions that support scalable growth.",
+          href: "/contact",
+          badge: "Workflow",
+        },
+      ],
     },
   ];
 
   return (
-    <main className="min-h-screen bg-white">
+    <main
+      className="min-h-screen bg-white"
+      style={{ paddingTop: `${NAV_HEIGHT}px` }}
+    >
       {/* ===================== HERO ===================== */}
       <section className="relative overflow-hidden bg-white">
         <div className="mx-auto max-w-7xl px-6 py-20">
-          <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
-            SERVICES
-          </p>
-
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-black/90 md:text-5xl">
-            Consulting built for real-world operations.
+          <h1 className="text-4xl font-semibold tracking-tight text-black/90 md:text-5xl">
+            Fuzion also offers business & professional consulting services.
           </h1>
 
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
-            We design and implement modern systems that streamline operations,
-            strengthen compliance, and improve visibility across teams and tools.
+            We support organizations with consulting and technology services
+            that strengthen operations, improve visibility, and help teams move
+            faster with better systems in place.
+          </p>
+
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-black/60 md:text-lg">
+            Consulting built for real-world operations.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -88,78 +153,80 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Blue divider like your other pages */}
       <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
 
-      {/* ===================== SERVICES GRID ===================== */}
+      {/* ===================== SERVICE CATEGORIES ===================== */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
-                CAPABILITIES
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold text-black/90">
-                What we deliver
-              </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-black/60">
-                Select a capability to learn more about scope, outcomes, and engagement options.
-              </p>
-            </div>
-
-            <Link
-              href="/contact"
-              className="hidden rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-black/5 md:inline-flex"
-            >
-              Start a conversation →
-            </Link>
+          <div>
+            <h2 className="text-3xl font-semibold text-black/90">
+              Our consulting capabilities
+            </h2>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/60">
+              Fuzion provides both business-focused consulting and technology
+              services designed to solve operational challenges with practical,
+              scalable solutions.
+            </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => (
-              <Link
-                key={s.title}
-                href={s.href}
-                className="group rounded-3xl border border-black/10 bg-white p-7 shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition hover:-translate-y-[2px] hover:shadow-[0_16px_50px_rgba(0,0,0,0.10)]"
-              >
-                <div className="flex items-center justify-between gap-4">
-                  <div
-                    className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold tracking-wide text-black/70"
-                    style={{
-                      borderColor: "rgba(0,0,0,0.12)",
-                      background: "rgba(42,139,255,0.10)",
-                    }}
-                  >
-                    {s.badge}
-                  </div>
+          <div className="mt-12 space-y-14">
+            {serviceCategories.map((category) => (
+              <div key={category.heading}>
+                <h3 className="text-2xl font-semibold tracking-tight text-black/90">
+                  {category.heading}
+                </h3>
 
-                  <div
-                    className="h-10 w-10 rounded-2xl border bg-white grid place-items-center transition group-hover:translate-x-0.5"
-                    style={{ borderColor: "rgba(0,0,0,0.12)" }}
-                    aria-hidden="true"
-                  >
-                    →
-                  </div>
+                <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {category.items.map((service) => (
+                    <Link
+                      key={service.title}
+                      href={service.href}
+                      className="group rounded-3xl border border-black/10 bg-white p-7 shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition hover:-translate-y-[2px] hover:shadow-[0_16px_50px_rgba(0,0,0,0.10)]"
+                    >
+                      <div className="flex items-center justify-between gap-4">
+                        <div
+                          className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold tracking-wide text-black/70"
+                          style={{
+                            borderColor: "rgba(0,0,0,0.12)",
+                            background: "rgba(42,139,255,0.10)",
+                          }}
+                        >
+                          {service.badge}
+                        </div>
+
+                        <div
+                          className="grid h-10 w-10 place-items-center rounded-2xl border bg-white transition group-hover:translate-x-0.5"
+                          style={{ borderColor: "rgba(0,0,0,0.12)" }}
+                          aria-hidden="true"
+                        >
+                          →
+                        </div>
+                      </div>
+
+                      <div className="mt-6">
+                        <h4 className="text-xl font-semibold tracking-tight text-black/90">
+                          {service.title}
+                        </h4>
+                        <p className="mt-3 text-sm leading-relaxed text-black/60">
+                          {service.desc}
+                        </p>
+
+                        <div
+                          className="mt-6 h-[3px] w-12 rounded-full"
+                          style={{ background: LOGO_BLUE }}
+                        />
+                      </div>
+                    </Link>
+                  ))}
                 </div>
-
-                <div className="mt-6">
-                  <h3 className="text-xl font-semibold tracking-tight text-black/90">
-                    {s.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-black/60">
-                    {s.desc}
-                  </p>
-
-                  <div className="mt-6 h-[3px] w-12 rounded-full" style={{ background: LOGO_BLUE }} />
-                </div>
-              </Link>
+              </div>
             ))}
           </div>
 
-          <div className="mt-10 md:hidden">
+          <div className="mt-12">
             <Link
               href="/contact"
-              className="inline-flex w-full items-center justify-center rounded-2xl bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-black/90"
+              className="inline-flex rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-black/5"
             >
               Start a conversation →
             </Link>
@@ -179,7 +246,8 @@ export default function ServicesPage() {
                 Would love to help.
               </h3>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/90 md:text-base">
-                Tell us what you’re trying to improve — we’ll map the fastest path to measurable outcomes.
+                Tell us what you’re trying to improve — we’ll help map the
+                fastest path to practical, measurable outcomes.
               </p>
             </div>
 

@@ -24,13 +24,12 @@ export default function FuzionNav() {
       }`}
     >
       <nav className="flex h-full items-center justify-between pr-10">
-
         {/* MASSIVE LOGO */}
         <Link href="/" aria-label="Home" className="inline-flex">
           <img
             src="https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Brand/logo.png"
             alt="Fuzion Consulting Group"
-            className="h-[105px] lg:h-[110px] w-auto"
+            className="h-[105px] w-auto lg:h-[110px]"
           />
         </Link>
 
@@ -38,6 +37,9 @@ export default function FuzionNav() {
         <div className="hidden items-center gap-12 md:flex">
           <Link href="/services" className="navLink">
             Capabilities
+          </Link>
+          <Link href="/industries" className="navLink">
+            Industries
           </Link>
           <Link href="/projects" className="navLink">
             Projects
@@ -73,7 +75,6 @@ export default function FuzionNav() {
     </header>
   );
 }
-
 
 
 
