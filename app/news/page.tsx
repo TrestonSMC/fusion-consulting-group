@@ -45,22 +45,6 @@ export default function NewsPage() {
       category: "Partnership",
     },
     {
-      title:
-        "Fuzion/ C M Cattle Company Partnership - Logistics App Development",
-      desc:
-        "Fuzion partners with C M Cattle Company to deliver logistics-focused application development aligned to field operations.",
-      href: "/news",
-      category: "Partnership",
-    },
-    {
-      title:
-        "United Cajun Navy Partnership - Logistics/Mounted Patrol/Search & Rescue App Development",
-      desc:
-        "Fuzion supports United Cajun Navy through application development tailored to logistics, mounted patrol, and search & rescue coordination.",
-      href: "/news",
-      category: "Partnership",
-    },
-    {
       title: "Anderson Bean & Rios of Mercedes Boot Tour",
       desc:
         "Coverage of the Anderson Bean & Rios of Mercedes Boot Tour and related community and partner engagement.",
