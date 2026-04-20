@@ -8,77 +8,180 @@ const NAV_HEIGHT = 112;
 type TeamMember = {
   name: string;
   title: string;
-  img: string;
-  href?: string;
+  img?: string;
+  href: string;
+  photoPosition?: string;
+  photoScale?: number;
+};
+
+type TeamGroup = {
+  label: string;
+  title: string;
+  description: string;
+  members: TeamMember[];
 };
 
 export default function AboutPage() {
-  const team: TeamMember[] = [
+  const teamGroups: TeamGroup[] = [
     {
-      name: "Dan Goretskie",
-      title: "Founder & CEO",
-      img: "",
-      href: "/about",
+      label: "FOUNDERS",
+      title: "Fuzion Founders",
+      description:
+        "The founding leadership behind Fuzion Consulting Group’s vision, strategy, and client-centered growth.",
+      members: [
+        {
+          name: "Dan Goretskie",
+          title: "Founder & CEO",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Dan%20Goretskie%20-%20Founder%20Image%20-%20Alternate.jpg",
+          href: "/company/dan-goretskie-consulting",
+          photoPosition: "40% -5%",
+          photoScale: 1.1,
+        },
+        {
+          name: "Donna Webb",
+          title: "Co-Founder & COO",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Donna%20Webb%20-%20Fuzion%20Image%20-%20Consulting.png",
+          href: "/company/donna-webb-consulting",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+      ],
     },
     {
-      name: "Donna Webb",
-      title: "Co-Founder & COO",
-      img: "",
-      href: "/about",
+      label: "LEADERSHIP TEAM",
+      title: "Fuzion Leadership Team",
+      description:
+        "Experienced leaders driving delivery, engineering, program execution, and operational excellence.",
+      members: [
+        {
+          name: "Andy Much",
+          title: "Principal Solutions Leader",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Andy%20Much%20-%20Bio%20Image.jpg",
+          href: "/company/andy-much",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+        {
+          name: "Prag Padilla",
+          title: "Principal Solutions Leader",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Prag%20Padilla%20-%20Pending%20Approval%20-%20Bio%20Image%20(1).jpg",
+          href: "/company/prag-padilla",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+        {
+          name: "Pat Sagaser",
+          title: "Principal Solutions Engineer",
+          img: "/team/pat-sagaser.jpg",
+          href: "/company/pat-sagaser",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+        {
+          name: "Dennis DelGrosso",
+          title: "Principal Engineering Leader",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Dennis%20DelGrosso%20-%20Approved%20Bio%20Image.jpg",
+          href: "/company/dennis-delgrosso",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+        {
+          name: "Charles Eder",
+          title: "Principal Technology Program Manager",
+          img: "/team/charles-eder.jpg",
+          href: "/company/charles-eder",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+        {
+          name: "Shirley Patterson",
+          title: "Sr. Director of Accounting & Human Resources (HR)",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Shirley%20Patterson%20-%20Approved%20Bio%20Image.jpg",
+          href: "/company/shirley-patterson",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+      ],
     },
     {
-      name: "Shirley Patterson",
-      title: "Sr. Director of Accounting & HR",
-      img: "",
-      href: "/about",
+      label: "CONSULTING & SUPPORT",
+      title: "Fuzion Consulting & Support Team",
+      description:
+        "Specialized support professionals helping maintain documentation quality, controls, and delivery continuity.",
+      members: [
+        {
+          name: "Monica Mariscal",
+          title: "Sr. Document Controls Analyst",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Monica%20Mariscal%20-%20Approved%20Bio%20Image.png",
+          href: "/company/monica-mariscal",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+        {
+          name: "Lisa Holliday",
+          title: "Sr. Document Controls Analyst",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Lisa%2016x9.png",
+          href: "/company/lisa-holliday",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+      ],
     },
     {
-      name: "Dennis DelGrosso",
-      title: "Principal Engineering Leader",
-      img: "",
-      href: "/about",
+      label: "PRINCIPAL ADVISORS",
+      title: "Fuzion Approved Principal Advisors",
+      description:
+        "A trusted advisory bench offering strategic perspective across operations, government, and regulated industries.",
+      members: [
+        {
+          name: "Amy Houston",
+          title: "Principal Advisor",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Amy%20Houston%20-%20Principal%20Advisor%20-%20Approved%20Image.jpg",
+          href: "/company/amy-houston",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+        {
+          name: "Morgan Broome",
+          title: "Principal Advisor",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Morgan%20Broome%20-%20Principal%20Advisor%20Pending%20Approval%20-%20Image.jpg",
+          href: "/company/morgan-broome",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+        {
+          name: "Sean Goretskie",
+          title: "Principal Advisor",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Sean%20Goretskie%20-%20Principal%20Advisor%20-%20Approved%20Image.jpg",
+          href: "/company/sean-goretskie",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+        {
+          name: "Robert S. Olson",
+          title: "Principal Advisor",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Senator%20Robert%20Olson%20-%20Principal%20Advisor%20-%20Approved%20Image.webp",
+          href: "/company/robert-s-olson",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+      ],
     },
     {
-      name: "Andy Much",
-      title: "Principal Solutions Leader",
-      img: "",
-      href: "/about",
-    },
-    {
-      name: "Prag Padilla",
-      title: "Associate Solutions Engineer",
-      img: "",
-      href: "/about",
-    },
-    {
-      name: "Charles Eder",
-      title: "Sr. Technical Program Manager",
-      img: "",
-      href: "/about",
-    },
-    {
-      name: "Pat Sagaser",
-      title: "Sr. Solutions Engineer",
-      img: "",
-      href: "/about",
-    },
-    {
-      name: "Monica Mariscal",
-      title: "Sr. Document Control Specialist",
-      img: "",
-      href: "/about",
-    },
-    {
-      name: "Sean Goretskie",
-      title: "Life Sciences - Principal Advisor",
-      img: "",
-      href: "/about",
-    },
-    {
-      name: "Robert Olson",
-      title: "Government - Principal Advisor, Retired KS State Senator",
-      img: "",
-      href: "/about",
+      label: "DIGITAL DESIGN PARTNER",
+      title: "Fuzion Digital Design Partner",
+      description:
+        "Creative and digital execution support aligned with Fuzion’s modern business and technology initiatives.",
+      members: [
+        {
+          name: "Treston Slater",
+          title: "Slater Media Company",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/TrestonSlater_Profile.png",
+          href: "/company/treston-slater",
+          photoPosition: "50% 20%",
+          photoScale: 1,
+        },
+      ],
     },
   ];
 
@@ -87,7 +190,6 @@ export default function AboutPage() {
       className="min-h-screen bg-white"
       style={{ paddingTop: `${NAV_HEIGHT}px` }}
     >
-      {/* ===================== HERO (PHOTO) ===================== */}
       <section className="relative overflow-hidden">
         <div className="relative h-[420px] w-full">
           <img
@@ -135,7 +237,6 @@ export default function AboutPage() {
 
       <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
 
-      {/* ===================== WHO WE ARE (LEFT) + VIDEO (RIGHT) ===================== */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="grid gap-12 lg:grid-cols-12">
@@ -149,20 +250,18 @@ export default function AboutPage() {
               </h2>
 
               <p className="mt-6 text-sm leading-relaxed text-black/60 md:text-base">
-                We’ve recently expanded our reach through the launch of Fuzion
-                Chickasaw Group, a certified Minority Women-Owned company based
-                in Calera, Oklahoma. Independently operated with shared
-                leadership and close alignment to Fuzion Consulting Group, this
-                strategic expansion deepens our commitment to inclusion,
-                community partnership, and scalable impact.
+                We help organizations bridge the gap between business operations
+                and modern technology through practical, scalable consulting
+                solutions. Our approach is rooted in clarity, collaboration, and
+                long-term value creation for every client we serve.
               </p>
 
               <p className="mt-6 text-sm leading-relaxed text-black/60 md:text-base">
-                With over 30 years of combined experience, we understand the
-                communication gaps between traditional corporate IT and
-                operational business units. We design intuitive, scalable
-                systems that bridge those divides—enabling teams to work
-                smarter, faster, and more collaboratively.
+                With decades of combined leadership and delivery experience, our
+                team understands the communication gaps that often exist between
+                traditional corporate IT, field teams, and operational business
+                units. We design systems and strategies that bring those worlds
+                together.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -209,19 +308,19 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* ===================== MEET THE TEAM ===================== */}
-          <div className="mt-16">
+          <div className="mt-20">
             <div className="flex items-end justify-between gap-6">
               <div>
                 <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
                   MEET THE TEAM
                 </p>
-                <h3 className="mt-3 text-3xl font-semibold text-black/90">
-                  Leadership + delivery you can count on.
+                <h3 className="mt-3 text-3xl font-semibold text-black/90 md:text-4xl">
+                  Leadership, advisory, and support structured for delivery.
                 </h3>
-                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-black/60">
-                  Meet the leadership and advisory team behind Fuzion’s
-                  client-centered delivery.
+                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/60 md:text-base">
+                  Our team is organized across leadership, delivery, support,
+                  and advisory functions to provide focused expertise where it
+                  matters most.
                 </p>
               </div>
 
@@ -233,40 +332,82 @@ export default function AboutPage() {
               </Link>
             </div>
 
-            <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-              {team.map((m) => (
-                <div key={m.name} className="text-center">
-                  <div className="mx-auto h-44 w-44 overflow-hidden rounded-full bg-black/5">
-                    {m.img ? (
-                      <img
-                        src={m.img}
-                        alt={m.name}
-                        className="h-full w-full object-cover"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center text-sm text-black/40">
-                        Headshot
+            <div className="mt-12 space-y-10">
+              {teamGroups.map((group) => (
+                <section
+                  key={group.title}
+                  className="rounded-[28px] border border-black/10 bg-white p-6 shadow-[0_14px_40px_rgba(0,0,0,0.05)] md:p-8"
+                >
+                  <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                    <div>
+                      <p className="text-xs font-semibold tracking-[0.22em] text-black/50">
+                        {group.label}
+                      </p>
+                      <h4 className="mt-2 text-2xl font-semibold tracking-tight text-black/90">
+                        {group.title}
+                      </h4>
+                      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/60 md:text-base">
+                        {group.description}
+                      </p>
+                    </div>
+
+                    <div
+                      className="h-[3px] w-16 rounded-full"
+                      style={{ background: LOGO_BLUE }}
+                    />
+                  </div>
+
+                  <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                    {group.members.map((member) => (
+                      <div
+                        key={`${group.title}-${member.name}`}
+                        className="rounded-[24px] border border-black/10 bg-gray-50 p-6 text-center transition hover:border-black/15 hover:bg-white"
+                      >
+                        <div className="mx-auto h-36 w-36 overflow-hidden rounded-full border border-black/10 bg-white shadow-sm">
+                          {member.img ? (
+                            <img
+                              src={member.img}
+                              alt={member.name}
+                              className="h-full w-full object-cover"
+                              style={{
+                                objectPosition:
+                                  member.photoPosition ?? "50% 20%",
+                                transform: `scale(${member.photoScale ?? 1})`,
+                                transformOrigin: "center",
+                              }}
+                            />
+                          ) : (
+                            <div className="flex h-full w-full items-center justify-center text-xs font-semibold tracking-[0.16em] text-black/35">
+                              PHOTO
+                            </div>
+                          )}
+                        </div>
+
+                        <div
+                          className="mx-auto mt-5 h-[3px] w-12 rounded-full"
+                          style={{ background: LOGO_BLUE }}
+                        />
+
+                        <p className="mt-5 text-lg font-semibold text-black/90">
+                          {member.name}
+                        </p>
+
+                        <p className="mt-2 min-h-[44px] text-sm leading-relaxed text-black/60">
+                          {member.title}
+                        </p>
+
+                        <div className="mt-5">
+                          <Link
+                            href={member.href}
+                            className="inline-flex items-center gap-2 text-sm font-medium text-black/80 hover:text-black"
+                          >
+                            Learn more <span aria-hidden="true">→</span>
+                          </Link>
+                        </div>
                       </div>
-                    )}
+                    ))}
                   </div>
-
-                  <p className="mt-6 text-lg font-medium text-black/90">
-                    {m.name}
-                  </p>
-
-                  <p className="mt-1 text-xs font-semibold tracking-[0.12em] text-black/55">
-                    {m.title.toUpperCase()}
-                  </p>
-
-                  <div className="mt-4">
-                    <Link
-                      href={m.href ?? "/about"}
-                      className="inline-flex items-center gap-2 text-sm font-medium text-black/80 hover:text-black"
-                    >
-                      Learn more <span aria-hidden="true">→</span>
-                    </Link>
-                  </div>
-                </div>
+                </section>
               ))}
             </div>
 
@@ -282,7 +423,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ===================== OPTIONAL: WHAT WE DO ===================== */}
       <section className="border-t border-black/10 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
@@ -318,7 +458,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ===================== CTA STRIP ===================== */}
       <section
         className="relative overflow-hidden"
         style={{ background: LOGO_BLUE }}
@@ -359,4 +498,3 @@ export default function AboutPage() {
     </main>
   );
 }
-

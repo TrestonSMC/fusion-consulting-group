@@ -1,19 +1,109 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
-const LOGO_BLUE = "#2a8bff"; // adjust if you want closer to your exact logo
+const LOGO_BLUE = "#2a8bff";
 
 export default function HomePage() {
   const sliderRef = useRef<HTMLDivElement | null>(null);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    organization: "",
+    email: "",
+    phone: "",
+    interestedIn: "",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | "";
+    message: string;
+  }>({
+    type: "",
+    message: "",
+  });
 
   const scrollByCards = (dir: "left" | "right") => {
     const el = sliderRef.current;
     if (!el) return;
 
     const amount = Math.round(el.clientWidth * 0.62);
-    el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+    el.scrollBy({
+      left: dir === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setSubmitStatus({ type: "", message: "" });
+
+    if (
+      !formData.name.trim() ||
+      !formData.organization.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
+      setSubmitStatus({
+        type: "error",
+        message: "Please fill out all required fields.",
+      });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data?.error || "Something went wrong.");
+      }
+
+      setSubmitStatus({
+        type: "success",
+        message: "Message sent successfully.",
+      });
+
+      setFormData({
+        name: "",
+        organization: "",
+        email: "",
+        phone: "",
+        interestedIn: "",
+        message: "",
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "Unable to send your message right now. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const capabilities = [
@@ -88,7 +178,9 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-4 text-base leading-relaxed text-black/70 md:text-lg">
-             Fuzion Consulting Group helps organizations unlock business value by automating processes, adopting AI, and modernizing their digital capabilities.
+              Fuzion Consulting Group helps organizations unlock business value
+              by automating processes, adopting AI, and modernizing their
+              digital capabilities.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -138,7 +230,6 @@ export default function HomePage() {
         `}</style>
       </section>
 
-      {/* BLUE DIVIDER LINE (Hero -> Content) */}
       <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
 
       {/* ===================== EXPANDED HOME COPY ===================== */}
@@ -159,8 +250,8 @@ export default function HomePage() {
               </p>
 
               <p className="mt-6 text-sm leading-relaxed text-black/60 md:text-base">
-                At Fuzion Consulting Group and our certified Minority Women-Owned
-                subsidiary,{" "}
+                At Fuzion Consulting Group and our certified Minority
+                Women-Owned subsidiary,{" "}
                 <span className="font-semibold text-black/80">
                   Fuzion Chickasaw Group
                 </span>
@@ -186,7 +277,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* ✅ Blue border around the big rectangle */}
             <div className="lg:col-span-6">
               <div
                 className="rounded-3xl border-2 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
@@ -225,11 +315,11 @@ export default function HomePage() {
 
                 <p className="mt-6 text-sm leading-relaxed text-black/60">
                   With decades of combined experience, our consultants partner
-                  closely with each client to understand their unique operational
-                  challenges and design sustainable, scalable solutions. Whether
-                  you're a growing startup or a large enterprise, we bring the
-                  insight, precision, and execution needed to thrive in today’s
-                  digital economy.
+                  closely with each client to understand their unique
+                  operational challenges and design sustainable, scalable
+                  solutions. Whether you're a growing startup or a large
+                  enterprise, we bring the insight, precision, and execution
+                  needed to thrive in today’s digital economy.
                 </p>
 
                 <div className="mt-6">
@@ -246,7 +336,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===================== “PUSH BUTTON” CAPABILITIES CAROUSEL ===================== */}
+      {/* ===================== CAPABILITIES CAROUSEL ===================== */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 pb-16">
           <div className="flex items-end justify-between gap-6">
@@ -257,11 +347,9 @@ export default function HomePage() {
               <h3 className="mt-3 text-3xl font-semibold text-black/90">
                 Built for real-world operations
               </h3>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-black/60">
-              </p>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-black/60"></p>
             </div>
 
-            {/* ✅ Blue arrow buttons */}
             <div className="hidden items-center gap-3 md:flex">
               <button
                 type="button"
@@ -285,11 +373,10 @@ export default function HomePage() {
           </div>
 
           <div className="relative mt-8">
-            {/* Mobile arrows */}
             <button
               type="button"
               onClick={() => scrollByCards("left")}
-              className="md:hidden absolute left-0 top-1/2 z-10 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-2xl text-white shadow-md hover:brightness-110"
+              className="absolute left-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-2xl text-white shadow-md hover:brightness-110 md:hidden"
               style={{ background: LOGO_BLUE }}
               aria-label="Previous"
             >
@@ -298,7 +385,7 @@ export default function HomePage() {
             <button
               type="button"
               onClick={() => scrollByCards("right")}
-              className="md:hidden absolute right-0 top-1/2 z-10 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-2xl text-white shadow-md hover:brightness-110"
+              className="absolute right-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-2xl text-white shadow-md hover:brightness-110 md:hidden"
               style={{ background: LOGO_BLUE }}
               aria-label="Next"
             >
@@ -357,15 +444,16 @@ export default function HomePage() {
               ))}
             </div>
 
-            <p className="mt-4 text-xs text-black/45">
-            </p>
+            <p className="mt-4 text-xs text-black/45"></p>
           </div>
         </div>
       </section>
 
-      {/* ===================== CONTACT “SHEET” SECTION (BLUE) ===================== */}
-      <section className="relative overflow-hidden" style={{ background: LOGO_BLUE }}>
-        {/* subtle glow */}
+      {/* ===================== CONTACT SECTION ===================== */}
+      <section
+        className="relative overflow-hidden"
+        style={{ background: LOGO_BLUE }}
+      >
         <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
         <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
 
@@ -399,40 +487,84 @@ export default function HomePage() {
 
             <div className="lg:col-span-7">
               <form
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={handleSubmit}
                 className="rounded-3xl border border-white/25 bg-white/10 p-8 backdrop-blur"
               >
                 <div className="grid gap-5 md:grid-cols-2">
-                  <Field label="Name *" />
-                  <Field label="Organization *" />
-                  <Field label="Email *" />
-                  <Field label="Phone" />
+                  <Field
+                    label="Name *"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
+                  <Field
+                    label="Organization *"
+                    name="organization"
+                    value={formData.organization}
+                    onChange={handleChange}
+                  />
+                  <Field
+                    label="Email *"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                  <Field
+                    label="Phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
                   <div className="md:col-span-2">
-                    <Field label="Interested in:" />
+                    <Field
+                      label="Interested in:"
+                      name="interestedIn"
+                      value={formData.interestedIn}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className="md:col-span-2">
                     <label className="block text-sm font-medium text-white/95">
-                      Message
+                      Message *
                     </label>
                     <textarea
+                      name="message"
                       rows={5}
+                      value={formData.message}
+                      onChange={handleChange}
                       className="mt-2 w-full rounded-2xl border border-white/30 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 outline-none focus:border-white/60"
                       placeholder="Tell us what you're building…"
                     />
                   </div>
                 </div>
 
-                <div className="mt-8 flex items-center justify-end">
+                <div className="mt-8 flex items-center justify-between gap-4">
+                  <div>
+                    {submitStatus.message ? (
+                      <p
+                        className={`text-sm ${
+                          submitStatus.type === "success"
+                            ? "text-white"
+                            : "text-red-100"
+                        }`}
+                      >
+                        {submitStatus.message}
+                      </p>
+                    ) : null}
+                  </div>
+
                   <button
                     type="submit"
-                    className="rounded-2xl bg-white px-8 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                    disabled={isSubmitting}
+                    className="rounded-2xl bg-white px-8 py-3 text-sm font-semibold text-black/90 transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-70"
                   >
-                    SUBMIT
+                    {isSubmitting ? "SENDING..." : "SUBMIT"}
                   </button>
                 </div>
 
                 <p className="mt-4 text-xs text-white/65">
-                  This is a front-end form layout. Wire it to email/CRM when ready.
+                  Your message will be delivered directly to our team.
                 </p>
               </form>
             </div>
@@ -443,14 +575,34 @@ export default function HomePage() {
   );
 }
 
-function Field({ label }: { label: string }) {
+type FieldProps = {
+  label: string;
+  name: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type?: string;
+};
+
+function Field({
+  label,
+  name,
+  value,
+  onChange,
+  type = "text",
+}: FieldProps) {
   return (
     <div>
       <label className="block text-sm font-medium text-white/95">{label}</label>
-      <input className="mt-2 w-full rounded-2xl border border-white/30 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 outline-none focus:border-white/60" />
+      <input
+        name={name}
+        type={type}
+        value={value}
+        onChange={onChange}
+        className="mt-2 w-full rounded-2xl border border-white/30 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 outline-none focus:border-white/60"
+      />
     </div>
   );
-}
+} 
 
 
 
