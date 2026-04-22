@@ -10,10 +10,14 @@ export default function IndustriesPage() {
     "Engineering",
     "Education",
     "Financial Services",
+    "Government",
     "Healthcare",
     "Legal",
     "Life Sciences",
-    "Nonprofit",
+    "Logistics",
+    "Native American",
+    "Nonprofit (Disaster Relief)",
+    "Nuclear",
     "Technology",
     "Utilities",
   ];
@@ -114,7 +118,10 @@ export default function IndustriesPage() {
       </section>
 
       {/* ===================== CTA ===================== */}
-      <section className="relative overflow-hidden" style={{ background: LOGO_BLUE }}>
+      <section
+        className="relative overflow-hidden"
+        style={{ background: LOGO_BLUE }}
+      >
         <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
         <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
 

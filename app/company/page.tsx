@@ -32,7 +32,7 @@ export default function AboutPage() {
         {
           name: "Dan Goretskie",
           title: "Founder & CEO",
-          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Dan%20Goretskie%20-%20Founder%20Image%20-%20Alternate.jpg",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Dan%20Goretskie%20-%20Fuzion%20Website%20Image.jpg",
           href: "/company/dan-goretskie-consulting",
           photoPosition: "40% -5%",
           photoScale: 1.1,
@@ -497,4 +497,4 @@ export default function AboutPage() {
       </section>
     </main>
   );
-}
+} 

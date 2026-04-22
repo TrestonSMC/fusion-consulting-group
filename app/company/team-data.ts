@@ -17,7 +17,7 @@ export const teamMembers: TeamMember[] = [
     title: "Founder & CEO",
     group: "Founders",
     image:
-      "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Dan%20Goretskie%20-%20Founder%20Image%20-%20Alternate.jpg",
+      "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Dan%20Goretskie%20-%20Fuzion%20Website%20Image.jpg",
     photoPosition: "40% -5%",
     photoScale: 1.1,
     fullBio: `Dan Goretskie is the Founder and CEO of Fuzion Consulting Group, where he sets the firm’s strategic direction and leads its growth across business, technology, and operational consulting.
