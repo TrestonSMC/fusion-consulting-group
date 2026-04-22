@@ -168,7 +168,7 @@ export default function HomePage() {
         <div className="hazePanel" aria-hidden="true" />
 
         <div className="relative z-20 mx-auto flex min-h-screen max-w-6xl items-start px-6 pt-32 md:pt-36">
-          <div className="max-w-2xl">
+          <div className="heroTextWrap max-w-2xl">
             <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
               FUZION CONSULTING GROUP
             </p>
@@ -204,7 +204,9 @@ export default function HomePage() {
         <style>{`
           .hazePanel {
             position: absolute;
-            top: 0; bottom: 0; left: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
             z-index: 10;
             width: 100%;
             pointer-events: none;
@@ -216,13 +218,70 @@ export default function HomePage() {
             animation: openHaze 1.2s ease-out 0.2s forwards;
           }
 
+          .heroTextWrap {
+            position: relative;
+            padding: 24px;
+            border-radius: 20px;
+          }
+
+          .heroTextWrap::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            border: 1.5px solid rgba(42,139,255,0.35);
+            pointer-events: none;
+          }
+
           @keyframes openHaze {
             from { width: 100%; }
             to { width: 66%; }
           }
 
+          @media (max-width: 767px) {
+            .hazePanel {
+              inset: 0;
+              width: 100%;
+              clip-path: none;
+              box-shadow: none;
+              animation: none;
+              background: linear-gradient(
+                180deg,
+                rgba(255,255,255,0.10) 0%,
+                rgba(255,255,255,0.07) 30%,
+                rgba(255,255,255,0.04) 58%,
+                rgba(255,255,255,0.01) 100%
+              );
+              backdrop-filter: blur(2px);
+              -webkit-backdrop-filter: blur(2px);
+            }
+
+            .heroTextWrap {
+              background: rgba(255,255,255,0.08);
+              backdrop-filter: blur(10px);
+              -webkit-backdrop-filter: blur(10px);
+              padding: 22px 18px;
+              border-radius: 18px;
+            }
+
+            .heroTextWrap::before {
+              border-radius: 18px;
+              border: 1.5px solid rgba(42,139,255,0.42);
+              box-shadow: 0 0 0 1px rgba(42,139,255,0.08);
+            }
+          }
+
           @media (prefers-reduced-motion: reduce) {
-            .hazePanel { animation: none; width: 66%; }
+            .hazePanel {
+              animation: none;
+              width: 66%;
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) and (max-width: 767px) {
+            .hazePanel {
+              width: 100%;
+            }
           }
 
           .noScrollBar::-webkit-scrollbar { display: none; }
@@ -602,7 +661,7 @@ function Field({
       />
     </div>
   );
-}  
+}
 
 
 
