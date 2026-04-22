@@ -224,15 +224,6 @@ export default function HomePage() {
             border-radius: 20px;
           }
 
-          .heroTextWrap::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 20px;
-            border: 1.5px solid rgba(42,139,255,0.35);
-            pointer-events: none;
-          }
-
           @keyframes openHaze {
             from { width: 100%; }
             to { width: 66%; }
@@ -265,9 +256,13 @@ export default function HomePage() {
             }
 
             .heroTextWrap::before {
+              content: "";
+              position: absolute;
+              inset: 0;
               border-radius: 18px;
               border: 1.5px solid rgba(42,139,255,0.42);
               box-shadow: 0 0 0 1px rgba(42,139,255,0.08);
+              pointer-events: none;
             }
           }
 
