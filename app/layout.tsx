@@ -15,17 +15,17 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Fusion Consulting Group",
-    template: "%s | Fusion Consulting Group",
+    default: "Fuzion Consulting Group",
+    template: "%s | Fuzion Consulting Group",
   },
   description:
-    "Fusion Consulting Group helps businesses scale through strategy, operations, and modern digital solutions.",
+    "Fuzion Consulting Group helps businesses scale through strategy, operations, and modern digital solutions.",
   openGraph: {
-    title: "Fusion Consulting Group",
+    title: "Fuzion Consulting Group",
     description:
       "Helping businesses scale through strategy, operations, and modern digital solutions.",
-    url: "https://fusionconsultinggroup.com",
-    siteName: "Fusion Consulting Group",
+    url: "https://fuzionconsultinggroup.com",
+    siteName: "Fuzion Consulting Group",
     locale: "en_US",
     type: "website",
   },
