@@ -200,23 +200,6 @@ export default function ProjectWorksPmisPage() {
                 governance, and execution excellence.
               </p>
             </ContentBlock>
-
-            <ContentBlock title="Short Version">
-              <p>
-                <strong className="text-black">
-                  Fuzion Begins Development of ProjectWorks™ PMIS
-                </strong>
-              </p>
-
-              <p>
-                Fuzion Consulting Group and Fuzion Chickasaw Group are
-                developing ProjectWorks™, a next-generation, AI-enabled Project
-                Information Management System inspired by real-world enterprise
-                EPMS implementations. The cloud-native platform is designed for
-                regulated environments and is expected to release its Enterprise
-                version in <strong className="text-black">Fall 2027</strong>.
-              </p>
-            </ContentBlock>
           </div>
         </div>
       </section>

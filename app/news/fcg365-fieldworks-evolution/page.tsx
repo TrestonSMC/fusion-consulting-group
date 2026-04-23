@@ -254,23 +254,6 @@ export default function FCG365FieldworksEvolutionPage() {
                 environments.
               </p>
             </ContentBlock>
-
-            <ContentBlock title="Short Version">
-              <p>
-                <strong className="text-black">
-                  Fuzion Continues to Expand FCG365 Fieldworks Platform
-                </strong>
-              </p>
-
-              <p>
-                Originally launched in 2019, FCG365 Fieldworks is Fuzion’s
-                Microsoft 365–based construction and document management
-                platform supporting secure, scalable project and program
-                execution. The platform serves as the foundation of GDMP for a
-                major U.S. electric utility and is offered in both
-                Fuzion-hosted and client-deployed models with full SLA support.
-              </p>
-            </ContentBlock>
           </div>
         </div>
       </section>

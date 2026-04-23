@@ -39,7 +39,7 @@ export default function FuzionNav() {
               <img
                 src="https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Brand/logo.png"
                 alt="Fuzion Consulting Group"
-                className="h-[48px] w-auto"
+                className="h-[100px] w-auto"
               />
             </Link>
           </div>

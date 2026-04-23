@@ -74,8 +74,8 @@ With over three decades of experience in mechanical engineering and utility oper
     slug: "charles-eder",
     title: "Principal Technology Program Manager",
     group: "Leadership Team",
-    image: "/team/charles-eder.jpg",
-    fullBio: `Charles Eder serves as a Principal Technology Program Manager at Fuzion Consulting Group, leading large-scale program delivery and enterprise technology initiatives across regulated environments.`,
+    image: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Charles%20Eder.jpg",
+    fullBio: `Charles Eder serves as Principal Technology Program Manager for Fuzion Chickasaw Group, supporting technology strategy and delivery for utility, public-sector, and infrastructure engagements. With deep experience leading complex enterprise programs— including billing systems, advanced metering infrastructure, cybersecurity, and grid modernization, Charles provides structured oversight and execution leadership. His work reflects a commitment to operational reliability, regulatory alignment, and delivering sustainable outcomes for clients and communities.`,
   },
   {
     name: "Shirley Patterson",

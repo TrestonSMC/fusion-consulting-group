@@ -325,23 +325,6 @@ export default function TakeCoverPlatformPage() {
                 <strong className="text-black">Connected communities respond together.</strong>
               </p>
             </ContentBlock>
-
-            <ContentBlock title="Short Version">
-              <p>
-                <strong className="text-black">
-                  Fuzion Introduces “Take Cover”™ Severe Weather Preparedness
-                  Platform
-                </strong>
-              </p>
-
-              <p>
-                Inspired by collaboration with Rancher Navy, Fuzion Consulting
-                Group and Fuzion Chickasaw Group are developing Take Cover™, a
-                mobile and desktop application designed to help communities plan
-                for tornadoes and severe storms through shelter mapping,
-                real-time alerts, and community-driven preparedness.
-              </p>
-            </ContentBlock>
           </div>
         </div>
       </section>

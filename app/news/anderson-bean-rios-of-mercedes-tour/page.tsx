@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRef } from "react";
 
 const LOGO_BLUE = "#2a8bff";
 
@@ -29,7 +30,46 @@ const articleMeta = [
   },
 ];
 
+const carouselImages = [
+  {
+    src: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Webphotos/AB5.jpg",
+    alt: "Tour of Anderson Bean and Rios of Mercedes facilities",
+    caption:
+      "Inside the Anderson Bean and Rios of Mercedes boot tour in Mercedes, Texas",
+  },
+  {
+    src: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Webphotos/AB3.jpg",
+    alt: "Craftsmanship and boot-making process",
+    caption: "A closer look at the craftsmanship and process behind each pair",
+  },
+  {
+    src: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Webphotos/AB4.jpg",
+    alt: "Boot-making teams and manufacturing floor",
+    caption:
+      "The skilled teams and manufacturing pride behind heritage bootmaking",
+  },
+  {
+    src: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Webphotos/AB2.jpg",
+    alt: "Anderson Bean and Rios of Mercedes visit",
+    caption:
+      "A visit centered on learning, relationships, and respect for tradition",
+  },
+];
+
 export default function AndersonBeanRiosOfMercedesTourPage() {
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollByCards = (dir: "left" | "right") => {
+    const el = sliderRef.current;
+    if (!el) return;
+
+    const amount = Math.round(el.clientWidth * 0.9);
+    el.scrollBy({
+      left: dir === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <main className="min-h-screen bg-white">
       <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
@@ -89,6 +129,73 @@ export default function AndersonBeanRiosOfMercedesTourPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PHOTO CAROUSEL */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-5xl px-6 pb-6">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+                FEATURED IMAGERY
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold text-black md:text-3xl">
+                Anderson Bean & Rios of Mercedes Tour
+              </h2>
+              <div className="mt-3 h-[2px] w-14 bg-black/10" />
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-black/80 md:text-base">
+                Images from the visit highlighting craftsmanship, heritage
+                manufacturing, and the people behind the brands.
+              </p>
+            </div>
+
+            <div className="hidden gap-3 md:flex">
+              <button
+                type="button"
+                onClick={() => scrollByCards("left")}
+                className="grid h-11 w-11 place-items-center rounded-full border border-black/15 bg-white text-black transition hover:bg-black/5"
+                aria-label="Scroll left"
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollByCards("right")}
+                className="grid h-11 w-11 place-items-center rounded-full border border-black/15 bg-white text-black transition hover:bg-black/5"
+                aria-label="Scroll right"
+              >
+                →
+              </button>
+            </div>
+          </div>
+
+          <div
+            ref={sliderRef}
+            className="mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {carouselImages.map((image) => (
+              <div
+                key={image.src}
+                className="min-w-[88%] snap-start md:min-w-[72%]"
+              >
+                <div className="overflow-hidden rounded-3xl border border-black/10 bg-black/5 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+                  <div className="relative">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="h-[260px] w-full object-cover md:h-[420px]"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent px-6 pb-6 pt-16">
+                      <p className="text-sm font-medium text-white md:text-base">
+                        {image.caption}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -227,22 +334,6 @@ export default function AndersonBeanRiosOfMercedesTourPage() {
                 Whether now or in the future, Fuzion looks forward to continued
                 dialogue and the opportunity to support organizations that
                 balance heritage with thoughtful growth.
-              </p>
-            </ContentBlock>
-
-            <ContentBlock title="Short Version">
-              <p>
-                <strong className="text-black">
-                  Fuzion Visits Anderson Bean & Rios of Mercedes Boots
-                </strong>
-              </p>
-
-              <p>
-                Fuzion Consulting Group and Fuzion Chickasaw Group visited
-                Anderson Bean Boot Company and Rios of Mercedes in Texas,
-                gaining firsthand insight into the craftsmanship behind two
-                iconic brands and exploring how technology can thoughtfully
-                support heritage manufacturing as it grows.
               </p>
             </ContentBlock>
           </div>

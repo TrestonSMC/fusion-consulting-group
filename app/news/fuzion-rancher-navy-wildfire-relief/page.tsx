@@ -292,24 +292,6 @@ export default function RancherNavyWildfireReliefPage() {
                 .
               </p>
             </ContentBlock>
-
-            <ContentBlock title="Short Version">
-              <p>
-                <strong className="text-black">
-                  Fuzion Partners with Rancher Navy to Support
-                  Wildfire-Impacted Ranching Communities
-                </strong>
-              </p>
-
-              <p>
-                Fuzion Consulting Group and Fuzion Chickasaw Group partnered
-                with Rancher Navy to donate trucks, trailers, and logistics
-                support to help deliver hay and supplies to ranchers affected by
-                recent wildfires across Oklahoma, Kansas, and Texas. The effort
-                supported communities impacted by the Ranger Road, Stevens,
-                Andrew Lane, and Texas Panhandle fires.
-              </p>
-            </ContentBlock>
           </div>
         </div>
       </section>

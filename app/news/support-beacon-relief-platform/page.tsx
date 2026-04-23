@@ -166,19 +166,6 @@ export default function SupportBeaconReliefPlatformPage() {
                 real-world alignment.
               </p>
             </ContentBlock>
-
-            <ContentBlock title="Short Version">
-              <p>
-                <strong className="text-black">
-                  Fuzion Begins Development of Enterprise Support Beacon Relief
-                </strong>
-              </p>
-
-              <p>
-                Fuzion is building an AI-enabled SaaS platform to support disaster
-                response operations across nonprofit, public, and private sectors.
-              </p>
-            </ContentBlock>
           </div>
         </div>
       </section>

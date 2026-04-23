@@ -37,7 +37,6 @@ export default function ContactPage() {
     setSubmitStatus({ type: "", message: "" });
 
     try {
-      // Replace this with your real API route when ready
       await new Promise((resolve) => setTimeout(resolve, 900));
 
       setSubmitStatus({
@@ -66,21 +65,16 @@ export default function ContactPage() {
   const contactCards = [
     {
       title: "General Inquiries",
-      value: "info@fuzioncg.com",
-      description: "Questions about Fuzion Consulting Group, services, or partnerships.",
-      href: "mailto:info@fuzioncg.com",
-    },
-    {
-      title: "Business Development",
-      value: "partnerships@fuzioncg.com",
-      description: "Connect with our team regarding strategic collaborations and opportunities.",
-      href: "mailto:partnerships@fuzioncg.com",
+      value: "technology@fcghelps.com",
+      description:
+        "Questions about Fuzion Consulting Group, services, technology support, or general inquiries.",
+      href: "mailto:technology@fcghelps.com",
     },
     {
       title: "Call Us",
-      value: "(480) 555-0128",
+      value: "(913) 850-3509",
       description: "Speak directly with our team during normal business hours.",
-      href: "tel:+14805550128",
+      href: "tel:+19138503509",
     },
   ];
 
@@ -135,7 +129,7 @@ export default function ContactPage() {
       {/* CONTACT INFO CARDS */}
       <section className="bg-white py-14 md:py-16">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2">
             {contactCards.map((card) => (
               <a
                 key={card.title}
@@ -375,7 +369,7 @@ export default function ContactPage() {
                 OFFICE
               </p>
               <h3 className="mt-2 text-2xl font-semibold tracking-tight text-black">
-                Based in Arizona
+                Based in Kansas
               </h3>
               <p className="mt-4 text-sm leading-6 text-black/65">
                 Fuzion Consulting Group serves clients across industries with a
@@ -383,55 +377,13 @@ export default function ContactPage() {
               </p>
 
               <div className="mt-6 rounded-[24px] border border-dashed border-black/10 bg-[#f8fbff] p-5">
-                <p className="text-sm font-medium text-black">Phoenix Metro Area</p>
+                <p className="text-sm font-medium text-black">Olathe, Kansas</p>
                 <p className="mt-1 text-sm leading-6 text-black/60">
                   Available for regional and national client engagements.
                 </p>
               </div>
             </div>
           </aside>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="rounded-[36px] border border-black/10 bg-black px-8 py-10 text-white shadow-[0_25px_80px_rgba(0,0,0,0.18)] md:px-12 md:py-14">
-            <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-              <div className="max-w-2xl">
-                <p
-                  className="text-xs font-semibold tracking-[0.22em]"
-                  style={{ color: "#8bc0ff" }}
-                >
-                  READY TO CONNECT?
-                </p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-                  Let’s talk about what’s next for your organization.
-                </h2>
-                <p className="mt-4 text-sm leading-7 text-white/75 md:text-base">
-                  Reach out to discuss your priorities, current challenges, or
-                  the outcomes you’re working toward. We’ll help determine the
-                  best path forward.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="mailto:info@fuzioncg.com"
-                  className="inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
-                  style={{ backgroundColor: LOGO_BLUE }}
-                >
-                  Email Us
-                </a>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
-                >
-                  Learn More
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </main>

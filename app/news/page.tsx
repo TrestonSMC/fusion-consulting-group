@@ -72,14 +72,16 @@ export default function NewsPage() {
       href: "/news/take-cover-platform",
       category: "Product News",
     },
-    {
-      title:
-        "Fuzion Consulting Group and Fuzion Chickasaw Group Visit Anderson Bean Boot Company and Rios of Mercedes in Mercedes, Texas",
-      desc:
-        "Fuzion and Fuzion Chickasaw Group recently visited Anderson Bean Boot Company and Rios of Mercedes in Mercedes, Texas, highlighting continued relationship-building, shared values, and engagement with respected brands rooted in craftsmanship and community.",
-      href: "/news/anderson-bean-rios-of-mercedes-tour",
-      category: "Event",
-    },
+{
+  title:
+    "Fuzion Consulting Group and Fuzion Chickasaw Group Visit Anderson Bean Boot Company and Rios of Mercedes in Mercedes, Texas",
+  desc:
+    "Fuzion and Fuzion Chickasaw Group recently visited Anderson Bean Boot Company and Rios of Mercedes in Mercedes, Texas, highlighting continued relationship-building, shared values, and engagement with respected brands rooted in craftsmanship and community.",
+  href: "/news/anderson-bean-rios-of-mercedes-tour",
+  category: "Event",
+  image:
+    "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Webphotos/AB1.jpg", // swap with your real Supabase image
+},
   ];
 
   return (

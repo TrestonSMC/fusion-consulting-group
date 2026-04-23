@@ -88,7 +88,7 @@ export default function AboutPage() {
         {
           name: "Charles Eder",
           title: "Principal Technology Program Manager",
-          img: "/team/charles-eder.jpg",
+          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Charles%20Eder.jpg",
           href: "/company/charles-eder",
           photoPosition: "50% 20%",
           photoScale: 1,
@@ -210,12 +210,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
-            Fuzion Consulting Group LLC is a business and technology consulting
-            firm headquartered in Olathe, Kansas, with offices in Arizona and
-            California. Since our founding in 2019, we’ve delivered sustainable,
-            client-centered solutions across regulated industries—empowering
-            organizations to streamline operations, enhance compliance, and drive
-            innovation.
+           Fuzion Consulting Group LLC is a business and technology consulting firm headquartered in Olathe, Kansas, with offices in Arizona, California, Oklahoma, and Texas. Since our founding in 2019, we’ve delivered sustainable, client-centered solutions across regulated industries—empowering organizations to streamline operations, enhance compliance, and drive innovation.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
