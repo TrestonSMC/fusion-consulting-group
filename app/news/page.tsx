@@ -7,48 +7,77 @@ const LOGO_BLUE = "#2a8bff";
 type NewsItem = {
   title: string;
   desc: string;
-  href?: string;
+  href: string;
   category: string;
+  image?: string;
 };
 
 export default function NewsPage() {
   const newsItems: NewsItem[] = [
     {
       title:
-        "Launch Fuzion Chickasaw Group - Native American Minority & Women Owned Sister Company - Calera, OK",
+        "Fuzion Consulting Group Announces Launch of Fuzion Chickasaw Group",
       desc:
-        "Fuzion expands its reach through the launch of Fuzion Chickasaw Group, deepening its commitment to inclusion, community partnership, and scalable impact.",
-      href: "/news",
+        "Fuzion Consulting Group proudly announces the launch of Fuzion Chickasaw Group, a Native American women-owned business and technology consulting firm headquartered in Calera, Oklahoma, expanding Fuzion’s ability to serve tribes, nonprofits, and public- and private-sector organizations across Oklahoma and Texas.",
+      href: "/news/fuzion-chickasaw-group-launch",
       category: "Company News",
     },
     {
-      title: "Fuzion/Veracity Inc. Partnership",
+      title:
+        "Fuzion Consulting Group Announces Strategic Collaboration with Veracity Consulting Inc.",
       desc:
-        "A new strategic partnership focused on strengthening delivery capabilities and expanding support across client initiatives.",
-      href: "/news",
+        "Fuzion recognizes its collaboration with Veracity Consulting Inc., whose support across mission-critical enterprise initiatives helped strengthen business process mapping, optimization, enterprise readiness, process automation, and change management efforts tied to major utility programs.",
+      href: "/news/fuzion-veracity-collaboration",
       category: "Partnership",
     },
     {
       title:
-        "Fuzion/Rancher Navy Partnership - Logistics/Mounted Patrol/Search & Rescue App Development",
+        "Fuzion Consulting Group and Fuzion Chickasaw Group Partner with Rancher Navy to Support Wildfire Relief Efforts Across Oklahoma, Kansas, and Texas",
       desc:
-        "Fuzion partners with Rancher Navy to support logistics, mounted patrol, and search & rescue application development.",
-      href: "/news",
+        "Fuzion Consulting Group and Fuzion Chickasaw Group are honored to announce their partnership with Rancher Navy, a nonprofit organization dedicated to supporting agricultural communities affected by natural disasters, to provide direct wildfire and drought relief across Oklahoma, Kansas, and Texas.",
+      href: "/news/fuzion-rancher-navy-wildfire-relief",
       category: "Partnership",
+      image:
+        "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Webphotos/RancherNavy_5.jpg",
     },
     {
       title:
-        "Fuzion/Arizona Foothills 911 Partnership - Logistics/Mounted Patrol/Search & Rescue App Development",
+        "Fuzion Announces Development of Enterprise Support Beacon Relief Platform Inspired by Partnership with Rancher Navy",
       desc:
-        "A new collaboration to support emergency response operations through logistics and search & rescue application development.",
-      href: "/news",
-      category: "Partnership",
+        "Fuzion Consulting Group and Fuzion Chickasaw Group are developing an enterprise version of Support Beacon Relief, a secure and scalable logistics platform inspired by real-world nonprofit disaster response needs and designed to support broader public-, private-, and nonprofit-sector operations.",
+      href: "/news/support-beacon-relief-platform",
+      category: "Product News",
     },
     {
-      title: "Anderson Bean & Rios of Mercedes Boot Tour",
+      title:
+        "Fuzion Announces Development of ProjectWorks™ – A Next-Generation Project Information Management System (PMIS)",
       desc:
-        "Coverage of the Anderson Bean & Rios of Mercedes Boot Tour and related community and partner engagement.",
-      href: "/news",
+        "ProjectWorks™ is a fully integrated project information management system designed to modernize how complex projects and programs are planned, governed, and executed, with AI-enabled capabilities and deployment options across Microsoft 365 or AWS environments.",
+      href: "/news/projectworks-pmis",
+      category: "Product News",
+    },
+    {
+      title:
+        "Fuzion Highlights Continued Evolution of FCG365 Fieldworks Platform",
+      desc:
+        "Fuzion Consulting Group and Fuzion Chickasaw Group continue expanding FCG365 Fieldworks, an enterprise construction and document management platform built on Microsoft 365 Power Platform, supporting secure workflows, reporting, automation, and role-based access for both small and large-scale projects.",
+      href: "/news/fcg365-fieldworks-evolution",
+      category: "Product News",
+    },
+    {
+      title:
+        "Fuzion Announces Development of “Take Cover”™ – A Community-Focused Severe Weather Preparedness Platform",
+      desc:
+        "Fuzion Consulting Group and Fuzion Chickasaw Group are proud to announce the development of Take Cover™, a mobile and desktop platform designed to support community-based severe weather preparedness during tornadoes and other life-threatening storm events.",
+      href: "/news/take-cover-platform",
+      category: "Product News",
+    },
+    {
+      title:
+        "Fuzion Consulting Group and Fuzion Chickasaw Group Visit Anderson Bean Boot Company and Rios of Mercedes in Mercedes, Texas",
+      desc:
+        "Fuzion and Fuzion Chickasaw Group recently visited Anderson Bean Boot Company and Rios of Mercedes in Mercedes, Texas, highlighting continued relationship-building, shared values, and engagement with respected brands rooted in craftsmanship and community.",
+      href: "/news/anderson-bean-rios-of-mercedes-tour",
       category: "Event",
     },
   ];
@@ -77,7 +106,7 @@ export default function NewsPage() {
 
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
             Stay up to date with Fuzion’s latest partnerships, company
-            milestones, industry activity, and new initiatives.
+            milestones, field activity, and product initiatives.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -111,8 +140,9 @@ export default function NewsPage() {
               News from across Fuzion
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/60">
-              Company developments, strategic partnerships, and field-driven
-              initiatives shaping our work across industries and communities.
+              Company developments, strategic partnerships, field-driven
+              initiatives, and new platform announcements shaping our work
+              across industries and communities.
             </p>
           </div>
 
@@ -120,11 +150,11 @@ export default function NewsPage() {
             {newsItems.map((item) => (
               <Link
                 key={item.title}
-                href={item.href ?? "/news"}
-                className="group block rounded-3xl border border-black/10 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition hover:-translate-y-[2px] hover:shadow-[0_16px_50px_rgba(0,0,0,0.08)]"
+                href={item.href}
+                className="group block rounded-3xl border border-black/10 bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition hover:-translate-y-[2px] hover:shadow-[0_16px_50px_rgba(0,0,0,0.08)] md:p-8"
               >
-                <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
-                  <div className="max-w-4xl">
+                <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                  <div className="flex-1">
                     <div
                       className="inline-flex rounded-full border px-3 py-1 text-xs font-semibold tracking-wide text-black/70"
                       style={{
@@ -144,18 +174,30 @@ export default function NewsPage() {
                     </p>
 
                     <div
-                      className="mt-6 h-[3px] w-12 rounded-full"
+                      className="mt-6 h-[3px] w-12 rounded-full transition-all duration-300 group-hover:w-20"
                       style={{ background: LOGO_BLUE }}
                     />
                   </div>
 
-                  <div
-                    className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border bg-white transition group-hover:translate-x-0.5"
-                    style={{ borderColor: "rgba(0,0,0,0.12)" }}
-                    aria-hidden="true"
-                  >
-                    →
-                  </div>
+                  {item.image ? (
+                    <div className="w-full shrink-0 md:w-[280px]">
+                      <div className="overflow-hidden rounded-2xl border border-black/10 bg-black/5">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="h-[200px] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <div
+                      className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border bg-white transition group-hover:translate-x-0.5"
+                      style={{ borderColor: "rgba(0,0,0,0.12)" }}
+                      aria-hidden="true"
+                    >
+                      →
+                    </div>
+                  )}
                 </div>
               </Link>
             ))}

@@ -4,344 +4,327 @@ import Link from "next/link";
 
 const LOGO_BLUE = "#2a8bff";
 
-const culturePoints = [
+const roleCards = [
   {
-    title: "Meaningful Work",
-    desc: "We work on business, technology, and transformation initiatives designed to improve operations and create measurable outcomes.",
+    title: "Senior Software Engineer / Developer",
+    subtitle: "Future Opportunity",
+    overview:
+      "Fuzion is seeking experienced software engineers to help design, build, and support enterprise-grade platforms used in regulated and mission-critical environments. This role works across product development and client engagements, focusing on scalable, secure, and user-adoptable solutions.",
+    bulletsTitle: "What You’ll Work On",
+    bullets: [
+      "Enterprise SaaS platforms and internal products",
+      "Microsoft 365 Power Platform, cloud, and AI-enabled solutions",
+      "Applications supporting construction, engineering, logistics, utilities, government, nonprofits, and agriculture",
+    ],
+    qualifications: [
+      "5+ years of software development experience",
+      "Strong experience with cloud-based architecture and APIs",
+      "Experience in regulated or operational environments preferred",
+      "Ability to translate business workflows into technical solutions",
+    ],
   },
   {
-    title: "Modern Solutions",
-    desc: "From AI engineering to workflow automation and enterprise modernization, our team focuses on practical innovation.",
+    title: "Junior Software Engineer / Developer",
+    subtitle: "Future Opportunity",
+    overview:
+      "This role is ideal for early-career engineers interested in growing within a consulting and product delivery environment. You’ll work alongside senior engineers and solution leaders on real-world applications used by clients and communities.",
+    bulletsTitle: "What You’ll Learn",
+    bullets: [
+      "Enterprise application development",
+      "Modern cloud and automation technologies",
+      "Real-world delivery in regulated and operational environments",
+    ],
+    qualifications: [
+      "1–3 years of development experience or relevant education",
+      "Strong interest in learning enterprise systems",
+      "Ability to collaborate across technical and non-technical teams",
+    ],
   },
   {
-    title: "Collaborative Environment",
-    desc: "We value thoughtful execution, strong communication, and cross-functional teamwork across consulting and delivery.",
+    title: "Senior Project Manager / Program Manager (PMO)",
+    subtitle: "Future Opportunity",
+    overview:
+      "Fuzion is seeking senior project and program managers to support large-scale, multi-disciplinary initiatives. This role partners with engineering, operations, IT, and leadership teams to execute complex programs with clarity and discipline.",
+    bulletsTitle: "What You’ll Manage",
+    bullets: [
+      "Enterprise and regulated projects",
+      "Construction, engineering, and technology programs",
+      "Client stakeholder engagement and governance",
+    ],
+    qualifications: [
+      "7+ years of project or program management experience",
+      "Experience in utilities, infrastructure, construction, government, or IT PMO environments",
+      "Strong communication and leadership skills",
+    ],
   },
   {
-    title: "Built for Growth",
-    desc: "As Fuzion expands, we’re building a team of people who want to help shape what comes next.",
+    title: "Junior Project Manager / Project Coordinator",
+    subtitle: "Future Opportunity",
+    overview:
+      "This role supports senior PMs and delivery teams with planning, coordination, documentation, and reporting. Ideal for individuals aspiring to grow into a PM or program leadership role.",
+    bulletsTitle: "What You’ll Support",
+    bullets: [
+      "Project scheduling and documentation",
+      "Status reporting and task coordination",
+      "Client and team communication",
+    ],
+    qualifications: [
+      "1–3 years of project coordination experience",
+      "Strong organizational and communication skills",
+      "Interest in project, program, or delivery leadership",
+    ],
   },
 ];
 
-const futureRoleAreas = [
-  "Business Consulting",
-  "Project & Program Management",
-  "AI Engineering",
-  "Microsoft 365 & Cloud Solutions",
-  "Process Automation",
-  "Implementation & Delivery",
-  "Operations Support",
-  "Client Success",
+const thrivePoints = [
+  "Enjoy solving real operational problems, not just theoretical ones",
+  "Are comfortable working in regulated or high-accountability environments",
+  "Value collaboration, integrity, and long-term impact",
+  "Want to build technology and processes that actually get used",
 ];
 
-const hiringSteps = [
-  {
-    step: "01",
-    title: "Openings Posted",
-    desc: "Future roles will be published here as new positions become available.",
-  },
-  {
-    step: "02",
-    title: "Application Review",
-    desc: "Our team will review submitted applications based on role alignment, experience, and business need.",
-  },
-  {
-    step: "03",
-    title: "Interview Process",
-    desc: "Selected candidates will move through conversations focused on experience, communication, and problem solving.",
-  },
-  {
-    step: "04",
-    title: "Next Steps",
-    desc: "Qualified finalists will be contacted directly regarding role details, expectations, and onboarding timelines.",
-  },
+const industries = [
+  "Technology",
+  "Engineering",
+  "Construction",
+  "Logistics",
+  "Utilities",
+  "Government",
+  "Nonprofits",
+  "Agriculture",
+  "Life Sciences",
 ];
 
 export default function CareersPage() {
   return (
-    <main className="min-h-screen bg-white">
-      {/* ===================== HERO ===================== */}
-      <section className="relative min-h-screen overflow-hidden">
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          src="https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Hero/hero.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-hidden="true"
-        />
-
-        <div className="hazePanel" aria-hidden="true" />
-
-        <div className="relative z-20 mx-auto flex min-h-screen max-w-6xl items-start px-6 pt-32 md:pt-36">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
-              FUZION CONSULTING GROUP
-            </p>
-
-            <h1 className="mt-3 text-4xl font-semibold leading-tight text-black/90 md:text-6xl">
-              Careers at Fuzion
-            </h1>
-
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-black/70 md:text-lg">
-              We’re building a team around innovation, execution, and modern
-              business transformation. While we do not have open positions at
-              the moment, this is where future opportunities will be posted.
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                href="/company"
-                className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
-              >
-                Learn About Fuzion
-              </Link>
-
-              <Link
-                href="/contact"
-                className="rounded-full border border-black/20 bg-white/60 px-6 py-3 text-sm font-medium text-black/90 backdrop-blur hover:bg-white"
-              >
-                Contact Us →
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <style>{`
-          .hazePanel {
-            position: absolute;
-            top: 0; bottom: 0; left: 0;
-            z-index: 10;
-            width: 100%;
-            pointer-events: none;
-            background: rgba(255, 255, 255, 0.42);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
-            box-shadow: inset -160px 0 140px -80px rgba(255,255,255,0.65);
-            animation: openHaze 1.2s ease-out 0.2s forwards;
-          }
-
-          @keyframes openHaze {
-            from { width: 100%; }
-            to { width: 66%; }
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            .hazePanel { animation: none; width: 66%; }
-          }
-        `}</style>
-      </section>
-
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
-
-      {/* ===================== INTRO ===================== */}
+    <main className="min-h-screen bg-white pt-28 md:pt-32">
+      {/* ===================== PAGE INTRO ===================== */}
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-6">
+        <div className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-7">
               <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
-                BUILD WITH US
+                CAREERS AT FUZION
               </p>
 
-              <h2 className="mt-3 text-3xl font-semibold leading-tight text-black/90 md:text-4xl">
-                A place for problem-solvers, builders, and forward-thinkers
-              </h2>
+              <h1 className="mt-3 text-4xl font-semibold leading-tight text-black/90 md:text-6xl">
+                Build Technology That Works in the Real World
+              </h1>
 
-              <p className="mt-6 text-sm leading-relaxed text-black/60 md:text-base">
-                Fuzion Consulting Group supports organizations through digital
-                transformation, automation, operational strategy, and modern
-                technology delivery. As we continue to grow, we’re focused on
-                building a high-caliber team that values clarity, execution, and
-                measurable client impact.
+              <div
+                className="mt-6 h-[3px] w-20 rounded-full"
+                style={{ background: LOGO_BLUE }}
+              />
+
+              <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
+                While Fuzion Consulting Group does not have immediate openings,
+                we are always interested in connecting with talented
+                professionals who want to build practical, mission-driven
+                solutions in complex, regulated environments.
               </p>
 
-              <p className="mt-4 text-sm leading-relaxed text-black/60 md:text-base">
-                This careers page is structured to support future hiring. Once
-                positions are available, they can be added here and managed
-                through your separate admin workflow.
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-black/65 md:text-lg">
+                As we grow, we anticipate future opportunities across
+                technology, engineering, construction, logistics, utilities,
+                government, nonprofits, agriculture, and life sciences. We value
+                professionals who bring curiosity, integrity, and a strong sense
+                of ownership to everything they do.
+              </p>
+
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-black/65 md:text-lg">
+                If you’re interested in being considered for future roles, we
+                encourage you to review the profiles below and submit your
+                information.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
-                  href="/services"
+                  href="#future-roles"
                   className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
                 >
-                  Explore Services
+                  View Future Roles
                 </Link>
-                <Link
-                  href="/company"
+
+                <a
+                  href="mailto:Careers@fcghelps.com"
                   className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
                 >
-                  View Company →
-                </Link>
+                  Email Careers@fcghelps.com →
+                </a>
               </div>
             </div>
 
-            <div className="lg:col-span-6">
+            <div className="lg:col-span-5">
               <div
-                className="rounded-3xl border-2 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
+                className="rounded-[32px] border-2 bg-[#f8fbff] p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)] md:p-10"
                 style={{ borderColor: LOGO_BLUE }}
               >
-                <h3 className="text-xl font-semibold text-black/90">
-                  What future candidates can expect
-                </h3>
+                <p className="text-xs font-semibold tracking-[0.22em] text-black/55">
+                  FUTURE HIRING FOCUS
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold text-black/90 md:text-3xl">
+                  Areas we expect to grow
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-black/65 md:text-base">
+                  Fuzion expects future hiring needs across consulting,
+                  delivery, engineering, operations, and client-facing roles as
+                  the business expands.
+                </p>
 
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {culturePoints.map((item) => (
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {industries.map((item) => (
                     <div
-                      key={item.title}
-                      className="rounded-2xl border border-black/10 bg-white/80 p-4"
+                      key={item}
+                      className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-black/70"
                     >
-                      <div className="flex items-start gap-3">
-                        <span
-                          className="mt-1 inline-flex h-2.5 w-2.5 flex-none rounded-full"
-                          style={{ background: LOGO_BLUE }}
-                        />
-                        <div>
-                          <p className="text-sm font-semibold text-black/80">
-                            {item.title}
-                          </p>
-                          <p className="mt-2 text-sm leading-relaxed text-black/60">
-                            {item.desc}
-                          </p>
-                        </div>
-                      </div>
+                      {item}
                     </div>
                   ))}
                 </div>
-
-                <p className="mt-6 text-sm leading-relaxed text-black/60">
-                  We’re not hiring yet, but this page is ready to evolve into a
-                  live recruiting destination as new roles are added.
-                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===================== CURRENT OPENINGS ===================== */}
-      <section className="bg-[#f8fbff]">
+      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
+
+      {/* ===================== FUTURE ROLES ===================== */}
+      <section id="future-roles" className="bg-[#f8fbff]">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
-              CURRENT OPENINGS
+              FUTURE OPPORTUNITIES
             </p>
-            <h3 className="mt-3 text-3xl font-semibold text-black/90 md:text-4xl">
-              No positions available at this time
-            </h3>
+            <h2 className="mt-3 text-3xl font-semibold text-black/90 md:text-4xl">
+              Role profiles we anticipate hiring for
+            </h2>
             <p className="mt-4 text-sm leading-relaxed text-black/60 md:text-base">
-              We’re not actively hiring right now. When new opportunities open,
-              they will appear here with role details, qualifications, and
-              application links.
+              These are not active openings today, but they reflect the types of
+              roles we expect to hire for as Fuzion continues to grow.
             </p>
           </div>
 
-          <div className="mt-10 rounded-[32px] border border-black/10 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)] md:p-10">
-            <div className="grid gap-10 lg:grid-cols-12">
-              <div className="lg:col-span-7">
-                <div className="rounded-3xl border border-dashed border-black/15 bg-black/[0.02] p-8">
+          <div className="mt-12 grid gap-6 xl:grid-cols-2">
+            {roleCards.map((role) => (
+              <div
+                key={role.title}
+                className="rounded-[30px] border border-black/10 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+              >
+                <div className="flex flex-wrap items-center gap-3">
                   <div
                     className="inline-flex rounded-full px-4 py-1 text-xs font-semibold tracking-[0.18em] text-white"
                     style={{ background: LOGO_BLUE }}
                   >
-                    CAREERS PORTAL
-                  </div>
-
-                  <h4 className="mt-5 text-2xl font-semibold text-black/90">
-                    Open roles will be published here
-                  </h4>
-
-                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-black/60">
-                    This section is intentionally ready for future role cards or
-                    admin-managed listings. For now, visitors can learn more
-                    about the company and check back for updates.
-                  </p>
-
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    <Link
-                      href="/company"
-                      className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
-                    >
-                      About Fuzion
-                    </Link>
-                    <Link
-                      href="/contact"
-                      className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
-                    >
-                      Get in Touch →
-                    </Link>
+                    {role.subtitle.toUpperCase()}
                   </div>
                 </div>
-              </div>
 
-              <div className="lg:col-span-5">
-                <div className="rounded-3xl border border-black/10 bg-white p-6">
-                  <h5 className="text-lg font-semibold text-black/90">
-                    Future role areas may include
-                  </h5>
+                <h3 className="mt-5 text-2xl font-semibold leading-snug text-black/90">
+                  {role.title}
+                </h3>
 
-                  <div className="mt-5 grid gap-3">
-                    {futureRoleAreas.map((role) => (
+                <div className="mt-6">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-black/45">
+                    Overview
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-black/65 md:text-base">
+                    {role.overview}
+                  </p>
+                </div>
+
+                <div className="mt-6">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-black/45">
+                    {role.bulletsTitle}
+                  </p>
+                  <div className="mt-3 space-y-3">
+                    {role.bullets.map((item) => (
                       <div
-                        key={role}
-                        className="rounded-2xl border border-black/10 px-4 py-3 text-sm text-black/70"
+                        key={item}
+                        className="flex gap-3 rounded-2xl border border-black/8 bg-[#f8fbff] px-4 py-3"
                       >
-                        {role}
+                        <span
+                          className="mt-2 inline-flex h-2.5 w-2.5 flex-none rounded-full"
+                          style={{ background: LOGO_BLUE }}
+                        />
+                        <p className="text-sm leading-relaxed text-black/70">
+                          {item}
+                        </p>
                       </div>
                     ))}
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ===================== HIRING PROCESS ===================== */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
-              HIRING PROCESS
-            </p>
-            <h3 className="mt-3 text-3xl font-semibold text-black/90 md:text-4xl">
-              What the process will look like
-            </h3>
-            <p className="mt-4 text-sm leading-relaxed text-black/60 md:text-base">
-              Once active roles are available, candidates can expect a clear and
-              professional process built around alignment, communication, and
-              business impact.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {hiringSteps.map((item) => (
-              <div
-                key={item.step}
-                className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_10px_25px_rgba(0,0,0,0.04)]"
-              >
-                <div
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-2xl text-sm font-semibold text-white"
-                  style={{ background: LOGO_BLUE }}
-                >
-                  {item.step}
+                <div className="mt-6">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-black/45">
+                    Qualifications
+                  </p>
+                  <div className="mt-3 space-y-3">
+                    {role.qualifications.map((item) => (
+                      <div
+                        key={item}
+                        className="flex gap-3 rounded-2xl border border-black/8 bg-white px-4 py-3"
+                      >
+                        <span
+                          className="mt-2 inline-flex h-2.5 w-2.5 flex-none rounded-full"
+                          style={{ background: LOGO_BLUE }}
+                        />
+                        <p className="text-sm leading-relaxed text-black/70">
+                          {item}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h4 className="mt-5 text-lg font-semibold text-black/90">
-                  {item.title}
-                </h4>
-                <p className="mt-3 text-sm leading-relaxed text-black/60">
-                  {item.desc}
-                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===================== CTA ===================== */}
+      {/* ===================== WHO THRIVES ===================== */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-5">
+              <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+                WHO THRIVES AT FUZION
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-black/90 md:text-4xl">
+                We look for people who care about real outcomes
+              </h2>
+              <p className="mt-5 text-sm leading-relaxed text-black/60 md:text-base">
+                Fuzion is built around practical execution, cross-functional
+                collaboration, and work that supports real organizations in
+                complex environments.
+              </p>
+            </div>
+
+            <div className="lg:col-span-7">
+              <div className="grid gap-4 sm:grid-cols-2">
+                {thrivePoints.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_10px_24px_rgba(0,0,0,0.04)]"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span
+                        className="mt-1 inline-flex h-3 w-3 flex-none rounded-full"
+                        style={{ background: LOGO_BLUE }}
+                      />
+                      <p className="text-sm leading-relaxed text-black/70">
+                        {item}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== EXPRESS INTEREST ===================== */}
       <section
         className="relative overflow-hidden"
         style={{ background: LOGO_BLUE }}
@@ -352,53 +335,63 @@ export default function CareersPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-20">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <h3 className="text-4xl font-semibold tracking-tight text-white">
+              <p className="text-xs font-semibold tracking-[0.22em] text-white/75">
+                HOW TO EXPRESS INTEREST
+              </p>
+
+              <h3 className="mt-3 text-4xl font-semibold tracking-tight text-white">
                 Interested in future opportunities?
               </h3>
+
               <div className="mt-4 h-[2px] w-16 bg-white/80" />
+
               <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/90">
-                We’re not accepting applications right now, but this page will
-                become the central location for open roles as Fuzion continues
-                to grow.
+                If you’re interested in future opportunities with Fuzion, send a
+                resume and a brief note outlining your interests. Be sure to
+                indicate the role or roles you’re most aligned with.
               </p>
 
               <div className="mt-8 space-y-3 text-sm text-white/85">
-                <p>• Future positions will be posted here</p>
-                <p>• Role details and expectations will be clearly outlined</p>
-                <p>• Admin-managed listings can be added later without redesigning the page</p>
+                <p>• Send a resume and brief note outlining your interests</p>
+                <p>• Indicate the role(s) you’re most aligned with</p>
+                <p>• We’ll keep your information on file as roles open</p>
               </div>
             </div>
 
             <div className="lg:col-span-5">
               <div className="rounded-3xl border border-white/25 bg-white/10 p-8 backdrop-blur">
                 <p className="text-xs font-semibold tracking-[0.2em] text-white/75">
-                  NEXT STEPS
+                  CAREERS CONTACT
                 </p>
                 <h4 className="mt-3 text-2xl font-semibold text-white">
-                  Explore the company in the meantime
+                  Send your information directly
                 </h4>
                 <p className="mt-4 text-sm leading-relaxed text-white/80">
-                  Learn more about our services, company direction, and the kind
-                  of work we do across consulting, operations, and technology.
+                    Submit job inquiries and applications directly here for consideration
+  by our team.
                 </p>
 
-                <div className="mt-6 flex flex-col gap-3">
-                  <Link
-                    href="/company"
-                    className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                <div className="mt-6">
+                  <a
+                    href="mailto:Careers@fcghelps.com"
+                    className="inline-flex w-full items-center justify-center rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
                   >
-                    Visit Company Page
-                  </Link>
+                    Careers@fcghelps.com
+                  </a>
+                </div>
+
+                <div className="mt-3">
                   <Link
-                    href="/services"
-                    className="inline-flex items-center justify-center rounded-2xl border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/15"
+                    href="/contact"
+                    className="inline-flex w-full items-center justify-center rounded-2xl border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/15"
                   >
-                    View Services
+                    Visit Contact Page
                   </Link>
                 </div>
 
                 <p className="mt-4 text-xs text-white/65">
-                  Career opportunities will be added here once openings are live.
+                  This can be replaced later with a careers form or integrated
+                  application flow.
                 </p>
               </div>
             </div>
