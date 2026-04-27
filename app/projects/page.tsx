@@ -4,7 +4,21 @@ import Link from "next/link";
 
 const LOGO_BLUE = "#2a8bff";
 
-const projects = [
+type Project = {
+  slug: string;
+  category: string;
+  title: string;
+  client: string;
+  duration: string;
+  badge: string;
+  summary: string;
+  epmsNote?: string;
+  image: string;
+  challenge: string[];
+  delivered: string[];
+};
+
+const projects: Project[] = [
   {
     slug: "epms",
     category: "Enterprise Systems Modernization",
@@ -14,6 +28,8 @@ const projects = [
     badge: "Business-Critical",
     summary:
       "Mission-critical utility platform supporting project lifecycle management, forecasting, accounting workflows, and operational planning across multiple business units.",
+    epmsNote:
+      "Our work on EPMS reflects how Fuzion approaches complex environments: understand the system, align to the business, then deliver stability and forward momentum.",
     image:
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2200&q=80",
     challenge: [
@@ -44,7 +60,7 @@ const projects = [
       "Need to support compliance in a regulated generation environment",
     ],
     delivered: [
-      "Microsoft 365–based lifecycle management system for 3P governance",
+      "Microsoft 365-based lifecycle management system for 3P governance",
       "Automated creation, review, approval, and biennial maintenance workflows",
       "Centralized, role-based document governance with search and metadata configuration",
     ],
@@ -58,15 +74,14 @@ const projects = [
     badge: "Mission-Critical",
     summary:
       "Centralized alarm response management application built to automate the creation, review, and approval of power plant equipment alarm responses across regulated generation operations.",
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=2200&q=80",
+    image: "/images/alarm-response.jpg",
     challenge: [
       "Manual, email-driven alarm response coordination",
       "Disconnected Word documents and review workflows",
       "Need for accountability across operations, engineering, and external stakeholders",
     ],
     delivered: [
-      "Power Apps–based alarm response management solution",
+      "Power Apps-based alarm response management solution",
       "Structured workflows for creation, review, and approval",
       "Centralized collaboration with auditable approvals and improved visibility",
     ],
@@ -181,27 +196,27 @@ const projects = [
       "Enabled structured workflows, dashboards, and improved project visibility",
     ],
   },
-{
-  slug: "support-beacon",
-  category: "Disaster Response & Logistics Platform",
-  title: "Support Beacon Relief – Fuzion Logistics Application",
-  client: "Rancher Navy (Nonprofit) · Central Texas",
-  duration: "In Development – June 2026",
-  badge: "Impact-Critical",
-  summary:
-    "Disaster relief logistics and volunteer coordination platform designed to automate large-scale response operations across multiple states using AI-driven workflows and cloud infrastructure.",
-  image: "/images/support-beacon-flood.jpg",
-  challenge: [
-    "Manual coordination of disaster relief using spreadsheets and phone calls",
-    "Limited scalability across multi-state operations and growing response volume",
-    "Need for secure, real-time logistics and volunteer management",
-  ],
-  delivered: [
-    "Designed and developed scalable disaster response logistics platform (Support Beacon)",
-    "Automated coordination of donations, volunteers, routes, and delivery tracking",
-    "Built cloud-based system leveraging AWS, AI tools, and mobile application support",
-  ],
-},
+  {
+    slug: "support-beacon",
+    category: "Disaster Response & Logistics Platform",
+    title: "Support Beacon Relief – Fuzion Logistics Application",
+    client: "Rancher Navy (Nonprofit) · Central Texas",
+    duration: "In Development – June 2026",
+    badge: "Impact-Critical",
+    summary:
+      "Disaster relief logistics and volunteer coordination platform designed to automate large-scale response operations across multiple states using AI-driven workflows and cloud infrastructure.",
+    image: "/images/support-beacon-flood.jpg",
+    challenge: [
+      "Manual coordination of disaster relief using spreadsheets and phone calls",
+      "Limited scalability across multi-state operations and growing response volume",
+      "Need for secure, real-time logistics and volunteer management",
+    ],
+    delivered: [
+      "Designed and developed scalable disaster response logistics platform (Support Beacon)",
+      "Automated coordination of donations, volunteers, routes, and delivery tracking",
+      "Built cloud-based system leveraging AWS, AI tools, and mobile application support",
+    ],
+  },
 ];
 
 const impactStats = [
@@ -231,11 +246,9 @@ const engagementPhases = [
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
-
+    <main className="min-h-screen bg-white pt-28 md:pt-32">
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-6 pb-16 pt-10 md:pb-20 md:pt-12">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-6">
               <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
@@ -260,6 +273,7 @@ export default function ProjectsPage() {
                 >
                   Start a Conversation
                 </Link>
+
                 <Link
                   href="/services"
                   className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
@@ -296,16 +310,19 @@ export default function ProjectsPage() {
                           className="mt-1 inline-flex h-2.5 w-2.5 flex-none rounded-full"
                           style={{ background: LOGO_BLUE }}
                         />
-                        <p className="text-sm leading-relaxed text-black/70">{item}</p>
+                        <p className="text-sm leading-relaxed text-black/70">
+                          {item}
+                        </p>
                       </div>
                     </div>
                   ))}
                 </div>
 
                 <p className="mt-6 text-sm leading-relaxed text-black/60">
-                  Each engagement is built around business continuity, technical clarity,
-                  and long-term value. We focus on solving operational challenges while
-                  creating a practical path forward for modernization and growth.
+                  Each engagement is built around business continuity, technical
+                  clarity, and long-term value. We focus on solving operational
+                  challenges while creating a practical path forward for modernization
+                  and growth.
                 </p>
               </div>
             </div>
@@ -321,7 +338,9 @@ export default function ProjectsPage() {
                 key={stat.label}
                 className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
               >
-                <div className="text-3xl font-semibold text-black/90">{stat.value}</div>
+                <div className="text-3xl font-semibold text-black/90">
+                  {stat.value}
+                </div>
                 <div className="mt-2 text-sm text-black/60">{stat.label}</div>
               </div>
             ))}
@@ -331,15 +350,14 @@ export default function ProjectsPage() {
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
-                FEATURED PROJECTS
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold text-black/90 md:text-4xl">
-                Recent project highlights
-              </h2>
-            </div>
+          <div>
+            <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+              FEATURED PROJECTS
+            </p>
+
+            <h2 className="mt-3 text-3xl font-semibold text-black/90 md:text-4xl">
+              Recent project highlights
+            </h2>
           </div>
 
           <div className="mt-8 space-y-8">
@@ -353,9 +371,15 @@ export default function ProjectsPage() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="h-full w-full object-cover"
+                      className={`h-full w-full object-cover ${
+                        project.slug === "arl-app"
+                          ? "object-[50%_30%]"
+                          : "object-center"
+                      }`}
                     />
+
                     <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+
                     <div
                       className="absolute left-6 top-6 inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold tracking-wide text-white backdrop-blur"
                       style={{
@@ -367,7 +391,7 @@ export default function ProjectsPage() {
                     </div>
                   </div>
 
-                  <div className="lg:col-span-7 p-8 md:p-10">
+                  <div className="p-8 md:p-10 lg:col-span-7">
                     <p className="text-xs font-semibold tracking-[0.25em] text-black/55">
                       {project.category}
                     </p>
@@ -380,6 +404,7 @@ export default function ProjectsPage() {
                       <span className="rounded-full border border-black/10 px-3 py-1">
                         {project.client}
                       </span>
+
                       <span className="rounded-full border border-black/10 px-3 py-1">
                         {project.duration}
                       </span>
@@ -389,19 +414,31 @@ export default function ProjectsPage() {
                       {project.summary}
                     </p>
 
+                    {project.epmsNote && (
+                      <div className="mt-5 rounded-2xl border border-black/10 bg-black/[0.02] p-4">
+                        <p className="text-sm leading-relaxed text-black/65">
+                          {project.epmsNote}
+                        </p>
+                      </div>
+                    )}
+
                     <div className="mt-8 grid gap-6 md:grid-cols-2">
                       <div>
                         <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-black/55">
                           Key Challenges
                         </h4>
+
                         <div className="mt-4 space-y-3">
                           {project.challenge.map((item) => (
                             <div key={item} className="flex items-start gap-3">
                               <span
-                                className="mt-2 inline-flex h-2.5 w-2.5 rounded-full"
+                                className="mt-2 inline-flex h-2.5 w-2.5 flex-none rounded-full"
                                 style={{ background: LOGO_BLUE }}
                               />
-                              <p className="text-sm leading-relaxed text-black/68">{item}</p>
+
+                              <p className="text-sm leading-relaxed text-black/70">
+                                {item}
+                              </p>
                             </div>
                           ))}
                         </div>
@@ -411,14 +448,18 @@ export default function ProjectsPage() {
                         <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-black/55">
                           Delivered
                         </h4>
+
                         <div className="mt-4 space-y-3">
                           {project.delivered.map((item) => (
                             <div key={item} className="flex items-start gap-3">
                               <span
-                                className="mt-2 inline-flex h-2.5 w-2.5 rounded-full"
+                                className="mt-2 inline-flex h-2.5 w-2.5 flex-none rounded-full"
                                 style={{ background: LOGO_BLUE }}
                               />
-                              <p className="text-sm leading-relaxed text-black/68">{item}</p>
+
+                              <p className="text-sm leading-relaxed text-black/70">
+                                {item}
+                              </p>
                             </div>
                           ))}
                         </div>
@@ -447,66 +488,57 @@ export default function ProjectsPage() {
             className="rounded-3xl border-2 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
             style={{ borderColor: LOGO_BLUE }}
           >
-            <div className="grid gap-8 lg:grid-cols-12">
-              <div className="lg:col-span-5">
-                <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
-                  ENGAGEMENT APPROACH
-                </p>
-                <h2 className="mt-3 text-3xl font-semibold leading-tight text-black/90 md:text-4xl">
-                  A structured path from system risk to long-term modernization.
-                </h2>
-                <p className="mt-4 text-sm leading-relaxed text-black/65 md:text-base">
-                  Our work on EPMS reflects how Fuzion approaches complex environments:
-                  understand the system, align to the business, then deliver stability and
-                  forward momentum.
-                </p>
-              </div>
-
-              <div className="lg:col-span-7 grid gap-4 md:grid-cols-3">
-                {engagementPhases.map((phase, index) => (
+            <div className="grid gap-8 lg:grid-cols-3">
+              {engagementPhases.map((phase, index) => (
+                <div
+                  key={phase.title}
+                  className="rounded-2xl border border-black/10 bg-white/80 p-5"
+                >
                   <div
-                    key={phase.title}
-                    className="rounded-2xl border border-black/10 bg-white/80 p-5"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold text-white"
+                    style={{ background: LOGO_BLUE }}
                   >
-                    <div
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold text-white"
-                      style={{ background: LOGO_BLUE }}
-                    >
-                      {index + 1}
-                    </div>
-                    <h3 className="mt-4 text-lg font-semibold text-black/90">
-                      {phase.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-black/65">
-                      {phase.text}
-                    </p>
+                    {index + 1}
                   </div>
-                ))}
-              </div>
+
+                  <h3 className="mt-4 text-lg font-semibold text-black/90">
+                    {phase.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-relaxed text-black/65">
+                    {phase.text}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden" style={{ background: LOGO_BLUE }}>
+      <section
+        className="relative overflow-hidden"
+        style={{ background: LOGO_BLUE }}
+      >
         <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
         <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20">
-          <div className="grid gap-12 lg:grid-cols-12">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <h3 className="text-4xl font-semibold tracking-tight text-white">
                 Need a partner for modernization, support, or digital transformation?
               </h3>
+
               <div className="mt-4 h-[2px] w-16 bg-white/80" />
+
               <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/90">
-                Fuzion Consulting Group helps organizations stabilize critical systems,
-                improve operational visibility, and build practical paths forward with
-                modern technology.
+                Fuzion Consulting Group helps organizations stabilize critical
+                systems, improve operational visibility, and build practical paths
+                forward with modern technology.
               </p>
             </div>
 
-            <div className="lg:col-span-5 flex items-end lg:justify-end">
+            <div className="flex items-end lg:col-span-5 lg:justify-end">
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact"
@@ -514,6 +546,7 @@ export default function ProjectsPage() {
                 >
                   Contact Us →
                 </Link>
+
                 <Link
                   href="/services"
                   className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"

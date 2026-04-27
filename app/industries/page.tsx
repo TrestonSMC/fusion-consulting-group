@@ -4,27 +4,73 @@ import Link from "next/link";
 
 const LOGO_BLUE = "#2a8bff";
 
-export default function IndustriesPage() {
-  const industries = [
-    "Construction",
-    "Engineering",
-    "Education",
-    "Financial Services",
-    "Government",
-    "Healthcare",
-    "Legal",
-    "Life Sciences",
-    "Logistics",
-    "Native American",
-    "Nonprofit (Disaster Relief)",
-    "Nuclear",
-    "Technology",
-    "Utilities",
-  ];
+const industries = [
+  {
+    name: "Construction",
+    desc: "We support construction organizations with modern document, project, and field-execution platforms that improve visibility, governance, and collaboration across complex builds — without disrupting crews in the field.",
+  },
+  {
+    name: "Engineering",
+    desc: "Fuzion partners with engineering teams to streamline workflows, manage technical documentation, and align systems with real-world delivery — bridging the gap between design, execution, and operations.",
+  },
+  {
+    name: "Education",
+    desc: "We help educational institutions modernize operations, improve data visibility, and adopt technology responsibly while navigating compliance, governance, and limited administrative resources.",
+  },
+  {
+    name: "Financial Services",
+    desc: "Our teams support financial services organizations with secure, compliant technology solutions that improve reporting, integration, and operational transparency in highly regulated environments.",
+  },
+  {
+    name: "Government",
+    desc: "Fuzion works alongside public-sector clients to modernize systems, improve program oversight, and deliver accountable, compliant solutions that stand up to audit and long-term scrutiny.",
+  },
+  {
+    name: "Healthcare",
+    desc: "We bring disciplined, secure technology solutions to healthcare organizations — supporting operational workflows, data governance, and system integration while respecting patient safety and regulatory demands.",
+  },
+  {
+    name: "Legal",
+    desc: "Fuzion helps legal organizations streamline document management, workflows, and reporting so teams can focus on outcomes while maintaining confidentiality, compliance, and accuracy.",
+  },
+  {
+    name: "Life Sciences",
+    desc: "We support life sciences organizations with technology platforms and process modernization that enable compliance, traceability, and scalability across research, operations, and regulated programs.",
+  },
+  {
+    name: "Logistics",
+    desc: "From disaster response to enterprise supply chains, Fuzion delivers logistics-focused solutions that provide real-time visibility, coordination, and accountability across complex, time-critical operations.",
+  },
+  {
+    name: "Native American",
+    desc: "Fuzion Chickasaw Group partners with Native American tribes and organizations to deliver technology and consulting services that respect sovereignty, support compliance, and strengthen operational sustainability.",
+  },
+  {
+    name: "Nonprofit (Disaster Relief)",
+    desc: "We build and support purpose-driven platforms that help nonprofits coordinate volunteers, supplies, and logistics during crisis events — donated or delivered with mission-first intent.",
+  },
+  {
+    name: "Nonprofit",
+    desc: "Beyond disaster response, Fuzion supports nonprofits with technology, process improvement, and operational insight that maximizes impact while minimizing administrative burden.",
+  },
+  {
+    name: "Nuclear",
+    desc: "Fuzion delivers disciplined, secure solutions for nuclear and high-risk environments where governance, auditability, and precision are non-negotiable.",
+  },
+  {
+    name: "Technology",
+    desc: "We help technology organizations scale responsibly — supporting product development, integration, lifecycle management, and modernization grounded in practical execution.",
+  },
+  {
+    name: "Utilities",
+    desc: "Fuzion partners with utility organizations to modernize enterprise platforms, improve project governance, and support mission-critical infrastructure in regulated, safety-driven environments.",
+  },
+];
 
+export default function IndustriesPage() {
   return (
     <main className="min-h-screen bg-white pt-28 md:pt-32">
-      {/* ===================== HERO ===================== */}
+      {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="relative h-[420px] w-full">
           <img
@@ -68,10 +114,9 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* BLUE DIVIDER */}
       <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
 
-      {/* ===================== WHO WE SERVE ===================== */}
+      {/* WHO WE SERVE */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div>
@@ -85,16 +130,16 @@ export default function IndustriesPage() {
 
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/60">
               Our experience spans regulated environments, operationally complex
-              organizations, and high-growth teams. We bring practical solutions
-              that align with how each industry actually operates.
+              organizations, public-sector programs, nonprofits, and high-growth
+              teams. We bring practical solutions that align with how each
+              industry actually operates.
             </p>
           </div>
 
-          {/* GRID */}
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {industries.map((industry) => (
               <div
-                key={industry}
+                key={industry.name}
                 className="group rounded-3xl border border-black/10 bg-white p-7 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition hover:-translate-y-[2px] hover:shadow-[0_16px_50px_rgba(0,0,0,0.08)]"
               >
                 <div
@@ -103,13 +148,11 @@ export default function IndustriesPage() {
                 />
 
                 <h3 className="text-xl font-semibold text-black/90">
-                  {industry}
+                  {industry.name}
                 </h3>
 
                 <p className="mt-3 text-sm leading-relaxed text-black/60">
-                  Tailored consulting and technology solutions designed to meet
-                  the unique operational and regulatory needs of the{" "}
-                  {industry.toLowerCase()} sector.
+                  {industry.desc}
                 </p>
               </div>
             ))}
@@ -117,7 +160,7 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* ===================== CTA ===================== */}
+      {/* CTA */}
       <section
         className="relative overflow-hidden"
         style={{ background: LOGO_BLUE }}

@@ -128,46 +128,6 @@ export default function AboutPage() {
       ],
     },
     {
-      label: "PRINCIPAL ADVISORS",
-      title: "Fuzion Approved Principal Advisors",
-      description:
-        "A trusted advisory bench offering strategic perspective across operations, government, and regulated industries.",
-      members: [
-        {
-          name: "Amy Houston",
-          title: "Principal Advisor",
-          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Amy%20Houston%20-%20Principal%20Advisor%20-%20Approved%20Image.jpg",
-          href: "/company/amy-houston",
-          photoPosition: "50% 20%",
-          photoScale: 1,
-        },
-        {
-          name: "Morgan Broome",
-          title: "Principal Advisor",
-          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Morgan%20Broome%20-%20Principal%20Advisor%20Pending%20Approval%20-%20Image.jpg",
-          href: "/company/morgan-broome",
-          photoPosition: "50% 20%",
-          photoScale: 1,
-        },
-        {
-          name: "Sean Goretskie",
-          title: "Principal Advisor",
-          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Sean%20Goretskie%20-%20Principal%20Advisor%20-%20Approved%20Image.jpg",
-          href: "/company/sean-goretskie",
-          photoPosition: "50% 20%",
-          photoScale: 1,
-        },
-        {
-          name: "Robert S. Olson",
-          title: "Principal Advisor",
-          img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Senator%20Robert%20Olson%20-%20Principal%20Advisor%20-%20Approved%20Image.webp",
-          href: "/company/robert-s-olson",
-          photoPosition: "50% 20%",
-          photoScale: 1,
-        },
-      ],
-    },
-    {
       label: "DIGITAL DESIGN PARTNER",
       title: "Fuzion Digital Design Partner",
       description:
@@ -210,7 +170,12 @@ export default function AboutPage() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
-           Fuzion Consulting Group LLC is a business and technology consulting firm headquartered in Olathe, Kansas, with offices in Arizona, California, Oklahoma, and Texas. Since our founding in 2019, we’ve delivered sustainable, client-centered solutions across regulated industries—empowering organizations to streamline operations, enhance compliance, and drive innovation.
+            Fuzion Consulting Group LLC is a business and technology consulting
+            firm headquartered in Olathe, Kansas, with offices in Arizona,
+            California, Oklahoma, and Texas. Since our founding in 2019, we’ve
+            delivered sustainable, client-centered solutions across regulated
+            industries—empowering organizations to streamline operations, enhance
+            compliance, and drive innovation.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -328,6 +293,40 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-12 space-y-10">
+              <section className="rounded-[28px] border border-black/10 bg-white p-6 shadow-[0_14px_40px_rgba(0,0,0,0.05)] md:p-8">
+                <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className="text-xs font-semibold tracking-[0.22em] text-black/50">
+                      PRINCIPAL PARTNERS
+                    </p>
+
+                    <h4 className="mt-2 text-2xl font-semibold tracking-tight text-black/90">
+                      Fuzion Principal Partners
+                    </h4>
+
+                    <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/60 md:text-base">
+                      A trusted advisory network providing strategic insight
+                      across regulated, operational, and growth-focused markets.
+                    </p>
+
+                    <div className="mt-5">
+                      <Link
+                        href="/company/principal-partners"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-black/80 hover:text-black"
+                      >
+                        Meet our Principal Partners{" "}
+                        <span aria-hidden="true">→</span>
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div
+                    className="h-[3px] w-16 rounded-full"
+                    style={{ background: LOGO_BLUE }}
+                  />
+                </div>
+              </section>
+
               {teamGroups.map((group) => (
                 <section
                   key={group.title}
@@ -492,4 +491,4 @@ export default function AboutPage() {
       </section>
     </main>
   );
-} 
+}

@@ -305,7 +305,7 @@ export default function HomePage() {
 
               <p className="mt-6 text-sm leading-relaxed text-black/60 md:text-base">
                 At Fuzion Consulting Group and our certified Minority
-                Women-Owned subsidiary,{" "}
+                Woman-Owned subsidiary,{" "}
                 <span className="font-semibold text-black/80">
                   Fuzion Chickasaw Group
                 </span>
