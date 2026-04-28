@@ -293,39 +293,6 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-12 space-y-10">
-              <section className="rounded-[28px] border border-black/10 bg-white p-6 shadow-[0_14px_40px_rgba(0,0,0,0.05)] md:p-8">
-                <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                  <div>
-                    <p className="text-xs font-semibold tracking-[0.22em] text-black/50">
-                      PRINCIPAL PARTNERS
-                    </p>
-
-                    <h4 className="mt-2 text-2xl font-semibold tracking-tight text-black/90">
-                      Fuzion Principal Partners
-                    </h4>
-
-                    <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/60 md:text-base">
-                      A trusted advisory network providing strategic insight
-                      across regulated, operational, and growth-focused markets.
-                    </p>
-
-                    <div className="mt-5">
-                      <Link
-                        href="/company/principal-partners"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-black/80 hover:text-black"
-                      >
-                        Meet our Principal Partners{" "}
-                        <span aria-hidden="true">→</span>
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div
-                    className="h-[3px] w-16 rounded-full"
-                    style={{ background: LOGO_BLUE }}
-                  />
-                </div>
-              </section>
 
               {teamGroups.map((group) => (
                 <section
