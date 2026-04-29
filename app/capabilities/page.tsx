@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 const LOGO_BLUE = "#2a8bff";
-const NAV_HEIGHT = 112; // adjust if your header is taller/shorter
+const NAV_HEIGHT = 112;
 
 type ServiceCategory = {
   heading: string;
@@ -15,7 +15,7 @@ type ServiceCategory = {
   }[];
 };
 
-export default function ServicesPage() {
+export default function CapabilitiesPage() {
   const serviceCategories: ServiceCategory[] = [
     {
       heading: "Business & Professional Consulting",
@@ -75,7 +75,7 @@ export default function ServicesPage() {
         },
         {
           title: "Maintenance & Support",
-          desc: "Ongoing support services that keep business-critical systems stable, secure, and performing well.",
+          desc: "Ongoing support that keeps business-critical systems stable, secure, and performing well.",
           href: "/contact",
           badge: "Support",
         },
@@ -118,15 +118,19 @@ export default function ServicesPage() {
       className="min-h-screen bg-white"
       style={{ paddingTop: `${NAV_HEIGHT}px` }}
     >
-      {/* ===================== HERO ===================== */}
       <section className="relative overflow-hidden bg-white">
         <div className="mx-auto max-w-7xl px-6 py-20">
-          <h1 className="text-4xl font-semibold tracking-tight text-black/90 md:text-5xl">
-            Fuzion also offers business & professional consulting services.
+          <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+            CAPABILITIES
+          </p>
+
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-black/90 md:text-5xl">
+            Fuzion capabilities for business, technology, and operational
+            transformation.
           </h1>
 
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
-            We support organizations with consulting and technology services
+            We support organizations with business and technology capabilities
             that strengthen operations, improve visibility, and help teams move
             faster with better systems in place.
           </p>
@@ -155,17 +159,21 @@ export default function ServicesPage() {
 
       <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
 
-      {/* ===================== SERVICE CATEGORIES ===================== */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div>
-            <h2 className="text-3xl font-semibold text-black/90">
+            <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+              WHAT WE DO
+            </p>
+
+            <h2 className="mt-3 text-3xl font-semibold text-black/90">
               Our consulting capabilities
             </h2>
+
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/60">
               Fuzion provides both business-focused consulting and technology
-              services designed to solve operational challenges with practical,
-              scalable solutions.
+              capabilities designed to solve operational challenges with
+              practical, scalable solutions.
             </p>
           </div>
 
@@ -207,6 +215,7 @@ export default function ServicesPage() {
                         <h4 className="text-xl font-semibold tracking-tight text-black/90">
                           {service.title}
                         </h4>
+
                         <p className="mt-3 text-sm leading-relaxed text-black/60">
                           {service.desc}
                         </p>
@@ -234,8 +243,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ===================== CTA STRIP ===================== */}
-      <section className="relative overflow-hidden" style={{ background: LOGO_BLUE }}>
+      <section
+        className="relative overflow-hidden"
+        style={{ background: LOGO_BLUE }}
+      >
         <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
         <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
 
@@ -245,6 +256,7 @@ export default function ServicesPage() {
               <h3 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                 Would love to help.
               </h3>
+
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/90 md:text-base">
                 Tell us what you’re trying to improve — we’ll help map the
                 fastest path to practical, measurable outcomes.
@@ -258,6 +270,7 @@ export default function ServicesPage() {
               >
                 Contact Us →
               </Link>
+
               <Link
                 href="/company"
                 className="rounded-full border border-white/30 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"

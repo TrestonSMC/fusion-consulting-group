@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { href: "/services", label: "Capabilities" },
+  { href: "/capabilities", label: "Capabilities" }, // ✅ FIXED
   { href: "/industries", label: "Industries" },
   { href: "/projects", label: "Projects" },
   { href: "/company", label: "Company", hasDropdown: true },
@@ -29,7 +29,6 @@ export default function FuzionNav() {
     const onResize = () => {
       if (window.innerWidth >= 1024) setMobileOpen(false);
     };
-
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
@@ -51,33 +50,35 @@ export default function FuzionNav() {
     >
       <nav className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-[76px] items-center justify-between lg:h-[84px]">
-          <div className="flex items-center">
-            <Link href="/" aria-label="Home" className="inline-flex shrink-0">
-              <img
-                src="https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Brand/logo.png"
-                alt="Fuzion Consulting Group"
-                className="h-[72px] w-auto sm:h-[82px] lg:h-[100px]"
-              />
-            </Link>
-          </div>
 
-          <div className="hidden flex-1 items-center justify-center lg:flex">
+          {/* Logo */}
+          <Link href="/" className="inline-flex shrink-0">
+            <img
+              src="https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Brand/logo.png"
+              alt="Fuzion"
+              className="h-[72px] w-auto sm:h-[82px] lg:h-[100px]"
+            />
+          </Link>
+
+          {/* Desktop Nav */}
+          <div className="hidden flex-1 justify-center lg:flex">
             <div className="flex items-center gap-6 xl:gap-8 2xl:gap-10">
               {navItems.map((item) =>
                 item.hasDropdown ? (
                   <div key={item.href} className="group relative">
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-1 whitespace-nowrap text-[14px] font-semibold text-black/85 transition hover:text-black xl:text-[15px]"
+                      className="flex items-center gap-1 text-[14px] font-semibold text-black/85 hover:text-black"
                     >
                       {item.label}
-                      <span className="text-[11px] leading-none">▾</span>
+                      <span className="text-[11px]">▾</span>
                     </Link>
 
-                    <div className="invisible absolute left-1/2 top-full z-50 mt-4 w-60 -translate-x-1/2 rounded-2xl border border-black/10 bg-white p-2 opacity-0 shadow-[0_18px_45px_rgba(0,0,0,0.12)] transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                    {/* Dropdown */}
+                    <div className="invisible absolute left-1/2 top-full mt-4 w-60 -translate-x-1/2 rounded-2xl border border-black/10 bg-white p-2 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
                       <Link
-                        href="/company/principal-partners"
-                        className="block rounded-xl px-4 py-3 text-sm font-semibold text-black/75 hover:bg-black/[0.04] hover:text-black"
+                        href="/company/principal-advisors"
+                        className="block rounded-xl px-4 py-3 text-sm font-semibold text-black/75 hover:bg-black/[0.04]"
                       >
                         Principal Advisors
                       </Link>
@@ -87,7 +88,7 @@ export default function FuzionNav() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="whitespace-nowrap text-[14px] font-semibold text-black/85 transition hover:text-black xl:text-[15px]"
+                    className="text-[14px] font-semibold text-black/85 hover:text-black"
                   >
                     {item.label}
                   </Link>
@@ -96,52 +97,43 @@ export default function FuzionNav() {
             </div>
           </div>
 
+          {/* Spacer */}
           <div className="hidden lg:block lg:w-[72px]" />
 
+          {/* Mobile Toggle */}
           <button
-            type="button"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-            onClick={() => setMobileOpen((prev) => !prev)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-black shadow-sm transition hover:bg-black/[0.03] lg:hidden"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden"
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <X /> : <Menu />}
           </button>
         </div>
       </nav>
 
-      <div
-        className={`overflow-hidden border-t border-black/5 bg-white/98 backdrop-blur-md transition-all duration-300 lg:hidden ${
-          mobileOpen ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="px-4 pb-5 pt-3 sm:px-6">
-          <div className="flex flex-col rounded-2xl border border-black/5 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
-            {navItems.map((item, index) => (
-              <div
-                key={item.href}
-                className={index !== navItems.length - 1 ? "border-b border-black/5" : ""}
+      {/* Mobile Menu */}
+      <div className={`${mobileOpen ? "block" : "hidden"} lg:hidden`}>
+        <div className="px-4 pb-5 pt-3">
+          {navItems.map((item) => (
+            <div key={item.href}>
+              <Link
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3 font-semibold"
               >
-                <Link
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-5 py-4 text-[15px] font-semibold text-black/85 transition hover:bg-black/[0.03] hover:text-black"
-                >
-                  {item.label}
-                </Link>
+                {item.label}
+              </Link>
 
-                {item.hasDropdown && (
-                  <Link
-                    href="/company/principal-partners"
-                    onClick={() => setMobileOpen(false)}
-                    className="block border-t border-black/5 bg-black/[0.02] px-8 py-3 text-[14px] font-semibold text-black/65 transition hover:bg-black/[0.04] hover:text-black"
-                  >
-                    Principal Advisors
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
+              {item.hasDropdown && (
+                <Link
+                  href="/company/principal-advisors"
+                  onClick={() => setMobileOpen(false)}
+                  className="block pl-4 pb-3 text-sm"
+                >
+                  Principal Advisors
+                </Link>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </header>

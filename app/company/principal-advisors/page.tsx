@@ -15,25 +15,25 @@ export default function PrincipalPartnersPage() {
   const advisors: Advisor[] = [
     {
       name: "Amy Houston",
-      title: "Principal Partner",
+      title: "Principal Advisor",
       img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Amy%20Houston%20-%20Principal%20Advisor%20-%20Approved%20Image.jpg",
       href: "/company/amy-houston",
     },
     {
       name: "Morgan Broome",
-      title: "Principal Partner",
+      title: "Principal Advisor",
       img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Morgan%20Broome%20-%20Principal%20Advisor%20Pending%20Approval%20-%20Image.jpg",
       href: "/company/morgan-broome",
     },
     {
       name: "Sean Goretskie",
-      title: "Principal Partner",
+      title: "Principal Advisor",
       img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Sean%20Goretskie%20-%20Principal%20Advisor%20-%20Approved%20Image.jpg",
       href: "/company/sean-goretskie",
     },
     {
       name: "Robert S. Olson",
-      title: "Principal Partner",
+      title: "Principal Advisor",
       img: "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Company%20Headshots/Senator%20Robert%20Olson%20-%20Principal%20Advisor%20-%20Approved%20Image.webp",
       href: "/company/robert-s-olson",
     },
@@ -44,7 +44,7 @@ export default function PrincipalPartnersPage() {
       {/* ================= HERO ================= */}
       <section className="mx-auto max-w-7xl px-6 py-12">
         <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
-          PRINCIPAL PARTNERS
+          PRINCIPAL ADVISORS
         </p>
 
         <h1 className="mt-3 text-4xl font-semibold text-black/90 md:text-5xl">
@@ -53,13 +53,13 @@ export default function PrincipalPartnersPage() {
 
         <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
           Fuzion Consulting Group and Fuzion Chickasaw Group are supported by a
-          trusted network of Principal Partners—experienced leaders who provide
+          trusted network of Principal Advisors—experienced leaders who provide
           strategic perspective across the industries we serve today and the
           markets we are intentionally expanding into.
         </p>
 
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
-          Our Principal Partners offer real-world insight grounded in operations,
+          Our Principal Advisors offer real-world insight grounded in operations,
           regulation, and execution. They help ensure Fuzion’s solutions remain
           practical, credible, and aligned with real market conditions.
         </p>
@@ -70,11 +70,11 @@ export default function PrincipalPartnersPage() {
       {/* ================= WHAT THEY DO ================= */}
       <section className="mx-auto max-w-7xl px-6 py-16">
         <h2 className="text-2xl font-semibold text-black/90">
-          What Principal Partners Do
+          What Principal Advisors Do
         </h2>
 
         <div className="mt-8 space-y-4 text-black/70">
-          <p>Principal Partners support Fuzion by:</p>
+          <p>Principal Advisors support Fuzion by:</p>
 
           <ul className="space-y-3 pl-5 list-disc">
             <li>
@@ -104,7 +104,7 @@ export default function PrincipalPartnersPage() {
       {/* ================= ADVISORS GRID ================= */}
       <section className="mx-auto max-w-7xl px-6 pb-16">
         <h2 className="text-2xl font-semibold text-black/90">
-          Meet Our Principal Partners
+          Meet Our Principal Advisors
         </h2>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
