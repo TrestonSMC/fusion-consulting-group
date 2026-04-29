@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { href: "/capabilities", label: "Capabilities" }, // ✅ FIXED
+  { href: "/capabilities", label: "Capabilities" },
   { href: "/industries", label: "Industries" },
   { href: "/projects", label: "Projects" },
   { href: "/company", label: "Company", hasDropdown: true },
@@ -29,6 +29,7 @@ export default function FuzionNav() {
     const onResize = () => {
       if (window.innerWidth >= 1024) setMobileOpen(false);
     };
+
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
@@ -50,9 +51,7 @@ export default function FuzionNav() {
     >
       <nav className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-[76px] items-center justify-between lg:h-[84px]">
-
-          {/* Logo */}
-          <Link href="/" className="inline-flex shrink-0">
+          <Link href="/" aria-label="Home" className="inline-flex shrink-0">
             <img
               src="https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Brand/logo.png"
               alt="Fuzion"
@@ -60,7 +59,6 @@ export default function FuzionNav() {
             />
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden flex-1 justify-center lg:flex">
             <div className="flex items-center gap-6 xl:gap-8 2xl:gap-10">
               {navItems.map((item) =>
@@ -74,14 +72,15 @@ export default function FuzionNav() {
                       <span className="text-[11px]">▾</span>
                     </Link>
 
-                    {/* Dropdown */}
-                    <div className="invisible absolute left-1/2 top-full mt-4 w-60 -translate-x-1/2 rounded-2xl border border-black/10 bg-white p-2 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
-                      <Link
-                        href="/company/principal-advisors"
-                        className="block rounded-xl px-4 py-3 text-sm font-semibold text-black/75 hover:bg-black/[0.04]"
-                      >
-                        Principal Advisors
-                      </Link>
+                    <div className="invisible absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100">
+                      <div className="rounded-2xl border border-black/10 bg-white p-2 shadow-lg">
+                        <Link
+                          href="/company/principal-advisors"
+                          className="block rounded-xl px-4 py-3 text-sm font-semibold text-black/75 hover:bg-black/[0.04]"
+                        >
+                          Principal Advisors
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 ) : (
@@ -97,20 +96,19 @@ export default function FuzionNav() {
             </div>
           </div>
 
-          {/* Spacer */}
           <div className="hidden lg:block lg:w-[72px]" />
 
-          {/* Mobile Toggle */}
           <button
+            type="button"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-black shadow-sm lg:hidden"
           >
-            {mobileOpen ? <X /> : <Menu />}
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <div className={`${mobileOpen ? "block" : "hidden"} lg:hidden`}>
         <div className="px-4 pb-5 pt-3">
           {navItems.map((item) => (
