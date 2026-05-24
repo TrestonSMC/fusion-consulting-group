@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 
-const LOGO_BLUE = "#2a8bff";
+const NAVY = "#0B1F3A";
+const GOLD = "#C8A96B";
+const CREAM = "#F8F8F6";
 
 const projectMeta = [
   {
@@ -39,35 +41,35 @@ const projectMeta = [
 
 export default function ARLAppProjectPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
+    <main className="min-h-screen bg-[#F8F8F6]">
+      <div className="h-[3px] w-full bg-[#C8A96B]" />
 
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+          <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
             FUZION CONSULTING GROUP
           </p>
 
-          <h1 className="mt-3 text-3xl font-semibold leading-tight text-black/90 md:text-5xl">
+          <h1 className="mt-3 text-3xl font-semibold leading-tight text-[#0B1F3A] md:text-5xl">
             Alarm Response Library (ARL) App
           </h1>
 
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
-            Centralized alarm response management platform designed to automate the
-            creation, review, and approval of power plant equipment alarm responses
-            through structured, auditable Microsoft 365 workflows.
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
+            Centralized alarm response management platform designed to automate
+            the creation, review, and approval of power plant equipment alarm
+            responses through structured, auditable Microsoft 365 workflows.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/projects"
-              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+              className="rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
             >
               Back to Projects
             </Link>
             <Link
               href="/contact"
-              className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
+              className="rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-medium text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
             >
               Contact Us →
             </Link>
@@ -77,17 +79,14 @@ export default function ARLAppProjectPage() {
 
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 pb-8">
-          <div
-            className="rounded-3xl border-2 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
-            style={{ borderColor: LOGO_BLUE }}
-          >
+          <div className="rounded-3xl border-2 border-[#C8A96B]/45 bg-white p-8 shadow-[0_14px_40px_rgba(11,31,58,0.08)]">
             <div className="space-y-5">
               {projectMeta.map((item) => (
                 <div key={item.label}>
-                  <p className="text-sm font-semibold text-black/90">
+                  <p className="text-sm font-semibold text-[#0B1F3A]">
                     {item.label}:
                   </p>
-                  <p className="mt-1 text-base leading-relaxed text-black/70">
+                  <p className="mt-1 text-base leading-relaxed text-[#0B1F3A]/70">
                     {item.value}
                   </p>
                 </div>
@@ -97,33 +96,33 @@ export default function ARLAppProjectPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#F8F8F6]">
         <div className="mx-auto max-w-5xl px-6 py-10">
           <div className="space-y-12">
             <ContentBlock title="Project Description">
               <p>
                 Fuzion Consulting Group was engaged to modernize and automate a
-                previously manual alarm response process used to manage power plant
-                equipment alarms. The process required close coordination between
-                plant operations, engineering teams, and an external Owner’s
-                Engineer, and was historically managed through disconnected email
-                communications and Microsoft Word documents.
+                previously manual alarm response process used to manage power
+                plant equipment alarms. The process required close coordination
+                between plant operations, engineering teams, and an external
+                Owner’s Engineer, and was historically managed through
+                disconnected email communications and Microsoft Word documents.
               </p>
 
               <p>
-                Leveraging deep expertise in Microsoft 365–based automation, Fuzion
-                partnered directly with utility stakeholders and the Owner’s
-                Engineer to design and implement a centralized Alarm Response
-                Management application. The solution replaced manual document
-                handling with structured digital workflows that improved visibility,
-                accountability, and review cycle efficiency.
+                Leveraging deep expertise in Microsoft 365–based automation,
+                Fuzion partnered directly with utility stakeholders and the
+                Owner’s Engineer to design and implement a centralized Alarm
+                Response Management application. The solution replaced manual
+                document handling with structured digital workflows that improved
+                visibility, accountability, and review cycle efficiency.
               </p>
 
               <p>
                 The application was built using the Microsoft Power Platform and
-                SharePoint, enabling secure collaboration, standardized reviews, and
-                auditable approvals without introducing additional third-party
-                systems.
+                SharePoint, enabling secure collaboration, standardized reviews,
+                and auditable approvals without introducing additional
+                third-party systems.
               </p>
             </ContentBlock>
 
@@ -145,89 +144,91 @@ export default function ARLAppProjectPage() {
               </p>
 
               <p>
-                Fuzion also led the migration of legacy alarm response records from
-                Microsoft Word into SharePoint, establishing centralized document
-                storage, versioning, and comment tracking. Additional capabilities
-                included Power BI reporting for visibility into review status and
-                cycle performance, Microsoft Teams and Outlook integration for
-                real-time collaboration, and user documentation and training
-                materials to support platform adoption.
+                Fuzion also led the migration of legacy alarm response records
+                from Microsoft Word into SharePoint, establishing centralized
+                document storage, versioning, and comment tracking. Additional
+                capabilities included Power BI reporting for visibility into
+                review status and cycle performance, Microsoft Teams and Outlook
+                integration for real-time collaboration, and user documentation
+                and training materials to support platform adoption.
               </p>
             </ContentBlock>
 
             <ContentBlock title="Business Impact">
               <p>
                 The Alarm Response Management application enabled the utility to
-                eliminate manual, email-driven alarm response processes and replace
-                them with a structured digital framework that improved consistency,
-                accountability, and operational transparency.
+                eliminate manual, email-driven alarm response processes and
+                replace them with a structured digital framework that improved
+                consistency, accountability, and operational transparency.
               </p>
 
               <p>
-                The solution improved review cycle discipline and helped ensure that
-                alarm responses were fully reviewed and approved prior to
+                The solution improved review cycle discipline and helped ensure
+                that alarm responses were fully reviewed and approved prior to
                 implementation. It also strengthened collaboration between plant
-                operations, engineering teams, and external partners by creating a
-                centralized and auditable workflow environment.
+                operations, engineering teams, and external partners by creating
+                a centralized and auditable workflow environment.
               </p>
 
               <p>
                 Beyond immediate efficiency gains, the platform established a
-                scalable foundation for future operational automation and reinforced
-                the utility’s ability to manage alarm response processes in a more
-                controlled and defensible manner.
+                scalable foundation for future operational automation and
+                reinforced the utility’s ability to manage alarm response
+                processes in a more controlled and defensible manner.
               </p>
             </ContentBlock>
 
             <ContentBlock title="Why This Matters">
               <p>
-                This project demonstrates Fuzion’s ability to modernize operational
-                processes in regulated utility environments through structured,
-                role-based workflow automation. It highlights Fuzion’s strength in
-                replacing fragmented manual coordination with scalable enterprise
-                solutions that improve visibility, governance, and execution.
+                This project demonstrates Fuzion’s ability to modernize
+                operational processes in regulated utility environments through
+                structured, role-based workflow automation. It highlights
+                Fuzion’s strength in replacing fragmented manual coordination
+                with scalable enterprise solutions that improve visibility,
+                governance, and execution.
               </p>
 
               <p>
-                It also reflects Fuzion’s ability to apply Microsoft 365 and Power
-                Platform technologies to operationally critical use cases without
-                requiring costly third-party software, creating practical solutions
-                that align with the client’s broader digital ecosystem.
+                It also reflects Fuzion’s ability to apply Microsoft 365 and
+                Power Platform technologies to operationally critical use cases
+                without requiring costly third-party software, creating practical
+                solutions that align with the client’s broader digital
+                ecosystem.
               </p>
             </ContentBlock>
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden" style={{ background: LOGO_BLUE }}>
-        <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
+      <section className="relative overflow-hidden bg-[#0B1F3A]">
+        <div className="pointer-events-none absolute inset-0 opacity-35 [background:radial-gradient(900px_420px_at_30%_15%,rgba(200,169,107,0.38),transparent_60%)]" />
 
         <div className="relative mx-auto max-w-5xl px-6 py-20">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <h3 className="text-4xl font-semibold tracking-tight text-white">
-                Need a partner for modernization, support, or digital transformation?
+                Need a partner for modernization, support, or digital
+                transformation?
               </h3>
-              <div className="mt-4 h-[2px] w-16 bg-white/80" />
-              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/90">
+              <div className="mt-4 h-[2px] w-16 bg-[#C8A96B]" />
+              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/85">
                 Fuzion Consulting Group helps organizations stabilize critical
-                systems, improve operational visibility, and build practical paths
-                forward with modern technology.
+                systems, improve operational visibility, and build practical
+                paths forward with modern technology.
               </p>
             </div>
 
-            <div className="lg:col-span-5 flex items-end lg:justify-end">
+            <div className="flex items-end lg:col-span-5 lg:justify-end">
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                  className="inline-flex items-center justify-center rounded-full bg-[#C8A96B] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#d8bb7c]"
                 >
                   Contact Us →
                 </Link>
                 <Link
                   href="/projects"
-                  className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-full border border-[#C8A96B]/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
                   Back to Projects
                 </Link>
@@ -248,11 +249,11 @@ function ContentBlock({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold text-black/90 md:text-3xl">
+    <section className="rounded-3xl border border-[#C8A96B]/20 bg-white p-7 shadow-[0_10px_30px_rgba(11,31,58,0.04)]">
+      <h2 className="text-2xl font-semibold text-[#0B1F3A] md:text-3xl">
         {title}
       </h2>
-      <div className="mt-5 space-y-4 text-base leading-relaxed text-black/70">
+      <div className="mt-5 space-y-4 text-base leading-relaxed text-[#0B1F3A]/70">
         {children}
       </div>
     </section>

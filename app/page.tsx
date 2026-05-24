@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { BRAND } from "../src/config/brand";
 
-const LOGO_BLUE = "#2a8bff";
+const NAVY = BRAND.colors.navy;
+const GOLD = BRAND.colors.gold;
 
 export default function HomePage() {
   const sliderRef = useRef<HTMLDivElement | null>(null);
@@ -96,7 +98,7 @@ export default function HomePage() {
         interestedIn: "",
         message: "",
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: "error",
         message: "Unable to send your message right now. Please try again.",
@@ -110,50 +112,49 @@ export default function HomePage() {
     {
       title: "Construction, Document, and Project Management SaaS",
       desc: "Modern platforms that streamline approvals, documentation, scheduling, and delivery.",
-      href: "/services",
+      href: "/capabilities",
       img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2200&q=80",
       badge: "SaaS / PM",
     },
     {
       title: "Field Productivity Portals & Dashboards",
       desc: "Operational visibility across teams, sites, and systems—built for speed and clarity.",
-      href: "/services",
+      href: "/capabilities",
       img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2200&q=80",
       badge: "Dashboards",
     },
     {
       title: "Business & IT Integration Strategies",
       desc: "Connect tools, data, and workflows so your operations run as one system.",
-      href: "/services",
+      href: "/capabilities",
       img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=2200&q=80",
       badge: "Strategy",
     },
     {
       title: "AI Engineering Solutions",
       desc: "Practical AI that reduces overhead, automates decisions, and increases output.",
-      href: "/services",
+      href: "/capabilities",
       img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2200&q=80",
       badge: "AI",
     },
     {
       title: "Microsoft 365 & Cloud Optimization",
       desc: "Implementations, governance, security hardening, and cloud cost control.",
-      href: "/services",
+      href: "/capabilities",
       img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2200&q=80",
       badge: "M365 / Cloud",
     },
     {
       title: "Workflow Automation & Digital Transformation",
       desc: "Replace manual work with clean, measurable processes that scale.",
-      href: "/services",
+      href: "/capabilities",
       img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80",
       badge: "Automation",
     },
   ];
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* ===================== HERO ===================== */}
+    <main className="min-h-screen bg-[#F8F8F6]">
       <section className="relative min-h-screen overflow-hidden">
         <video
           className="absolute inset-0 h-full w-full object-cover"
@@ -169,15 +170,15 @@ export default function HomePage() {
 
         <div className="relative z-20 mx-auto flex min-h-screen max-w-6xl items-start px-6 pt-32 md:pt-36">
           <div className="heroTextWrap max-w-2xl">
-            <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+            <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
               FUZION CONSULTING GROUP
             </p>
 
-            <h1 className="mt-3 text-4xl font-semibold leading-tight text-black/90 md:text-6xl">
+            <h1 className="mt-3 text-4xl font-semibold leading-tight text-[#0B1F3A] md:text-6xl">
               Automating Business Processes with Modern Technology
             </h1>
 
-            <p className="mt-4 text-base leading-relaxed text-black/70 md:text-lg">
+            <p className="mt-4 text-base leading-relaxed text-[#0B1F3A]/75 md:text-lg">
               Fuzion Consulting Group helps organizations unlock business value
               by automating processes, adopting AI, and modernizing their
               digital capabilities.
@@ -186,16 +187,16 @@ export default function HomePage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+                className="rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
               >
                 Contact Us
               </Link>
 
               <Link
-                href="/services"
-                className="rounded-full border border-black/20 bg-white/60 px-6 py-3 text-sm font-medium text-black/90 backdrop-blur hover:bg-white"
+                href="/capabilities"
+                className="rounded-full border border-[#C8A96B]/50 bg-white/70 px-6 py-3 text-sm font-medium text-[#0B1F3A] backdrop-blur transition hover:bg-[#C8A96B]/10"
               >
-                View Services →
+                View Capabilities →
               </Link>
             </div>
           </div>
@@ -210,11 +211,18 @@ export default function HomePage() {
             z-index: 10;
             width: 100%;
             pointer-events: none;
-            background: rgba(255, 255, 255, 0.42);
+            background: linear-gradient(
+              90deg,
+              rgba(248,248,246,0.88) 0%,
+              rgba(248,248,246,0.72) 48%,
+              rgba(11,31,58,0.12) 100%
+            );
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
             clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
-            box-shadow: inset -160px 0 140px -80px rgba(255,255,255,0.65);
+            box-shadow:
+              inset -160px 0 140px -80px rgba(200,169,107,0.22),
+              inset 0 0 0 1px rgba(200,169,107,0.08);
             animation: openHaze 1.2s ease-out 0.2s forwards;
           }
 
@@ -222,6 +230,15 @@ export default function HomePage() {
             position: relative;
             padding: 24px;
             border-radius: 20px;
+          }
+
+          .heroTextWrap::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            border-left: 3px solid rgba(200,169,107,0.8);
+            pointer-events: none;
           }
 
           @keyframes openHaze {
@@ -238,31 +255,26 @@ export default function HomePage() {
               animation: none;
               background: linear-gradient(
                 180deg,
-                rgba(255,255,255,0.10) 0%,
-                rgba(255,255,255,0.07) 30%,
-                rgba(255,255,255,0.04) 58%,
-                rgba(255,255,255,0.01) 100%
+                rgba(248,248,246,0.60) 0%,
+                rgba(248,248,246,0.42) 40%,
+                rgba(11,31,58,0.28) 100%
               );
               backdrop-filter: blur(2px);
               -webkit-backdrop-filter: blur(2px);
             }
 
             .heroTextWrap {
-              background: rgba(255,255,255,0.08);
-              backdrop-filter: blur(10px);
-              -webkit-backdrop-filter: blur(10px);
+              background: rgba(248,248,246,0.72);
+              backdrop-filter: blur(12px);
+              -webkit-backdrop-filter: blur(12px);
               padding: 22px 18px;
               border-radius: 18px;
+              box-shadow: 0 18px 45px rgba(11,31,58,0.14);
             }
 
             .heroTextWrap::before {
-              content: "";
-              position: absolute;
-              inset: 0;
-              border-radius: 18px;
-              border: 1.5px solid rgba(42,139,255,0.42);
-              box-shadow: 0 0 0 1px rgba(42,139,255,0.08);
-              pointer-events: none;
+              border: 1.5px solid rgba(200,169,107,0.55);
+              box-shadow: 0 0 0 1px rgba(200,169,107,0.12);
             }
           }
 
@@ -284,29 +296,28 @@ export default function HomePage() {
         `}</style>
       </section>
 
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
+      <div className="h-[3px] w-full bg-[#C8A96B]" />
 
-      {/* ===================== EXPANDED HOME COPY ===================== */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-6">
-              <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+              <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
                 CONSULTING SERVICES
               </p>
 
-              <h2 className="mt-3 text-3xl font-semibold leading-tight text-black/90 md:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#0B1F3A] md:text-4xl">
                 Expert Consulting Services for Business
               </h2>
 
-              <p className="mt-4 text-base leading-relaxed text-black/70 md:text-lg">
+              <p className="mt-4 text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
                 Technology-Driven Solutions for a Complex Business Landscape
               </p>
 
-              <p className="mt-6 text-sm leading-relaxed text-black/60 md:text-base">
+              <p className="mt-6 text-sm leading-relaxed text-[#0B1F3A]/65 md:text-base">
                 At Fuzion Consulting Group and our certified Minority
-                Woman-Owned subsidiary,{" "}
-                <span className="font-semibold text-black/80">
+                Women-Owned subsidiary,{" "}
+                <span className="font-semibold text-[#0B1F3A]">
                   Fuzion Chickasaw Group
                 </span>
                 , we recognize that technology is no longer optional—it’s
@@ -317,14 +328,14 @@ export default function HomePage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
-                  href="/services"
-                  className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+                  href="/capabilities"
+                  className="rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
                 >
-                  Explore Services
+                  Explore Capabilities
                 </Link>
                 <Link
                   href="/company"
-                  className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
+                  className="rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-medium text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
                 >
                   About Our Company →
                 </Link>
@@ -332,11 +343,8 @@ export default function HomePage() {
             </div>
 
             <div className="lg:col-span-6">
-              <div
-                className="rounded-3xl border-2 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
-                style={{ borderColor: LOGO_BLUE }}
-              >
-                <h3 className="text-xl font-semibold text-black/90">
+              <div className="rounded-3xl border-2 border-[#C8A96B]/45 bg-white p-8 shadow-[0_18px_45px_rgba(11,31,58,0.08)]">
+                <h3 className="text-xl font-semibold text-[#0B1F3A]">
                   Our expertise includes:
                 </h3>
 
@@ -352,14 +360,11 @@ export default function HomePage() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="rounded-2xl border border-black/10 bg-white/80 p-4"
+                      className="rounded-2xl border border-[#C8A96B]/25 bg-[#F8F8F6] p-4"
                     >
                       <div className="flex items-start gap-3">
-                        <span
-                          className="mt-1 inline-flex h-2.5 w-2.5 flex-none rounded-full"
-                          style={{ background: LOGO_BLUE }}
-                        />
-                        <p className="text-sm leading-relaxed text-black/70">
+                        <span className="mt-1 inline-flex h-2.5 w-2.5 flex-none rounded-full bg-[#C8A96B]" />
+                        <p className="text-sm leading-relaxed text-[#0B1F3A]/70">
                           {item}
                         </p>
                       </div>
@@ -367,19 +372,17 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <p className="mt-6 text-sm leading-relaxed text-black/60">
+                <p className="mt-6 text-sm leading-relaxed text-[#0B1F3A]/60">
                   With decades of combined experience, our consultants partner
                   closely with each client to understand their unique
                   operational challenges and design sustainable, scalable
-                  solutions. Whether you're a growing startup or a large
-                  enterprise, we bring the insight, precision, and execution
-                  needed to thrive in today’s digital economy.
+                  solutions.
                 </p>
 
                 <div className="mt-6">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-black/5"
+                    className="inline-flex items-center justify-center rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
                   >
                     Talk to a Consultant →
                   </Link>
@@ -390,39 +393,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===================== CAPABILITIES CAROUSEL ===================== */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 pb-16">
+      {/* keep the rest same structure */}
+      <section className="bg-[#F8F8F6]">
+        <div className="mx-auto max-w-7xl px-6 pb-16 pt-4">
           <div className="flex items-end justify-between gap-6">
             <div>
-              <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+              <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
                 CAPABILITIES
               </p>
-              <h3 className="mt-3 text-3xl font-semibold text-black/90">
+              <h3 className="mt-3 text-3xl font-semibold text-[#0B1F3A]">
                 Built for real-world operations
               </h3>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-black/60"></p>
             </div>
 
             <div className="hidden items-center gap-3 md:flex">
-              <button
-                type="button"
-                onClick={() => scrollByCards("left")}
-                className="grid h-12 w-12 place-items-center rounded-2xl text-white shadow-md hover:brightness-110"
-                style={{ background: LOGO_BLUE }}
-                aria-label="Previous"
-              >
-                <span className="text-xl">←</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollByCards("right")}
-                className="grid h-12 w-12 place-items-center rounded-2xl text-white shadow-md hover:brightness-110"
-                style={{ background: LOGO_BLUE }}
-                aria-label="Next"
-              >
-                <span className="text-xl">→</span>
-              </button>
+              {["left", "right"].map((dir) => (
+                <button
+                  key={dir}
+                  type="button"
+                  onClick={() => scrollByCards(dir as "left" | "right")}
+                  className="grid h-12 w-12 place-items-center rounded-2xl bg-[#0B1F3A] text-white shadow-md transition hover:bg-[#132f56]"
+                  aria-label={dir === "left" ? "Previous" : "Next"}
+                >
+                  <span className="text-xl">{dir === "left" ? "←" : "→"}</span>
+                </button>
+              ))}
             </div>
           </div>
 
@@ -430,17 +425,16 @@ export default function HomePage() {
             <button
               type="button"
               onClick={() => scrollByCards("left")}
-              className="absolute left-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-2xl text-white shadow-md hover:brightness-110 md:hidden"
-              style={{ background: LOGO_BLUE }}
+              className="absolute left-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-2xl bg-[#0B1F3A] text-white shadow-md md:hidden"
               aria-label="Previous"
             >
               ←
             </button>
+
             <button
               type="button"
               onClick={() => scrollByCards("right")}
-              className="absolute right-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-2xl text-white shadow-md hover:brightness-110 md:hidden"
-              style={{ background: LOGO_BLUE }}
+              className="absolute right-0 top-1/2 z-10 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-2xl bg-[#0B1F3A] text-white shadow-md md:hidden"
               aria-label="Next"
             >
               →
@@ -454,7 +448,7 @@ export default function HomePage() {
                 <Link
                   key={c.title}
                   href={c.href}
-                  className="group relative snap-start overflow-hidden rounded-3xl border border-black/10 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(0,0,0,0.12)]"
+                  className="group relative snap-start overflow-hidden rounded-3xl border border-[#C8A96B]/25 bg-white shadow-[0_12px_35px_rgba(11,31,58,0.08)] transition hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(11,31,58,0.14)]"
                   style={{ minWidth: "min(720px, 90vw)" }}
                 >
                   <div className="relative h-72 w-full">
@@ -463,33 +457,24 @@ export default function HomePage() {
                       alt={c.title}
                       className="h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/75 via-[#0B1F3A]/15 to-transparent" />
 
-                    <div
-                      className="absolute left-6 top-6 inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold tracking-wide text-white backdrop-blur"
-                      style={{
-                        borderColor: "rgba(255,255,255,0.25)",
-                        background: "rgba(42,139,255,0.20)",
-                      }}
-                    >
+                    <div className="absolute left-6 top-6 inline-flex items-center rounded-full border border-white/25 bg-[#C8A96B]/25 px-3 py-1 text-xs font-semibold tracking-wide text-white backdrop-blur">
                       {c.badge}
                     </div>
                   </div>
 
                   <div className="p-8">
-                    <h4 className="text-3xl font-semibold text-black/90">
+                    <h4 className="text-3xl font-semibold text-[#0B1F3A]">
                       {c.title}
                     </h4>
-                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-black/60">
+                    <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#0B1F3A]/60">
                       {c.desc}
                     </p>
 
-                    <div className="mt-6 inline-flex items-center gap-3 text-sm font-semibold text-black/80">
+                    <div className="mt-6 inline-flex items-center gap-3 text-sm font-semibold text-[#0B1F3A]">
                       Learn more
-                      <span
-                        className="grid h-8 w-8 place-items-center rounded-full border bg-white transition group-hover:translate-x-0.5"
-                        style={{ borderColor: "rgba(0,0,0,0.15)" }}
-                      >
+                      <span className="grid h-8 w-8 place-items-center rounded-full border border-[#C8A96B]/40 bg-white transition group-hover:translate-x-0.5">
                         →
                       </span>
                     </div>
@@ -497,19 +482,12 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
-
-            <p className="mt-4 text-xs text-black/45"></p>
           </div>
         </div>
       </section>
 
-      {/* ===================== CONTACT SECTION ===================== */}
-      <section
-        className="relative overflow-hidden"
-        style={{ background: LOGO_BLUE }}
-      >
-        <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
+      <section className="relative overflow-hidden bg-[#0B1F3A]">
+        <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(200,169,107,0.35),transparent_60%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20">
           <div className="grid gap-12 lg:grid-cols-12">
@@ -517,13 +495,13 @@ export default function HomePage() {
               <h3 className="text-4xl font-semibold tracking-tight text-white">
                 Would love to help.
               </h3>
-              <div className="mt-4 h-[2px] w-16 bg-white/80" />
-              <p className="mt-8 max-w-md text-base leading-relaxed text-white/90">
+              <div className="mt-4 h-[2px] w-16 bg-[#C8A96B]" />
+              <p className="mt-8 max-w-md text-base leading-relaxed text-white/85">
                 Do you have questions about our services? Do you want to learn
                 about ways we can help your business? Contact us now!
               </p>
 
-              <div className="mt-8 space-y-3 text-sm text-white/85">
+              <div className="mt-8 space-y-3 text-sm text-white/80">
                 <p>• Strategy, operations, and modern digital solutions</p>
                 <p>• Built for regulated + high-stakes environments</p>
                 <p>• Scalable execution with measurable outcomes</p>
@@ -531,10 +509,10 @@ export default function HomePage() {
 
               <div className="mt-10">
                 <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                  href="/capabilities"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#F8F8F6]"
                 >
-                  Explore Services →
+                  Explore Capabilities →
                 </Link>
               </div>
             </div>
@@ -542,41 +520,15 @@ export default function HomePage() {
             <div className="lg:col-span-7">
               <form
                 onSubmit={handleSubmit}
-                className="rounded-3xl border border-white/25 bg-white/10 p-8 backdrop-blur"
+                className="rounded-3xl border border-[#C8A96B]/30 bg-white/10 p-8 backdrop-blur"
               >
                 <div className="grid gap-5 md:grid-cols-2">
-                  <Field
-                    label="Name *"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                  <Field
-                    label="Organization *"
-                    name="organization"
-                    value={formData.organization}
-                    onChange={handleChange}
-                  />
-                  <Field
-                    label="Email *"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                  <Field
-                    label="Phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                  />
+                  <Field label="Name *" name="name" value={formData.name} onChange={handleChange} />
+                  <Field label="Organization *" name="organization" value={formData.organization} onChange={handleChange} />
+                  <Field label="Email *" name="email" type="email" value={formData.email} onChange={handleChange} />
+                  <Field label="Phone" name="phone" value={formData.phone} onChange={handleChange} />
                   <div className="md:col-span-2">
-                    <Field
-                      label="Interested in:"
-                      name="interestedIn"
-                      value={formData.interestedIn}
-                      onChange={handleChange}
-                    />
+                    <Field label="Interested in:" name="interestedIn" value={formData.interestedIn} onChange={handleChange} />
                   </div>
                   <div className="md:col-span-2">
                     <label className="block text-sm font-medium text-white/95">
@@ -587,7 +539,7 @@ export default function HomePage() {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className="mt-2 w-full rounded-2xl border border-white/30 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 outline-none focus:border-white/60"
+                      className="mt-2 w-full rounded-2xl border border-[#C8A96B]/35 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 outline-none focus:border-[#C8A96B]"
                       placeholder="Tell us what you're building…"
                     />
                   </div>
@@ -596,13 +548,7 @@ export default function HomePage() {
                 <div className="mt-8 flex items-center justify-between gap-4">
                   <div>
                     {submitStatus.message ? (
-                      <p
-                        className={`text-sm ${
-                          submitStatus.type === "success"
-                            ? "text-white"
-                            : "text-red-100"
-                        }`}
-                      >
+                      <p className="text-sm text-white">
                         {submitStatus.message}
                       </p>
                     ) : null}
@@ -611,13 +557,13 @@ export default function HomePage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="rounded-2xl bg-white px-8 py-3 text-sm font-semibold text-black/90 transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-70"
+                    className="rounded-2xl bg-[#C8A96B] px-8 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#d8bb7c] disabled:cursor-not-allowed disabled:opacity-70"
                   >
                     {isSubmitting ? "SENDING..." : "SUBMIT"}
                   </button>
                 </div>
 
-                <p className="mt-4 text-xs text-white/65">
+                <p className="mt-4 text-xs text-white/60">
                   Your message will be delivered directly to our team.
                 </p>
               </form>
@@ -652,7 +598,7 @@ function Field({
         type={type}
         value={value}
         onChange={onChange}
-        className="mt-2 w-full rounded-2xl border border-white/30 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 outline-none focus:border-white/60"
+        className="mt-2 w-full rounded-2xl border border-[#C8A96B]/35 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 outline-none focus:border-[#C8A96B]"
       />
     </div>
   );

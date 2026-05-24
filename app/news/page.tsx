@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 
-const LOGO_BLUE = "#2a8bff";
-
 type NewsItem = {
   title: string;
   desc: string;
@@ -72,41 +70,40 @@ export default function NewsPage() {
       href: "/news/take-cover-platform",
       category: "Product News",
     },
-{
-  title:
-    "Fuzion Consulting Group and Fuzion Chickasaw Group Visit Anderson Bean Boot Company and Rios of Mercedes in Mercedes, Texas",
-  desc:
-    "Fuzion and Fuzion Chickasaw Group recently visited Anderson Bean Boot Company and Rios of Mercedes in Mercedes, Texas, highlighting continued relationship-building, shared values, and engagement with respected brands rooted in craftsmanship and community.",
-  href: "/news/anderson-bean-rios-of-mercedes-tour",
-  category: "Event",
-  image:
-    "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Webphotos/AB1.jpg", // swap with your real Supabase image
-},
+    {
+      title:
+        "Fuzion Consulting Group and Fuzion Chickasaw Group Visit Anderson Bean Boot Company and Rios of Mercedes in Mercedes, Texas",
+      desc:
+        "Fuzion and Fuzion Chickasaw Group recently visited Anderson Bean Boot Company and Rios of Mercedes in Mercedes, Texas, highlighting continued relationship-building, shared values, and engagement with respected brands rooted in craftsmanship and community.",
+      href: "/news/anderson-bean-rios-of-mercedes-tour",
+      category: "Event",
+      image:
+        "https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Webphotos/AB1.jpg",
+    },
   ];
 
   return (
-    <main className="min-h-screen bg-white pt-28 md:pt-32">
-      {/* ===================== HERO ===================== */}
-      <section className="relative overflow-hidden">
+    <main className="min-h-screen bg-[#F8F8F6] pt-28 md:pt-32">
+      <section className="relative overflow-hidden bg-white">
         <div className="relative h-[420px] w-full">
           <img
             src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=2400&q=80"
             alt="Fuzion news"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/75 via-[#0B1F3A]/25 to-transparent" />
         </div>
 
         <div className="mx-auto max-w-7xl px-6 py-14">
-          <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+          <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
             NEWS
           </p>
 
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-black/90 md:text-5xl">
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-[#0B1F3A] md:text-5xl">
             Latest news and announcements
           </h1>
 
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
             Stay up to date with Fuzion’s latest partnerships, company
             milestones, field activity, and product initiatives.
           </p>
@@ -114,14 +111,14 @@ export default function NewsPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+              className="rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
             >
               Contact Us
             </Link>
 
             <Link
               href="/company"
-              className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
+              className="rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-medium text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
             >
               About Our Company →
             </Link>
@@ -129,19 +126,18 @@ export default function NewsPage() {
         </div>
       </section>
 
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
+      <div className="h-[3px] w-full bg-[#C8A96B]" />
 
-      {/* ===================== NEWS LIST ===================== */}
-      <section className="bg-white">
+      <section className="bg-[#F8F8F6]">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div>
-            <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+            <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
               RECENT UPDATES
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-black/90">
+            <h2 className="mt-3 text-3xl font-semibold text-[#0B1F3A]">
               News from across Fuzion
             </h2>
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/60">
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#0B1F3A]/60">
               Company developments, strategic partnerships, field-driven
               initiatives, and new platform announcements shaping our work
               across industries and communities.
@@ -153,37 +149,28 @@ export default function NewsPage() {
               <Link
                 key={item.title}
                 href={item.href}
-                className="group block rounded-3xl border border-black/10 bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition hover:-translate-y-[2px] hover:shadow-[0_16px_50px_rgba(0,0,0,0.08)] md:p-8"
+                className="group block rounded-3xl border border-[#C8A96B]/25 bg-white p-6 shadow-[0_12px_35px_rgba(11,31,58,0.06)] transition hover:-translate-y-[2px] hover:border-[#C8A96B]/45 hover:shadow-[0_18px_50px_rgba(11,31,58,0.12)] md:p-8"
               >
                 <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                   <div className="flex-1">
-                    <div
-                      className="inline-flex rounded-full border px-3 py-1 text-xs font-semibold tracking-wide text-black/70"
-                      style={{
-                        borderColor: "rgba(0,0,0,0.12)",
-                        background: "rgba(42,139,255,0.10)",
-                      }}
-                    >
+                    <div className="inline-flex rounded-full border border-[#C8A96B]/35 bg-[#C8A96B]/10 px-3 py-1 text-xs font-semibold tracking-wide text-[#0B1F3A]">
                       {item.category}
                     </div>
 
-                    <h3 className="mt-5 text-2xl font-semibold tracking-tight text-black/90">
+                    <h3 className="mt-5 text-2xl font-semibold tracking-tight text-[#0B1F3A]">
                       {item.title}
                     </h3>
 
-                    <p className="mt-4 text-sm leading-relaxed text-black/60 md:text-base">
+                    <p className="mt-4 text-sm leading-relaxed text-[#0B1F3A]/60 md:text-base">
                       {item.desc}
                     </p>
 
-                    <div
-                      className="mt-6 h-[3px] w-12 rounded-full transition-all duration-300 group-hover:w-20"
-                      style={{ background: LOGO_BLUE }}
-                    />
+                    <div className="mt-6 h-[3px] w-12 rounded-full bg-[#C8A96B] transition-all duration-300 group-hover:w-20" />
                   </div>
 
                   {item.image ? (
                     <div className="w-full shrink-0 md:w-[280px]">
-                      <div className="overflow-hidden rounded-2xl border border-black/10 bg-black/5">
+                      <div className="overflow-hidden rounded-2xl border border-[#C8A96B]/25 bg-[#0B1F3A]/5">
                         <img
                           src={item.image}
                           alt={item.title}
@@ -193,8 +180,7 @@ export default function NewsPage() {
                     </div>
                   ) : (
                     <div
-                      className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border bg-white transition group-hover:translate-x-0.5"
-                      style={{ borderColor: "rgba(0,0,0,0.12)" }}
+                      className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-[#C8A96B]/30 bg-white text-[#0B1F3A] transition group-hover:translate-x-0.5 group-hover:bg-[#C8A96B]/10"
                       aria-hidden="true"
                     >
                       →
@@ -207,13 +193,8 @@ export default function NewsPage() {
         </div>
       </section>
 
-      {/* ===================== CTA ===================== */}
-      <section
-        className="relative overflow-hidden"
-        style={{ background: LOGO_BLUE }}
-      >
-        <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
+      <section className="relative overflow-hidden bg-[#0B1F3A]">
+        <div className="pointer-events-none absolute inset-0 opacity-35 [background:radial-gradient(900px_420px_at_30%_15%,rgba(200,169,107,0.38),transparent_60%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-16">
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
@@ -221,7 +202,7 @@ export default function NewsPage() {
               <h3 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
                 Stay connected with Fuzion.
               </h3>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/90 md:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/85 md:text-base">
                 Learn more about our latest initiatives, partnerships, and the
                 work we’re doing across industries and communities.
               </p>
@@ -230,15 +211,15 @@ export default function NewsPage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                className="rounded-full bg-[#C8A96B] px-7 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#d8bb7c]"
               >
                 Contact Us →
               </Link>
               <Link
-                href="/services"
-                className="rounded-full border border-white/30 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"
+                href="/capabilities"
+                className="rounded-full border border-[#C8A96B]/40 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
               >
-                View Services →
+                View Capabilities →
               </Link>
             </div>
           </div>

@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 
-const LOGO_BLUE = "#2a8bff";
+const NAVY = "#0B1F3A";
+const GOLD = "#C8A96B";
+const CREAM = "#F8F8F6";
 
 const projectMeta = [
   {
@@ -11,7 +13,8 @@ const projectMeta = [
   },
   {
     label: "Application",
-    value: "Enterprise document governance platform for Generation engineering and plant operations",
+    value:
+      "Enterprise document governance platform for Generation engineering and plant operations",
   },
   {
     label: "Technology Stack",
@@ -39,20 +42,20 @@ const projectMeta = [
 
 export default function ESLPDLProjectPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
+    <main className="min-h-screen bg-[#F8F8F6]">
+      <div className="h-[3px] w-full bg-[#C8A96B]" />
 
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+          <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
             FUZION CONSULTING GROUP
           </p>
 
-          <h1 className="mt-3 text-3xl font-semibold leading-tight text-black/90 md:text-5xl">
+          <h1 className="mt-3 text-3xl font-semibold leading-tight text-[#0B1F3A] md:text-5xl">
             Engineering Standards & Plant Document Automation (ESL & PDL)
           </h1>
 
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
             Microsoft 365–based modernization of two mission-critical document
             libraries supporting engineering standards, plant documentation, and
             outage execution across regulated Generation operations.
@@ -61,13 +64,13 @@ export default function ESLPDLProjectPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/projects"
-              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+              className="rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
             >
               Back to Projects
             </Link>
             <Link
               href="/contact"
-              className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
+              className="rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-medium text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
             >
               Contact Us →
             </Link>
@@ -77,17 +80,14 @@ export default function ESLPDLProjectPage() {
 
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 pb-8">
-          <div
-            className="rounded-3xl border-2 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
-            style={{ borderColor: LOGO_BLUE }}
-          >
+          <div className="rounded-3xl border-2 border-[#C8A96B]/45 bg-white p-8 shadow-[0_14px_40px_rgba(11,31,58,0.08)]">
             <div className="space-y-5">
               {projectMeta.map((item) => (
                 <div key={item.label}>
-                  <p className="text-sm font-semibold text-black/90">
+                  <p className="text-sm font-semibold text-[#0B1F3A]">
                     {item.label}:
                   </p>
-                  <p className="mt-1 text-base leading-relaxed text-black/70">
+                  <p className="mt-1 text-base leading-relaxed text-[#0B1F3A]/70">
                     {item.value}
                   </p>
                 </div>
@@ -97,15 +97,16 @@ export default function ESLPDLProjectPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#F8F8F6]">
         <div className="mx-auto max-w-5xl px-6 py-10">
           <div className="space-y-12">
             <ContentBlock title="Project Description">
               <p>
-                Fuzion Consulting Group was engaged by the Generation organization
-                of a large electric utility to modernize and automate two
-                mission-critical SharePoint libraries: the Engineering Standards
-                Library (ESL) and the Plant Document Library (PDL).
+                Fuzion Consulting Group was engaged by the Generation
+                organization of a large electric utility to modernize and
+                automate two mission-critical SharePoint libraries: the
+                Engineering Standards Library (ESL) and the Plant Document
+                Library (PDL).
               </p>
 
               <p>
@@ -113,17 +114,17 @@ export default function ESLPDLProjectPage() {
                 plant documentation that are essential to managing generation
                 projects and executing seasonal plant outages during spring and
                 fall operating cycles. Prior to this engagement, document
-                submission, change tracking, and visibility into updated standards
-                relied heavily on manual processes and inconsistent user
-                experiences.
+                submission, change tracking, and visibility into updated
+                standards relied heavily on manual processes and inconsistent
+                user experiences.
               </p>
 
               <p>
                 Fuzion was tasked with enhancing usability, governance, and
                 traceability while aligning ESL and PDL with other Generation
                 automation initiatives, including the Project Management Basis
-                (PMB) and Alarm Response libraries. The goal was to drive toward a
-                single, centralized, and standardized location for managing
+                (PMB) and Alarm Response libraries. The goal was to drive toward
+                a single, centralized, and standardized location for managing
                 Generation documents and specifications in a regulated utility
                 environment.
               </p>
@@ -132,19 +133,19 @@ export default function ESLPDLProjectPage() {
             <ContentBlock title="Scope of Work & Capabilities">
               <p>
                 Fuzion delivered a fully automated Microsoft 365–based solution
-                that included the modernization of both the ESL and PDL SharePoint
-                libraries, structured metadata and taxonomy aligned with
-                engineering and document standards, and role-based security
-                supporting engineers, project engineers, project managers, Owner’s
-                Engineers, and leadership.
+                that included the modernization of both the ESL and PDL
+                SharePoint libraries, structured metadata and taxonomy aligned
+                with engineering and document standards, and role-based security
+                supporting engineers, project engineers, project managers,
+                Owner’s Engineers, and leadership.
               </p>
 
               <p>
-                The solution also introduced automated tracking of newly submitted
-                documents and revisions to existing standards, workflow automation
-                for document review, updates, and approvals, and dashboards with
-                Power BI reporting to provide visibility into document status and
-                changes.
+                The solution also introduced automated tracking of newly
+                submitted documents and revisions to existing standards, workflow
+                automation for document review, updates, and approvals, and
+                dashboards with Power BI reporting to provide visibility into
+                document status and changes.
               </p>
 
               <p>
@@ -161,15 +162,16 @@ export default function ESLPDLProjectPage() {
               <p>
                 The automated ESL and PDL platforms enabled the Generation
                 organization to centralize engineering standards and plant
-                documentation in a governed environment while improving visibility
-                into document changes and newly issued standards.
+                documentation in a governed environment while improving
+                visibility into document changes and newly issued standards.
               </p>
 
               <p>
                 The solution reduced reliance on manual tracking and email-based
                 processes, enhanced collaboration across engineering, project
                 management, and external partners, and supported more consistent
-                execution of outage-related work in regulated operating conditions.
+                execution of outage-related work in regulated operating
+                conditions.
               </p>
 
               <p>
@@ -202,11 +204,11 @@ export default function ESLPDLProjectPage() {
 
             <ContentBlock title="Why This Matters">
               <p>
-                This project demonstrates Fuzion’s ability to modernize enterprise
-                document management in regulated utility environments, apply
-                Microsoft 365 and Power Platform technologies to enforce standards
-                and governance, and design scalable solutions that integrate with
-                broader digital ecosystems.
+                This project demonstrates Fuzion’s ability to modernize
+                enterprise document management in regulated utility environments,
+                apply Microsoft 365 and Power Platform technologies to enforce
+                standards and governance, and design scalable solutions that
+                integrate with broader digital ecosystems.
               </p>
 
               <p>
@@ -220,35 +222,35 @@ export default function ESLPDLProjectPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden" style={{ background: LOGO_BLUE }}>
-        <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
+      <section className="relative overflow-hidden bg-[#0B1F3A]">
+        <div className="pointer-events-none absolute inset-0 opacity-35 [background:radial-gradient(900px_420px_at_30%_15%,rgba(200,169,107,0.38),transparent_60%)]" />
 
         <div className="relative mx-auto max-w-5xl px-6 py-20">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <h3 className="text-4xl font-semibold tracking-tight text-white">
-                Need a partner for modernization, support, or digital transformation?
+                Need a partner for modernization, support, or digital
+                transformation?
               </h3>
-              <div className="mt-4 h-[2px] w-16 bg-white/80" />
-              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/90">
+              <div className="mt-4 h-[2px] w-16 bg-[#C8A96B]" />
+              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/85">
                 Fuzion Consulting Group helps organizations stabilize critical
-                systems, improve operational visibility, and build practical paths
-                forward with modern technology.
+                systems, improve operational visibility, and build practical
+                paths forward with modern technology.
               </p>
             </div>
 
-            <div className="lg:col-span-5 flex items-end lg:justify-end">
+            <div className="flex items-end lg:col-span-5 lg:justify-end">
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                  className="inline-flex items-center justify-center rounded-full bg-[#C8A96B] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#d8bb7c]"
                 >
                   Contact Us →
                 </Link>
                 <Link
                   href="/projects"
-                  className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-full border border-[#C8A96B]/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
                   Back to Projects
                 </Link>
@@ -269,11 +271,11 @@ function ContentBlock({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold text-black/90 md:text-3xl">
+    <section className="rounded-3xl border border-[#C8A96B]/20 bg-white p-7 shadow-[0_10px_30px_rgba(11,31,58,0.04)]">
+      <h2 className="text-2xl font-semibold text-[#0B1F3A] md:text-3xl">
         {title}
       </h2>
-      <div className="mt-5 space-y-4 text-base leading-relaxed text-black/70">
+      <div className="mt-5 space-y-4 text-base leading-relaxed text-[#0B1F3A]/70">
         {children}
       </div>
     </section>

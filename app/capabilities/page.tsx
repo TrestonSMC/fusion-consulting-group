@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 
-const LOGO_BLUE = "#2a8bff";
 const NAV_HEIGHT = 112;
 
 type ServiceCategory = {
@@ -115,41 +114,43 @@ export default function CapabilitiesPage() {
 
   return (
     <main
-      className="min-h-screen bg-white"
+      className="min-h-screen bg-[#F8F8F6]"
       style={{ paddingTop: `${NAV_HEIGHT}px` }}
     >
-      <section className="relative overflow-hidden bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+      <section className="relative overflow-hidden border-b border-[#C8A96B]/20 bg-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(200,169,107,0.18),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(11,31,58,0.10),transparent_32%)]" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-20">
+          <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
             CAPABILITIES
           </p>
 
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-black/90 md:text-5xl">
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-[#0B1F3A] md:text-5xl">
             Fuzion capabilities for business, technology, and operational
             transformation.
           </h1>
 
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
             We support organizations with business and technology capabilities
             that strengthen operations, improve visibility, and help teams move
             faster with better systems in place.
           </p>
 
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-black/60 md:text-lg">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/60 md:text-lg">
             Consulting built for real-world operations.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+              className="rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
             >
               Talk to a Consultant
             </Link>
 
             <Link
               href="/company"
-              className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
+              className="rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-medium text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
             >
               About Our Company →
             </Link>
@@ -157,20 +158,20 @@ export default function CapabilitiesPage() {
         </div>
       </section>
 
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
+      <div className="h-[3px] w-full bg-[#C8A96B]" />
 
-      <section className="bg-white">
+      <section className="bg-[#F8F8F6]">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div>
-            <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+            <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
               WHAT WE DO
             </p>
 
-            <h2 className="mt-3 text-3xl font-semibold text-black/90">
+            <h2 className="mt-3 text-3xl font-semibold text-[#0B1F3A]">
               Our consulting capabilities
             </h2>
 
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/60">
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#0B1F3A]/60">
               Fuzion provides both business-focused consulting and technology
               capabilities designed to solve operational challenges with
               practical, scalable solutions.
@@ -180,7 +181,7 @@ export default function CapabilitiesPage() {
           <div className="mt-12 space-y-14">
             {serviceCategories.map((category) => (
               <div key={category.heading}>
-                <h3 className="text-2xl font-semibold tracking-tight text-black/90">
+                <h3 className="text-2xl font-semibold tracking-tight text-[#0B1F3A]">
                   {category.heading}
                 </h3>
 
@@ -189,22 +190,15 @@ export default function CapabilitiesPage() {
                     <Link
                       key={service.title}
                       href={service.href}
-                      className="group rounded-3xl border border-black/10 bg-white p-7 shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition hover:-translate-y-[2px] hover:shadow-[0_16px_50px_rgba(0,0,0,0.10)]"
+                      className="group rounded-3xl border border-[#C8A96B]/25 bg-white p-7 shadow-[0_12px_35px_rgba(11,31,58,0.06)] transition hover:-translate-y-[2px] hover:border-[#C8A96B]/45 hover:shadow-[0_18px_50px_rgba(11,31,58,0.12)]"
                     >
                       <div className="flex items-center justify-between gap-4">
-                        <div
-                          className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold tracking-wide text-black/70"
-                          style={{
-                            borderColor: "rgba(0,0,0,0.12)",
-                            background: "rgba(42,139,255,0.10)",
-                          }}
-                        >
+                        <div className="inline-flex items-center rounded-full border border-[#C8A96B]/35 bg-[#C8A96B]/10 px-3 py-1 text-xs font-semibold tracking-wide text-[#0B1F3A]">
                           {service.badge}
                         </div>
 
                         <div
-                          className="grid h-10 w-10 place-items-center rounded-2xl border bg-white transition group-hover:translate-x-0.5"
-                          style={{ borderColor: "rgba(0,0,0,0.12)" }}
+                          className="grid h-10 w-10 place-items-center rounded-2xl border border-[#C8A96B]/30 bg-white text-[#0B1F3A] transition group-hover:translate-x-0.5 group-hover:bg-[#C8A96B]/10"
                           aria-hidden="true"
                         >
                           →
@@ -212,18 +206,15 @@ export default function CapabilitiesPage() {
                       </div>
 
                       <div className="mt-6">
-                        <h4 className="text-xl font-semibold tracking-tight text-black/90">
+                        <h4 className="text-xl font-semibold tracking-tight text-[#0B1F3A]">
                           {service.title}
                         </h4>
 
-                        <p className="mt-3 text-sm leading-relaxed text-black/60">
+                        <p className="mt-3 text-sm leading-relaxed text-[#0B1F3A]/60">
                           {service.desc}
                         </p>
 
-                        <div
-                          className="mt-6 h-[3px] w-12 rounded-full"
-                          style={{ background: LOGO_BLUE }}
-                        />
+                        <div className="mt-6 h-[3px] w-12 rounded-full bg-[#C8A96B]" />
                       </div>
                     </Link>
                   ))}
@@ -235,7 +226,7 @@ export default function CapabilitiesPage() {
           <div className="mt-12">
             <Link
               href="/contact"
-              className="inline-flex rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-black/5"
+              className="inline-flex rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
             >
               Start a conversation →
             </Link>
@@ -243,12 +234,8 @@ export default function CapabilitiesPage() {
         </div>
       </section>
 
-      <section
-        className="relative overflow-hidden"
-        style={{ background: LOGO_BLUE }}
-      >
-        <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
+      <section className="relative overflow-hidden bg-[#0B1F3A]">
+        <div className="pointer-events-none absolute inset-0 opacity-35 [background:radial-gradient(900px_420px_at_30%_15%,rgba(200,169,107,0.38),transparent_60%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-16">
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
@@ -257,7 +244,7 @@ export default function CapabilitiesPage() {
                 Would love to help.
               </h3>
 
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/90 md:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/85 md:text-base">
                 Tell us what you’re trying to improve — we’ll help map the
                 fastest path to practical, measurable outcomes.
               </p>
@@ -266,14 +253,14 @@ export default function CapabilitiesPage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                className="rounded-full bg-[#C8A96B] px-7 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#d8bb7c]"
               >
                 Contact Us →
               </Link>
 
               <Link
                 href="/company"
-                className="rounded-full border border-white/30 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"
+                className="rounded-full border border-[#C8A96B]/40 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
               >
                 About the team →
               </Link>

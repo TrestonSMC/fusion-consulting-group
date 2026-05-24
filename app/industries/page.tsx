@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 
-const LOGO_BLUE = "#2a8bff";
-
 const industries = [
   {
     name: "Construction",
@@ -69,28 +67,27 @@ const industries = [
 
 export default function IndustriesPage() {
   return (
-    <main className="min-h-screen bg-white pt-28 md:pt-32">
-      {/* HERO */}
-      <section className="relative overflow-hidden">
+    <main className="min-h-screen bg-[#F8F8F6] pt-28 md:pt-32">
+      <section className="relative overflow-hidden bg-white">
         <div className="relative h-[420px] w-full">
           <img
             src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=80"
             alt="Industries we serve"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/75 via-[#0B1F3A]/25 to-transparent" />
         </div>
 
         <div className="mx-auto max-w-7xl px-6 py-14">
-          <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+          <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
             INDUSTRIES
           </p>
 
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-black/90 md:text-5xl">
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-[#0B1F3A] md:text-5xl">
             Industries we serve
           </h1>
 
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
             Fuzion supports organizations across a wide range of industries,
             delivering consulting and technology solutions tailored to the
             operational, regulatory, and performance demands of each sector.
@@ -99,36 +96,35 @@ export default function IndustriesPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+              className="rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
             >
               Talk to a Consultant
             </Link>
 
             <Link
-              href="/services"
-              className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
+              href="/capabilities"
+              className="rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-medium text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
             >
-              View Services →
+              View Capabilities →
             </Link>
           </div>
         </div>
       </section>
 
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
+      <div className="h-[3px] w-full bg-[#C8A96B]" />
 
-      {/* WHO WE SERVE */}
-      <section className="bg-white">
+      <section className="bg-[#F8F8F6]">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div>
-            <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+            <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
               WHO WE SERVE
             </p>
 
-            <h2 className="mt-3 text-3xl font-semibold text-black/90">
+            <h2 className="mt-3 text-3xl font-semibold text-[#0B1F3A]">
               Deep experience across industries
             </h2>
 
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/60">
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#0B1F3A]/60">
               Our experience spans regulated environments, operationally complex
               organizations, public-sector programs, nonprofits, and high-growth
               teams. We bring practical solutions that align with how each
@@ -140,18 +136,15 @@ export default function IndustriesPage() {
             {industries.map((industry) => (
               <div
                 key={industry.name}
-                className="group rounded-3xl border border-black/10 bg-white p-7 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition hover:-translate-y-[2px] hover:shadow-[0_16px_50px_rgba(0,0,0,0.08)]"
+                className="group rounded-3xl border border-[#C8A96B]/25 bg-white p-7 shadow-[0_12px_35px_rgba(11,31,58,0.06)] transition hover:-translate-y-[2px] hover:border-[#C8A96B]/45 hover:shadow-[0_18px_50px_rgba(11,31,58,0.12)]"
               >
-                <div
-                  className="mb-4 h-[3px] w-12 rounded-full"
-                  style={{ background: LOGO_BLUE }}
-                />
+                <div className="mb-4 h-[3px] w-12 rounded-full bg-[#C8A96B]" />
 
-                <h3 className="text-xl font-semibold text-black/90">
+                <h3 className="text-xl font-semibold text-[#0B1F3A]">
                   {industry.name}
                 </h3>
 
-                <p className="mt-3 text-sm leading-relaxed text-black/60">
+                <p className="mt-3 text-sm leading-relaxed text-[#0B1F3A]/60">
                   {industry.desc}
                 </p>
               </div>
@@ -160,13 +153,8 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section
-        className="relative overflow-hidden"
-        style={{ background: LOGO_BLUE }}
-      >
-        <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
+      <section className="relative overflow-hidden bg-[#0B1F3A]">
+        <div className="pointer-events-none absolute inset-0 opacity-35 [background:radial-gradient(900px_420px_at_30%_15%,rgba(200,169,107,0.38),transparent_60%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-16">
           <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
@@ -174,25 +162,26 @@ export default function IndustriesPage() {
               <h3 className="text-3xl font-semibold text-white md:text-4xl">
                 Let’s build something that works.
               </h3>
-              <p className="mt-4 max-w-2xl text-sm text-white/90 md:text-base">
+              <p className="mt-4 max-w-2xl text-sm text-white/85 md:text-base">
                 No matter the industry, we help organizations streamline
-                operations, improve visibility, and move forward with confidence.
+                operations, improve visibility, and move forward with
+                confidence.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                className="rounded-full bg-[#C8A96B] px-7 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#d8bb7c]"
               >
                 Contact Us →
               </Link>
 
               <Link
-                href="/services"
-                className="rounded-full border border-white/30 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"
+                href="/capabilities"
+                className="rounded-full border border-[#C8A96B]/40 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
               >
-                Explore Services →
+                Explore Capabilities →
               </Link>
             </div>
           </div>

@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 
-const LOGO_BLUE = "#2a8bff";
+const NAVY = "#0B1F3A";
+const GOLD = "#C8A96B";
+const CREAM = "#F8F8F6";
 
 const projectMeta = [
   {
@@ -38,35 +40,36 @@ const projectMeta = [
 
 export default function GDMPProjectPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
+    <main className="min-h-screen bg-[#F8F8F6]">
+      <div className="h-[3px] w-full bg-[#C8A96B]" />
 
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+          <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
             FUZION CONSULTING GROUP
           </p>
 
-          <h1 className="mt-3 text-3xl font-semibold leading-tight text-black/90 md:text-5xl">
+          <h1 className="mt-3 text-3xl font-semibold leading-tight text-[#0B1F3A] md:text-5xl">
             Generation Document Management Portal (GDMP)
           </h1>
 
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
             Multi-year enterprise document management platform supporting
-            construction, engineering, and generation operations through long-term
-            design, development, pilot expansion, and managed lifecycle support.
+            construction, engineering, and generation operations through
+            long-term design, development, pilot expansion, and managed lifecycle
+            support.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/projects"
-              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+              className="rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
             >
               Back to Projects
             </Link>
             <Link
               href="/contact"
-              className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
+              className="rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-medium text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
             >
               Contact Us →
             </Link>
@@ -76,17 +79,14 @@ export default function GDMPProjectPage() {
 
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 pb-8">
-          <div
-            className="rounded-3xl border-2 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
-            style={{ borderColor: LOGO_BLUE }}
-          >
+          <div className="rounded-3xl border-2 border-[#C8A96B]/45 bg-white p-8 shadow-[0_14px_40px_rgba(11,31,58,0.08)]">
             <div className="space-y-5">
               {projectMeta.map((item) => (
                 <div key={item.label}>
-                  <p className="text-sm font-semibold text-black/90">
+                  <p className="text-sm font-semibold text-[#0B1F3A]">
                     {item.label}:
                   </p>
-                  <p className="mt-1 text-base leading-relaxed text-black/70">
+                  <p className="mt-1 text-base leading-relaxed text-[#0B1F3A]/70">
                     {item.value}
                   </p>
                 </div>
@@ -96,7 +96,7 @@ export default function GDMPProjectPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#F8F8F6]">
         <div className="mx-auto max-w-5xl px-6 py-10">
           <div className="space-y-12">
             <ContentBlock title="Project Overview">
@@ -104,23 +104,23 @@ export default function GDMPProjectPage() {
                 Fuzion Consulting Group has served as a long-term technology
                 partner for one of the largest electric utilities in the Phoenix,
                 Arizona metro area, supporting the design, development, and
-                ongoing evolution of a custom Generation Document Management Portal
-                (GDMP). Internally branded by Fuzion as{" "}
-                <span className="font-semibold text-black/85">
+                ongoing evolution of a custom Generation Document Management
+                Portal (GDMP). Internally branded by Fuzion as{" "}
+                <span className="font-semibold text-[#0B1F3A]">
                   FCG365 Fieldworks
                 </span>
-                , the platform was created to modernize construction, engineering,
-                and operational document workflows across large-scale generation
-                projects.
+                , the platform was created to modernize construction,
+                engineering, and operational document workflows across
+                large-scale generation projects.
               </p>
 
               <p>
                 Since the initial engagement, Fuzion has provided continuous
                 application development, pilot testing, production support, and
                 lifecycle management services. The program evolved from early
-                discovery and proof-of-concept work into a mature, enterprise-grade
-                application supporting field teams, engineering stakeholders, and
-                operational leadership.
+                discovery and proof-of-concept work into a mature,
+                enterprise-grade application supporting field teams, engineering
+                stakeholders, and operational leadership.
               </p>
 
               <p>
@@ -134,27 +134,28 @@ export default function GDMPProjectPage() {
             <ContentBlock title="Scope & Capabilities Delivered">
               <p>
                 Across multiple phases and contract years, Fuzion delivered a
-                comprehensive set of services that included design and development
-                of a centralized construction and generation document management
-                platform, integration with Microsoft 365 and cloud-based
-                collaboration tools, and secure document storage with versioning
-                and approval workflows.
+                comprehensive set of services that included design and
+                development of a centralized construction and generation document
+                management platform, integration with Microsoft 365 and
+                cloud-based collaboration tools, and secure document storage with
+                versioning and approval workflows.
               </p>
 
               <p>
                 The platform was shaped with field-friendly user experiences
-                optimized for construction and operational environments, making it
-                practical for day-to-day use while maintaining enterprise
-                governance standards. Fuzion also provided application management,
-                ongoing production support, pilot program execution, discovery
-                efforts, and iterative enhancements as the platform matured.
+                optimized for construction and operational environments, making
+                it practical for day-to-day use while maintaining enterprise
+                governance standards. Fuzion also provided application
+                management, ongoing production support, pilot program execution,
+                discovery efforts, and iterative enhancements as the platform
+                matured.
               </p>
 
               <p>
                 Additional delivery included change management, end-user training
                 and adoption support, software upgrades, release management, and
-                performance optimization—ensuring the application remained stable,
-                relevant, and scalable as operational needs evolved.
+                performance optimization—ensuring the application remained
+                stable, relevant, and scalable as operational needs evolved.
               </p>
             </ContentBlock>
 
@@ -163,22 +164,23 @@ export default function GDMPProjectPage() {
                 Fuzion supported the GDMP program through successive phases of
                 growth and expansion. In 2022, the focus centered on application
                 management and support for discovery and pilot testing. In 2023,
-                the engagement expanded into continued application development and
-                broader pilot testing across operational use cases.
+                the engagement expanded into continued application development
+                and broader pilot testing across operational use cases.
               </p>
 
               <p>
                 During 2024, Fuzion continued supporting pilot operations while
                 introducing new feature development and platform enhancements. In
-                2025, the effort advanced into pilot expansion, change management,
-                training, and software upgrades and releases.
+                2025, the effort advanced into pilot expansion, change
+                management, training, and software upgrades and releases.
               </p>
 
               <p>
                 Each phase built on prior work, allowing the platform to scale
                 alongside operational needs while maintaining reliability,
-                security, and compliance. This long-term structure gave the client
-                a stable modernization path rather than a one-time implementation.
+                security, and compliance. This long-term structure gave the
+                client a stable modernization path rather than a one-time
+                implementation.
               </p>
             </ContentBlock>
 
@@ -192,11 +194,11 @@ export default function GDMPProjectPage() {
 
               <p>
                 The platform enhanced collaboration between field teams,
-                engineering stakeholders, and operations leadership, helping create
-                more consistent standards across large, regulated infrastructure
-                projects. It also improved the organization’s ability to manage
-                documentation in a more structured and scalable way as projects and
-                operational demands increased.
+                engineering stakeholders, and operations leadership, helping
+                create more consistent standards across large, regulated
+                infrastructure projects. It also improved the organization’s
+                ability to manage documentation in a more structured and scalable
+                way as projects and operational demands increased.
               </p>
 
               <p>
@@ -228,35 +230,35 @@ export default function GDMPProjectPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden" style={{ background: LOGO_BLUE }}>
-        <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
+      <section className="relative overflow-hidden bg-[#0B1F3A]">
+        <div className="pointer-events-none absolute inset-0 opacity-35 [background:radial-gradient(900px_420px_at_30%_15%,rgba(200,169,107,0.38),transparent_60%)]" />
 
         <div className="relative mx-auto max-w-5xl px-6 py-20">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <h3 className="text-4xl font-semibold tracking-tight text-white">
-                Need a partner for modernization, support, or digital transformation?
+                Need a partner for modernization, support, or digital
+                transformation?
               </h3>
-              <div className="mt-4 h-[2px] w-16 bg-white/80" />
-              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/90">
+              <div className="mt-4 h-[2px] w-16 bg-[#C8A96B]" />
+              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/85">
                 Fuzion Consulting Group helps organizations stabilize critical
-                systems, improve operational visibility, and build practical paths
-                forward with modern technology.
+                systems, improve operational visibility, and build practical
+                paths forward with modern technology.
               </p>
             </div>
 
-            <div className="lg:col-span-5 flex items-end lg:justify-end">
+            <div className="flex items-end lg:col-span-5 lg:justify-end">
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                  className="inline-flex items-center justify-center rounded-full bg-[#C8A96B] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#d8bb7c]"
                 >
                   Contact Us →
                 </Link>
                 <Link
                   href="/projects"
-                  className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-full border border-[#C8A96B]/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
                   Back to Projects
                 </Link>
@@ -277,11 +279,11 @@ function ContentBlock({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold text-black/90 md:text-3xl">
+    <section className="rounded-3xl border border-[#C8A96B]/20 bg-white p-7 shadow-[0_10px_30px_rgba(11,31,58,0.04)]">
+      <h2 className="text-2xl font-semibold text-[#0B1F3A] md:text-3xl">
         {title}
       </h2>
-      <div className="mt-5 space-y-4 text-base leading-relaxed text-black/70">
+      <div className="mt-5 space-y-4 text-base leading-relaxed text-[#0B1F3A]/70">
         {children}
       </div>
     </section>

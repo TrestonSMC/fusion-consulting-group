@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 
-const LOGO_BLUE = "#2a8bff";
+const NAVY = "#0B1F3A";
+const GOLD = "#C8A96B";
+const CREAM = "#F8F8F6";
 
 const projectMeta = [
   {
@@ -39,20 +41,20 @@ const projectMeta = [
 
 export default function PMBLibraryPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
+    <main className="min-h-screen bg-[#F8F8F6]">
+      <div className="h-[3px] w-full bg-[#C8A96B]" />
 
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+          <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
             FUZION CONSULTING GROUP
           </p>
 
-          <h1 className="mt-3 text-3xl font-semibold leading-tight text-black/90 md:text-5xl">
+          <h1 className="mt-3 text-3xl font-semibold leading-tight text-[#0B1F3A] md:text-5xl">
             Project Management Basis (PMB) SP Library
           </h1>
 
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
             Centralized Microsoft 365 project governance platform designed to
             unify project processes, Stage Gate lifecycle guidance, engineering
             standards, and operational reference materials for Generation project
@@ -62,13 +64,13 @@ export default function PMBLibraryPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/projects"
-              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+              className="rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
             >
               Back to Projects
             </Link>
             <Link
               href="/contact"
-              className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
+              className="rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-medium text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
             >
               Contact Us →
             </Link>
@@ -78,17 +80,14 @@ export default function PMBLibraryPage() {
 
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 pb-8">
-          <div
-            className="rounded-3xl border-2 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
-            style={{ borderColor: LOGO_BLUE }}
-          >
+          <div className="rounded-3xl border-2 border-[#C8A96B]/45 bg-white p-8 shadow-[0_14px_40px_rgba(11,31,58,0.08)]">
             <div className="space-y-5">
               {projectMeta.map((item) => (
                 <div key={item.label}>
-                  <p className="text-sm font-semibold text-black/90">
+                  <p className="text-sm font-semibold text-[#0B1F3A]">
                     {item.label}:
                   </p>
-                  <p className="mt-1 text-base leading-relaxed text-black/70">
+                  <p className="mt-1 text-base leading-relaxed text-[#0B1F3A]/70">
                     {item.value}
                   </p>
                 </div>
@@ -98,41 +97,41 @@ export default function PMBLibraryPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#F8F8F6]">
         <div className="mx-auto max-w-5xl px-6 py-10">
           <div className="space-y-12">
             <ContentBlock title="Project Highlight">
               <p>
-                Fuzion Consulting Group was engaged by the Generation organization
-                of a large electric utility to design and implement a centralized
-                Project Management Basis (PMB) SharePoint Library to support
-                enterprise-wide project execution and governance.
+                Fuzion Consulting Group was engaged by the Generation
+                organization of a large electric utility to design and implement
+                a centralized Project Management Basis (PMB) SharePoint Library
+                to support enterprise-wide project execution and governance.
               </p>
 
               <p>
                 The PMB platform was created to serve as a single source of truth
-                for Generation project management practices, consolidating project
-                management processes, Stage Gate 1–5 definitions, engineering
-                standards, vendor and supplier specifications, and operational
-                guidance into a secure, structured, and highly accessible
-                Microsoft 365 environment.
+                for Generation project management practices, consolidating
+                project management processes, Stage Gate 1–5 definitions,
+                engineering standards, vendor and supplier specifications, and
+                operational guidance into a secure, structured, and highly
+                accessible Microsoft 365 environment.
               </p>
 
               <p>
                 In addition, the platform provides documentation and reference
-                materials for the internal and external software applications used
-                by project managers to plan and execute major outages during
+                materials for the internal and external software applications
+                used by project managers to plan and execute major outages during
                 spring and fall operating cycles.
               </p>
             </ContentBlock>
 
             <ContentBlock title="Scope of Work & Capabilities">
               <p>
-                Fuzion delivered a comprehensive Microsoft 365–based solution that
-                included the design and deployment of a Generation-wide PMB
+                Fuzion delivered a comprehensive Microsoft 365–based solution
+                that included the design and deployment of a Generation-wide PMB
                 SharePoint Library, structured metadata and taxonomy to support
-                search, governance, and reporting, and role-based security aligned
-                with project managers, engineers, Owner’s Engineers, and
+                search, governance, and reporting, and role-based security
+                aligned with project managers, engineers, Owner’s Engineers, and
                 leadership.
               </p>
 
@@ -146,10 +145,10 @@ export default function PMBLibraryPage() {
 
               <p>
                 Fuzion also implemented reference documentation for internal and
-                external project management and outage tools, custom dashboards and
-                reporting for visibility and consistency, Power Apps–based forms to
-                standardize submissions and updates, and Power Automate workflows
-                to support approvals and process automation.
+                external project management and outage tools, custom dashboards
+                and reporting for visibility and consistency, Power Apps–based
+                forms to standardize submissions and updates, and Power Automate
+                workflows to support approvals and process automation.
               </p>
 
               <p>
@@ -163,9 +162,9 @@ export default function PMBLibraryPage() {
             <ContentBlock title="Business Impact">
               <p>
                 The PMB Central Hub enabled the Generation organization to
-                standardize project management practices across complex capital and
-                outage projects while reducing reliance on disconnected documents
-                and tribal knowledge.
+                standardize project management practices across complex capital
+                and outage projects while reducing reliance on disconnected
+                documents and tribal knowledge.
               </p>
 
               <p>
@@ -178,9 +177,9 @@ export default function PMBLibraryPage() {
 
               <p>
                 The platform also established a scalable governance foundation
-                aligned with Microsoft 365 best practices, giving the organization
-                a more structured and sustainable model for project execution and
-                operational consistency.
+                aligned with Microsoft 365 best practices, giving the
+                organization a more structured and sustainable model for project
+                execution and operational consistency.
               </p>
             </ContentBlock>
 
@@ -224,35 +223,35 @@ export default function PMBLibraryPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden" style={{ background: LOGO_BLUE }}>
-        <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
+      <section className="relative overflow-hidden bg-[#0B1F3A]">
+        <div className="pointer-events-none absolute inset-0 opacity-35 [background:radial-gradient(900px_420px_at_30%_15%,rgba(200,169,107,0.38),transparent_60%)]" />
 
         <div className="relative mx-auto max-w-5xl px-6 py-20">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <h3 className="text-4xl font-semibold tracking-tight text-white">
-                Need a partner for modernization, support, or digital transformation?
+                Need a partner for modernization, support, or digital
+                transformation?
               </h3>
-              <div className="mt-4 h-[2px] w-16 bg-white/80" />
-              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/90">
+              <div className="mt-4 h-[2px] w-16 bg-[#C8A96B]" />
+              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/85">
                 Fuzion Consulting Group helps organizations stabilize critical
-                systems, improve operational visibility, and build practical paths
-                forward with modern technology.
+                systems, improve operational visibility, and build practical
+                paths forward with modern technology.
               </p>
             </div>
 
-            <div className="lg:col-span-5 flex items-end lg:justify-end">
+            <div className="flex items-end lg:col-span-5 lg:justify-end">
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                  className="inline-flex items-center justify-center rounded-full bg-[#C8A96B] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#d8bb7c]"
                 >
                   Contact Us →
                 </Link>
                 <Link
                   href="/projects"
-                  className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-full border border-[#C8A96B]/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
                   Back to Projects
                 </Link>
@@ -273,11 +272,11 @@ function ContentBlock({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold text-black/90 md:text-3xl">
+    <section className="rounded-3xl border border-[#C8A96B]/20 bg-white p-7 shadow-[0_10px_30px_rgba(11,31,58,0.04)]">
+      <h2 className="text-2xl font-semibold text-[#0B1F3A] md:text-3xl">
         {title}
       </h2>
-      <div className="mt-5 space-y-4 text-base leading-relaxed text-black/70">
+      <div className="mt-5 space-y-4 text-base leading-relaxed text-[#0B1F3A]/70">
         {children}
       </div>
     </section>

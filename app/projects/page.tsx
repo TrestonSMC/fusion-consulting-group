@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 
-const LOGO_BLUE = "#2a8bff";
-
 type Project = {
   slug: string;
   category: string;
@@ -246,49 +244,48 @@ const engagementPhases = [
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-white pt-28 md:pt-32">
+    <main className="min-h-screen bg-[#F8F8F6] pt-28 md:pt-32">
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 pb-16 pt-10 md:pb-20 md:pt-12">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-6">
-              <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+              <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
                 PROJECT EXPERIENCE
               </p>
 
-              <h1 className="mt-3 text-3xl font-semibold leading-tight text-black/90 md:text-5xl">
-                Selected projects built for complex operations and measurable outcomes.
+              <h1 className="mt-3 text-3xl font-semibold leading-tight text-[#0B1F3A] md:text-5xl">
+                Selected projects built for complex operations and measurable
+                outcomes.
               </h1>
 
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-black/70 md:text-lg">
-                Fuzion Consulting Group helps organizations modernize legacy systems,
-                improve visibility, and create scalable digital foundations. Our
-                project work reflects hands-on delivery across business-critical
-                applications, operational transformation, and modernization strategy.
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
+                Fuzion Consulting Group helps organizations modernize legacy
+                systems, improve visibility, and create scalable digital
+                foundations. Our project work reflects hands-on delivery across
+                business-critical applications, operational transformation, and
+                modernization strategy.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+                  className="rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
                 >
                   Start a Conversation
                 </Link>
 
                 <Link
-                  href="/services"
-                  className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
+                  href="/capabilities"
+                  className="rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-medium text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
                 >
-                  View Services →
+                  View Capabilities →
                 </Link>
               </div>
             </div>
 
             <div className="lg:col-span-6">
-              <div
-                className="rounded-3xl border-2 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
-                style={{ borderColor: LOGO_BLUE }}
-              >
-                <h2 className="text-xl font-semibold text-black/90">
+              <div className="rounded-3xl border-2 border-[#C8A96B]/45 bg-white p-8 shadow-[0_14px_40px_rgba(11,31,58,0.08)]">
+                <h2 className="text-xl font-semibold text-[#0B1F3A]">
                   What our project work demonstrates
                 </h2>
 
@@ -303,14 +300,11 @@ export default function ProjectsPage() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="rounded-2xl border border-black/10 bg-white/80 p-4"
+                      className="rounded-2xl border border-[#C8A96B]/20 bg-[#F8F8F6] p-4"
                     >
                       <div className="flex items-start gap-3">
-                        <span
-                          className="mt-1 inline-flex h-2.5 w-2.5 flex-none rounded-full"
-                          style={{ background: LOGO_BLUE }}
-                        />
-                        <p className="text-sm leading-relaxed text-black/70">
+                        <span className="mt-1 inline-flex h-2.5 w-2.5 flex-none rounded-full bg-[#C8A96B]" />
+                        <p className="text-sm leading-relaxed text-[#0B1F3A]/70">
                           {item}
                         </p>
                       </div>
@@ -318,11 +312,11 @@ export default function ProjectsPage() {
                   ))}
                 </div>
 
-                <p className="mt-6 text-sm leading-relaxed text-black/60">
+                <p className="mt-6 text-sm leading-relaxed text-[#0B1F3A]/60">
                   Each engagement is built around business continuity, technical
                   clarity, and long-term value. We focus on solving operational
-                  challenges while creating a practical path forward for modernization
-                  and growth.
+                  challenges while creating a practical path forward for
+                  modernization and growth.
                 </p>
               </div>
             </div>
@@ -330,32 +324,36 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 pb-8">
+      <div className="h-[3px] w-full bg-[#C8A96B]" />
+
+      <section className="bg-[#F8F8F6]">
+        <div className="mx-auto max-w-7xl px-6 py-8">
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {impactStats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-3xl border border-black/10 bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+                className="rounded-3xl border border-[#C8A96B]/25 bg-white p-6 shadow-[0_10px_30px_rgba(11,31,58,0.05)]"
               >
-                <div className="text-3xl font-semibold text-black/90">
+                <div className="text-3xl font-semibold text-[#0B1F3A]">
                   {stat.value}
                 </div>
-                <div className="mt-2 text-sm text-black/60">{stat.label}</div>
+                <div className="mt-2 text-sm text-[#0B1F3A]/60">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#F8F8F6]">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div>
-            <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+            <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
               FEATURED PROJECTS
             </p>
 
-            <h2 className="mt-3 text-3xl font-semibold text-black/90 md:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold text-[#0B1F3A] md:text-4xl">
               Recent project highlights
             </h2>
           </div>
@@ -364,7 +362,7 @@ export default function ProjectsPage() {
             {projects.map((project) => (
               <article
                 key={project.slug}
-                className="overflow-hidden rounded-3xl border border-black/10 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+                className="overflow-hidden rounded-3xl border border-[#C8A96B]/25 bg-white shadow-[0_12px_35px_rgba(11,31,58,0.08)]"
               >
                 <div className="grid lg:grid-cols-12">
                   <div className="relative min-h-[320px] lg:col-span-5">
@@ -378,45 +376,39 @@ export default function ProjectsPage() {
                       }`}
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/75 via-[#0B1F3A]/15 to-transparent" />
 
-                    <div
-                      className="absolute left-6 top-6 inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold tracking-wide text-white backdrop-blur"
-                      style={{
-                        borderColor: "rgba(255,255,255,0.25)",
-                        background: "rgba(42,139,255,0.20)",
-                      }}
-                    >
+                    <div className="absolute left-6 top-6 inline-flex items-center rounded-full border border-white/25 bg-[#C8A96B]/25 px-3 py-1 text-xs font-semibold tracking-wide text-white backdrop-blur">
                       {project.badge}
                     </div>
                   </div>
 
                   <div className="p-8 md:p-10 lg:col-span-7">
-                    <p className="text-xs font-semibold tracking-[0.25em] text-black/55">
+                    <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
                       {project.category}
                     </p>
 
-                    <h3 className="mt-3 text-3xl font-semibold text-black/90 md:text-4xl">
+                    <h3 className="mt-3 text-3xl font-semibold text-[#0B1F3A] md:text-4xl">
                       {project.title}
                     </h3>
 
-                    <div className="mt-4 flex flex-wrap gap-3 text-sm text-black/60">
-                      <span className="rounded-full border border-black/10 px-3 py-1">
+                    <div className="mt-4 flex flex-wrap gap-3 text-sm text-[#0B1F3A]/60">
+                      <span className="rounded-full border border-[#C8A96B]/25 px-3 py-1">
                         {project.client}
                       </span>
 
-                      <span className="rounded-full border border-black/10 px-3 py-1">
+                      <span className="rounded-full border border-[#C8A96B]/25 px-3 py-1">
                         {project.duration}
                       </span>
                     </div>
 
-                    <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70">
+                    <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/70">
                       {project.summary}
                     </p>
 
                     {project.epmsNote && (
-                      <div className="mt-5 rounded-2xl border border-black/10 bg-black/[0.02] p-4">
-                        <p className="text-sm leading-relaxed text-black/65">
+                      <div className="mt-5 rounded-2xl border border-[#C8A96B]/20 bg-[#F8F8F6] p-4">
+                        <p className="text-sm leading-relaxed text-[#0B1F3A]/65">
                           {project.epmsNote}
                         </p>
                       </div>
@@ -424,19 +416,15 @@ export default function ProjectsPage() {
 
                     <div className="mt-8 grid gap-6 md:grid-cols-2">
                       <div>
-                        <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-black/55">
+                        <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-[#C8A96B]">
                           Key Challenges
                         </h4>
 
                         <div className="mt-4 space-y-3">
                           {project.challenge.map((item) => (
                             <div key={item} className="flex items-start gap-3">
-                              <span
-                                className="mt-2 inline-flex h-2.5 w-2.5 flex-none rounded-full"
-                                style={{ background: LOGO_BLUE }}
-                              />
-
-                              <p className="text-sm leading-relaxed text-black/70">
+                              <span className="mt-2 inline-flex h-2.5 w-2.5 flex-none rounded-full bg-[#C8A96B]" />
+                              <p className="text-sm leading-relaxed text-[#0B1F3A]/70">
                                 {item}
                               </p>
                             </div>
@@ -445,19 +433,15 @@ export default function ProjectsPage() {
                       </div>
 
                       <div>
-                        <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-black/55">
+                        <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-[#C8A96B]">
                           Delivered
                         </h4>
 
                         <div className="mt-4 space-y-3">
                           {project.delivered.map((item) => (
                             <div key={item} className="flex items-start gap-3">
-                              <span
-                                className="mt-2 inline-flex h-2.5 w-2.5 flex-none rounded-full"
-                                style={{ background: LOGO_BLUE }}
-                              />
-
-                              <p className="text-sm leading-relaxed text-black/70">
+                              <span className="mt-2 inline-flex h-2.5 w-2.5 flex-none rounded-full bg-[#C8A96B]" />
+                              <p className="text-sm leading-relaxed text-[#0B1F3A]/70">
                                 {item}
                               </p>
                             </div>
@@ -469,7 +453,7 @@ export default function ProjectsPage() {
                     <div className="mt-8">
                       <Link
                         href={`/projects/${project.slug}`}
-                        className="inline-flex items-center justify-center rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+                        className="inline-flex items-center justify-center rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
                       >
                         View Project Details →
                       </Link>
@@ -482,30 +466,24 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-[#F8F8F6]">
         <div className="mx-auto max-w-7xl px-6 py-6 md:py-10">
-          <div
-            className="rounded-3xl border-2 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
-            style={{ borderColor: LOGO_BLUE }}
-          >
+          <div className="rounded-3xl border-2 border-[#C8A96B]/45 bg-white p-8 shadow-[0_14px_40px_rgba(11,31,58,0.08)]">
             <div className="grid gap-8 lg:grid-cols-3">
               {engagementPhases.map((phase, index) => (
                 <div
                   key={phase.title}
-                  className="rounded-2xl border border-black/10 bg-white/80 p-5"
+                  className="rounded-2xl border border-[#C8A96B]/20 bg-[#F8F8F6] p-5"
                 >
-                  <div
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold text-white"
-                    style={{ background: LOGO_BLUE }}
-                  >
+                  <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#0B1F3A] text-sm font-semibold text-[#C8A96B]">
                     {index + 1}
                   </div>
 
-                  <h3 className="mt-4 text-lg font-semibold text-black/90">
+                  <h3 className="mt-4 text-lg font-semibold text-[#0B1F3A]">
                     {phase.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-relaxed text-black/65">
+                  <p className="mt-3 text-sm leading-relaxed text-[#0B1F3A]/65">
                     {phase.text}
                   </p>
                 </div>
@@ -515,26 +493,23 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section
-        className="relative overflow-hidden"
-        style={{ background: LOGO_BLUE }}
-      >
-        <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
+      <section className="relative overflow-hidden bg-[#0B1F3A]">
+        <div className="pointer-events-none absolute inset-0 opacity-35 [background:radial-gradient(900px_420px_at_30%_15%,rgba(200,169,107,0.38),transparent_60%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <h3 className="text-4xl font-semibold tracking-tight text-white">
-                Need a partner for modernization, support, or digital transformation?
+                Need a partner for modernization, support, or digital
+                transformation?
               </h3>
 
-              <div className="mt-4 h-[2px] w-16 bg-white/80" />
+              <div className="mt-4 h-[2px] w-16 bg-[#C8A96B]" />
 
-              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/90">
+              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/85">
                 Fuzion Consulting Group helps organizations stabilize critical
-                systems, improve operational visibility, and build practical paths
-                forward with modern technology.
+                systems, improve operational visibility, and build practical
+                paths forward with modern technology.
               </p>
             </div>
 
@@ -542,16 +517,16 @@ export default function ProjectsPage() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                  className="inline-flex items-center justify-center rounded-full bg-[#C8A96B] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#d8bb7c]"
                 >
                   Contact Us →
                 </Link>
 
                 <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+                  href="/capabilities"
+                  className="inline-flex items-center justify-center rounded-full border border-[#C8A96B]/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
-                  Explore Services
+                  Explore Capabilities
                 </Link>
               </div>
             </div>

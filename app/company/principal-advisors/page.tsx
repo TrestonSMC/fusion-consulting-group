@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 
-const LOGO_BLUE = "#2a8bff";
-
 type Advisor = {
   name: string;
   title: string;
@@ -40,43 +38,44 @@ export default function PrincipalPartnersPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white pt-28 md:pt-32">
-      {/* ================= HERO ================= */}
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
-          PRINCIPAL ADVISORS
-        </p>
+    <main className="min-h-screen bg-[#F8F8F6] pt-28 md:pt-32">
+      <section className="border-b border-[#C8A96B]/20 bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-12">
+          <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
+            PRINCIPAL ADVISORS
+          </p>
 
-        <h1 className="mt-3 text-4xl font-semibold text-black/90 md:text-5xl">
-          Strategic perspective across the markets we serve and grow
-        </h1>
+          <h1 className="mt-3 text-4xl font-semibold text-[#0B1F3A] md:text-5xl">
+            Strategic perspective across the markets we serve and grow
+          </h1>
 
-        <p className="mt-6 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
-          Fuzion Consulting Group and Fuzion Chickasaw Group are supported by a
-          trusted network of Principal Advisors—experienced leaders who provide
-          strategic perspective across the industries we serve today and the
-          markets we are intentionally expanding into.
-        </p>
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
+            Fuzion Consulting Group and Fuzion Chickasaw Group are supported by
+            a trusted network of Principal Advisors—experienced leaders who
+            provide strategic perspective across the industries we serve today
+            and the markets we are intentionally expanding into.
+          </p>
 
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
-          Our Principal Advisors offer real-world insight grounded in operations,
-          regulation, and execution. They help ensure Fuzion’s solutions remain
-          practical, credible, and aligned with real market conditions.
-        </p>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
+            Our Principal Advisors offer real-world insight grounded in
+            operations, regulation, and execution. They help ensure Fuzion’s
+            solutions remain practical, credible, and aligned with real market
+            conditions.
+          </p>
+        </div>
       </section>
 
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
+      <div className="h-[3px] w-full bg-[#C8A96B]" />
 
-      {/* ================= WHAT THEY DO ================= */}
       <section className="mx-auto max-w-7xl px-6 py-16">
-        <h2 className="text-2xl font-semibold text-black/90">
+        <h2 className="text-2xl font-semibold text-[#0B1F3A]">
           What Principal Advisors Do
         </h2>
 
-        <div className="mt-8 space-y-4 text-black/70">
+        <div className="mt-8 space-y-4 text-[#0B1F3A]/70">
           <p>Principal Advisors support Fuzion by:</p>
 
-          <ul className="space-y-3 pl-5 list-disc">
+          <ul className="list-disc space-y-3 pl-5">
             <li>
               Providing <strong>strategic guidance</strong> grounded in hands-on
               industry experience
@@ -101,9 +100,8 @@ export default function PrincipalPartnersPage() {
         </div>
       </section>
 
-      {/* ================= ADVISORS GRID ================= */}
       <section className="mx-auto max-w-7xl px-6 pb-16">
-        <h2 className="text-2xl font-semibold text-black/90">
+        <h2 className="text-2xl font-semibold text-[#0B1F3A]">
           Meet Our Principal Advisors
         </h2>
 
@@ -111,9 +109,9 @@ export default function PrincipalPartnersPage() {
           {advisors.map((advisor) => (
             <div
               key={advisor.name}
-              className="rounded-2xl border border-black/10 bg-white p-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.05)]"
+              className="rounded-2xl border border-[#C8A96B]/25 bg-white p-6 text-center shadow-[0_12px_35px_rgba(11,31,58,0.06)] transition hover:-translate-y-[2px] hover:border-[#C8A96B]/45"
             >
-              <div className="mx-auto h-32 w-32 overflow-hidden rounded-full border border-black/10">
+              <div className="mx-auto h-32 w-32 overflow-hidden rounded-full border border-[#C8A96B]/30 bg-white">
                 <img
                   src={advisor.img}
                   alt={advisor.name}
@@ -121,18 +119,20 @@ export default function PrincipalPartnersPage() {
                 />
               </div>
 
-              <p className="mt-5 text-lg font-semibold text-black/90">
+              <div className="mx-auto mt-5 h-[3px] w-12 rounded-full bg-[#C8A96B]" />
+
+              <p className="mt-5 text-lg font-semibold text-[#0B1F3A]">
                 {advisor.name}
               </p>
 
-              <p className="mt-2 text-sm text-black/60">
+              <p className="mt-2 text-sm text-[#0B1F3A]/60">
                 {advisor.title}
               </p>
 
               <div className="mt-4">
                 <Link
                   href={advisor.href}
-                  className="text-sm font-medium text-black/80 hover:text-black"
+                  className="text-sm font-medium text-[#0B1F3A] transition hover:text-[#C8A96B]"
                 >
                   View Profile →
                 </Link>
@@ -142,12 +142,10 @@ export default function PrincipalPartnersPage() {
         </div>
       </section>
 
-      {/* ================= CTA ================= */}
-      <section
-        className="relative overflow-hidden"
-        style={{ background: LOGO_BLUE }}
-      >
-        <div className="mx-auto max-w-7xl px-6 py-16">
+      <section className="relative overflow-hidden bg-[#0B1F3A]">
+        <div className="pointer-events-none absolute inset-0 opacity-35 [background:radial-gradient(900px_420px_at_30%_15%,rgba(200,169,107,0.38),transparent_60%)]" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-16">
           <h3 className="text-3xl font-semibold text-white">
             Work with a team backed by real-world experience.
           </h3>
@@ -155,7 +153,7 @@ export default function PrincipalPartnersPage() {
           <div className="mt-6">
             <Link
               href="/contact"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black"
+              className="rounded-full bg-[#C8A96B] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#d8bb7c]"
             >
               Contact Us →
             </Link>

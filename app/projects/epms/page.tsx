@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 
-const LOGO_BLUE = "#2a8bff";
+const NAVY = "#0B1F3A";
+const GOLD = "#C8A96B";
+const CREAM = "#F8F8F6";
 
 const projectMeta = [
   {
@@ -39,36 +41,36 @@ const projectMeta = [
 
 export default function EPMSProjectPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <div className="h-[3px] w-full" style={{ background: LOGO_BLUE }} />
+    <main className="min-h-screen bg-[#F8F8F6]">
+      <div className="h-[3px] w-full bg-[#C8A96B]" />
 
-      {/* HERO */}
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <p className="text-xs font-semibold tracking-[0.25em] text-black/60">
+          <p className="text-xs font-semibold tracking-[0.25em] text-[#C8A96B]">
             FUZION CONSULTING GROUP
           </p>
 
-          <h1 className="mt-3 text-3xl font-semibold leading-tight text-black/90 md:text-5xl">
+          <h1 className="mt-3 text-3xl font-semibold leading-tight text-[#0B1F3A] md:text-5xl">
             Enterprise Project Management System (EPMS)
           </h1>
 
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-black/70 md:text-lg">
-            Stabilization, support, and modernization planning for a business-critical
-            enterprise platform supporting utility project lifecycle management,
-            forecasting, accounting integration, and outage execution.
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-[#0B1F3A]/70 md:text-lg">
+            Stabilization, support, and modernization planning for a
+            business-critical enterprise platform supporting utility project
+            lifecycle management, forecasting, accounting integration, and outage
+            execution.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/projects"
-              className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white hover:bg-black/90"
+              className="rounded-full bg-[#0B1F3A] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#132f56]"
             >
               Back to Projects
             </Link>
             <Link
               href="/contact"
-              className="rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-medium text-black/90 hover:bg-black/5"
+              className="rounded-full border border-[#C8A96B]/50 bg-white px-6 py-3 text-sm font-medium text-[#0B1F3A] transition hover:bg-[#C8A96B]/10"
             >
               Contact Us →
             </Link>
@@ -76,20 +78,16 @@ export default function EPMSProjectPage() {
         </div>
       </section>
 
-      {/* TOP INFO BOX */}
       <section className="bg-white">
         <div className="mx-auto max-w-5xl px-6 pb-8">
-          <div
-            className="rounded-3xl border-2 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)]"
-            style={{ borderColor: LOGO_BLUE }}
-          >
+          <div className="rounded-3xl border-2 border-[#C8A96B]/45 bg-white p-8 shadow-[0_14px_40px_rgba(11,31,58,0.08)]">
             <div className="space-y-5">
               {projectMeta.map((item) => (
                 <div key={item.label}>
-                  <p className="text-sm font-semibold text-black/90">
+                  <p className="text-sm font-semibold text-[#0B1F3A]">
                     {item.label}:
                   </p>
-                  <p className="mt-1 text-base leading-relaxed text-black/70">
+                  <p className="mt-1 text-base leading-relaxed text-[#0B1F3A]/70">
                     {item.value}
                   </p>
                 </div>
@@ -99,84 +97,91 @@ export default function EPMSProjectPage() {
         </div>
       </section>
 
-      {/* BODY CONTENT */}
-      <section className="bg-white">
+      <section className="bg-[#F8F8F6]">
         <div className="mx-auto max-w-5xl px-6 py-10">
           <div className="space-y-12">
             <ContentBlock title="Project Description">
               <p>
-                Fuzion Consulting Group was engaged by the Generation organization
-                of a large electric utility to assume responsibility for the
-                assessment, stabilization, and ongoing support of a legacy
-                Enterprise Project Management System (EPMS). The application supports
-                multiple business units—including Generation, Operations, and
-                Transmission & Distribution—and is heavily utilized during seasonal
-                outage planning and execution.
+                Fuzion Consulting Group was engaged by the Generation
+                organization of a large electric utility to assume responsibility
+                for the assessment, stabilization, and ongoing support of a
+                legacy Enterprise Project Management System (EPMS). The
+                application supports multiple business units—including
+                Generation, Operations, and Transmission & Distribution—and is
+                heavily utilized during seasonal outage planning and execution.
               </p>
 
               <p>
                 EPMS was originally developed to replace manual project tracking
-                processes and supports end-to-end project lifecycle management from
-                Stage Gate 1 through Stage Gate 5, including long-range forecasting,
-                accounting integration, and interfaces with the utility’s financial
-                business office. Due to its long evolution, limited documentation,
-                and the retirement of the original developer, the system presented
-                elevated operational and support risks.
+                processes and supports end-to-end project lifecycle management
+                from Stage Gate 1 through Stage Gate 5, including long-range
+                forecasting, accounting integration, and interfaces with the
+                utility’s financial business office. Due to its long evolution,
+                limited documentation, and the retirement of the original
+                developer, the system presented elevated operational and support
+                risks.
               </p>
 
               <p>
                 In late 2022, utility leadership formally classified EPMS as a
                 business-critical enterprise application. Business stakeholders
-                expressed concerns regarding continuity of support, system knowledge
-                gaps, and responsiveness. Fuzion was requested to evaluate and
-                execute a structured transition plan to stabilize and support the
-                application while defining a long-term modernization roadmap.
+                expressed concerns regarding continuity of support, system
+                knowledge gaps, and responsiveness. Fuzion was requested to
+                evaluate and execute a structured transition plan to stabilize
+                and support the application while defining a long-term
+                modernization roadmap.
               </p>
             </ContentBlock>
 
             <ContentBlock title="Phase 1: IT Discovery & Risk Assessment">
               <p>
-                <span className="font-semibold text-black/85">Objective:</span>{" "}
+                <span className="font-semibold text-[#0B1F3A]">
+                  Objective:
+                </span>{" "}
                 Establish full system transparency, reduce operational risk, and
                 enable informed decision-making.
               </p>
 
               <p>
-                Fuzion executed a comprehensive EPMS IT Discovery engagement under
-                an accelerated timeline. Despite less than six weeks of execution
-                time, Fuzion delivered a complete technical and operational
-                assessment that included application architecture and infrastructure
-                documentation, data flows and integrations, codebase assessment and
-                supportability analysis, security and performance review, operational
-                risk identification, and structured knowledge transfer documentation.
+                Fuzion executed a comprehensive EPMS IT Discovery engagement
+                under an accelerated timeline. Despite less than six weeks of
+                execution time, Fuzion delivered a complete technical and
+                operational assessment that included application architecture and
+                infrastructure documentation, data flows and integrations,
+                codebase assessment and supportability analysis, security and
+                performance review, operational risk identification, and
+                structured knowledge transfer documentation.
               </p>
 
               <p>
                 The effort was completed on schedule, with an executive-level
                 readout delivered to corporate IT leadership. The final delivery
-                included over <span className="font-semibold text-black/85">426 documented artifacts</span>,
-                significantly improving governance, auditability, and long-term
-                support readiness.
+                included over{" "}
+                <span className="font-semibold text-[#0B1F3A]">
+                  426 documented artifacts
+                </span>
+                , significantly improving governance, auditability, and
+                long-term support readiness.
               </p>
             </ContentBlock>
 
             <ContentBlock title="Parallel Support Activities">
               <p>
                 During the discovery phase, Fuzion also provided targeted support
-                for a critical EPMS integration initiative involving the utility’s
-                asset management system, ensuring continuity of operations and
-                minimizing business disruption.
+                for a critical EPMS integration initiative involving the
+                utility’s asset management system, ensuring continuity of
+                operations and minimizing business disruption.
               </p>
             </ContentBlock>
 
             <ContentBlock title="Phase 2: Business Process Mapping">
               <p>
-                Following IT discovery, Fuzion partnered with Generation leadership
-                to perform enterprise business process mapping, documenting how EPMS
-                supports operational workflows across departments. This phase helped
-                align system capabilities with real-world business practices and
-                identified process inefficiencies impacting schedule, forecasting,
-                and execution.
+                Following IT discovery, Fuzion partnered with Generation
+                leadership to perform enterprise business process mapping,
+                documenting how EPMS supports operational workflows across
+                departments. This phase helped align system capabilities with
+                real-world business practices and identified process
+                inefficiencies impacting schedule, forecasting, and execution.
               </p>
             </ContentBlock>
 
@@ -188,10 +193,11 @@ export default function EPMSProjectPage() {
               </p>
 
               <p>
-                Key activities included architecture and infrastructure remediation,
-                controlled change and release management, ServiceNow-based incident
-                and request tracking, Power BI reporting and analytics, and Six
-                Sigma–driven governance and performance monitoring.
+                Key activities included architecture and infrastructure
+                remediation, controlled change and release management,
+                ServiceNow-based incident and request tracking, Power BI
+                reporting and analytics, and Six Sigma–driven governance and
+                performance monitoring.
               </p>
 
               <p>
@@ -204,9 +210,9 @@ export default function EPMSProjectPage() {
             <ContentBlock title="Current State & Forward Roadmap">
               <p>
                 Fuzion continues to support EPMS operations in collaboration with
-                utility IT leadership. A forward-looking roadmap has been defined to
-                evolve the platform toward a{" "}
-                <span className="font-semibold text-black/85">
+                utility IT leadership. A forward-looking roadmap has been defined
+                to evolve the platform toward a{" "}
+                <span className="font-semibold text-[#0B1F3A]">
                   modern, Microsoft 365–based SaaS
                 </span>{" "}
                 architecture, enhancing forecasting, reporting, and operational
@@ -216,8 +222,8 @@ export default function EPMSProjectPage() {
               <p>
                 This approach enables the utility to extend the life of a
                 mission-critical system, reduce dependency on costly COTS
-                replacements, preserve business-specific functionality, and improve
-                governance, supportability, and scalability.
+                replacements, preserve business-specific functionality, and
+                improve governance, supportability, and scalability.
               </p>
             </ContentBlock>
 
@@ -225,9 +231,9 @@ export default function EPMSProjectPage() {
               <p>
                 This engagement stabilized a business-critical enterprise
                 application, eliminated institutional knowledge gaps, improved
-                auditability and governance, reduced operational and support risk,
-                and established a scalable modernization path aligned with utility
-                standards.
+                auditability and governance, reduced operational and support
+                risk, and established a scalable modernization path aligned with
+                utility standards.
               </p>
             </ContentBlock>
 
@@ -237,44 +243,43 @@ export default function EPMSProjectPage() {
                 responsibility for undocumented, mission-critical legacy systems,
                 operate effectively in regulated and high-risk utility
                 environments, deliver under aggressive timelines, bridge gaps
-                between business operations and IT, and create modernization paths
-                without disrupting core operations.
+                between business operations and IT, and create modernization
+                paths without disrupting core operations.
               </p>
             </ContentBlock>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative overflow-hidden" style={{ background: LOGO_BLUE }}>
-        <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(900px_420px_at_30%_15%,rgba(255,255,255,0.22),transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 opacity-20 [background:radial-gradient(700px_380px_at_80%_40%,rgba(0,0,0,0.20),transparent_60%)]" />
+      <section className="relative overflow-hidden bg-[#0B1F3A]">
+        <div className="pointer-events-none absolute inset-0 opacity-35 [background:radial-gradient(900px_420px_at_30%_15%,rgba(200,169,107,0.38),transparent_60%)]" />
 
         <div className="relative mx-auto max-w-5xl px-6 py-20">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <h3 className="text-4xl font-semibold tracking-tight text-white">
-                Need a partner for modernization, support, or digital transformation?
+                Need a partner for modernization, support, or digital
+                transformation?
               </h3>
-              <div className="mt-4 h-[2px] w-16 bg-white/80" />
-              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/90">
+              <div className="mt-4 h-[2px] w-16 bg-[#C8A96B]" />
+              <p className="mt-8 max-w-2xl text-base leading-relaxed text-white/85">
                 Fuzion Consulting Group helps organizations stabilize critical
-                systems, improve operational visibility, and build practical paths
-                forward with modern technology.
+                systems, improve operational visibility, and build practical
+                paths forward with modern technology.
               </p>
             </div>
 
-            <div className="lg:col-span-5 flex items-end lg:justify-end">
+            <div className="flex items-end lg:col-span-5 lg:justify-end">
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black/90 hover:bg-white/90"
+                  className="inline-flex items-center justify-center rounded-full bg-[#C8A96B] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#d8bb7c]"
                 >
                   Contact Us →
                 </Link>
                 <Link
                   href="/projects"
-                  className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-full border border-[#C8A96B]/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
                   Back to Projects
                 </Link>
@@ -295,11 +300,11 @@ function ContentBlock({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold text-black/90 md:text-3xl">
+    <section className="rounded-3xl border border-[#C8A96B]/20 bg-white p-7 shadow-[0_10px_30px_rgba(11,31,58,0.04)]">
+      <h2 className="text-2xl font-semibold text-[#0B1F3A] md:text-3xl">
         {title}
       </h2>
-      <div className="mt-5 space-y-4 text-base leading-relaxed text-black/70">
+      <div className="mt-5 space-y-4 text-base leading-relaxed text-[#0B1F3A]/70">
         {children}
       </div>
     </section>
