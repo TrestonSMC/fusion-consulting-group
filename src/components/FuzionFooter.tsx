@@ -11,7 +11,7 @@ export default function FuzionFooter() {
       <div className="mx-auto max-w-7xl px-6 py-8">
         <div className="flex flex-col items-center justify-center gap-4 text-center">
           <img
-            src="https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Brand/logo.png"
+            src="https://imeyhjgubpbglspfellj.supabase.co/storage/v1/object/public/media/Brand/logo-V2.png"
             alt="Fuzion"
             className="h-16 w-auto opacity-95"
           />
